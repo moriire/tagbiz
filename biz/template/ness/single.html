@@ -1,0 +1,116 @@
+{% extends '../layout.html' %}
+
+{% block content %}
+			<!-- details_section - start
+			================================================== -->
+			<section class="details_section shop_details sec_ptb_140 clearfix">
+				<div class="container">
+					<div class="row mb_100 justify-content-lg-between">
+						<div class="col-lg-5 col-md-5">
+							<div class="shop_details_image">
+								<div class="tab-content">
+									<div id="tab_1" class="tab-pane active">
+										<img src="{{ product.image.url }}" alt="image_not_found">
+									</div>
+									<div id="tab_2" class="tab-pane fade">
+										<img src="{{ product.image.url }}" alt="image_not_found">
+									</div>
+									<div id="tab_3" class="tab-pane fade">
+										<img src="{{ product.image.url }}" alt="image_not_found">
+									</div>
+									<div id="tab_4" class="tab-pane fade">
+										<img src="assets/images/details/shop/img_01.jpg" alt="image_not_found">
+									</div>
+								</div>
+
+								<ul class="nav ul_li clearfix" role="tablist">
+									<li>
+										<a class="active" data-toggle="tab" href="#tab_1">
+											<img src="assets/images/details/shop/img_02.jpg" alt="image_not_found">
+										</a>
+									</li>
+									<li>
+										<a data-toggle="tab" href="#tab_2">
+											<img src="assets/images/details/shop/img_03.jpg" alt="image_not_found">
+										</a>
+									</li>
+									<li>
+										<a data-toggle="tab" href="#tab_3">
+											<img src="assets/images/details/shop/img_04.jpg" alt="image_not_found">
+										</a>
+									</li>
+									<li>
+										<a data-toggle="tab" href="#tab_4">
+											<img src="{{ product.image.url }}" alt="image_not_found">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-7 col-md-7">
+							<div class="shop_details_content">
+								<h2 class="item_title">{{ product.title }}</h2>
+								<span class="item_price">{{ product.discounted_amount }}</span>
+								<hr>
+								<div class="row mb_30 align-items-center justify-content-lg-between">
+									<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+										<div class="item_brand d-flex align-items-center">
+											<span class="brand_title">Brands:</span>
+											<span class="brand_image d-flex align-items-center justify-content-center" data-bg-color="#f7f7f7">
+												<img src="assets/images/product_brands/img_01.png" alt="image_not_found">
+											</span>
+										</div>
+									</div>
+
+									<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+										<div class="rating_review_wrap d-flex align-items-center clearfix">
+											<ul class="rating_star ul_li">
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+												<li><i class="fas fa-star"></i></li>
+											</ul>
+											<span>4 Review(s)</span>
+											<button type="button" class="add_review_btn">Add Your Review</button>
+										</div>
+									</div>
+								</div>
+								<p class="mb-0">
+								{{ product.description }}
+			</p>
+								<hr>
+								<ul class="btns_group_1 ul_li mb_30 clearfix">
+									<li>
+										<div class="quantity_input">
+											<form action="#">
+												<span class="input_number_decrement">–</span>
+												<input class="input_number" type="text" value="1">
+												<span class="input_number_increment">+</span>
+											</form>
+										</div>
+									</li>
+									<li>
+										<a class="custom_btn bg_black text-uppercase" href="#!"><i class="fal fa-shopping-bag mr-2"></i> Add To Cart</a>
+									</li>
+								</ul>
+								<hr>
+
+								<ul class="product_info ul_li_block clearfix">
+									<li><strong>Categories:</strong> <a href="#!">Dress</a> <a href="#!">Handbag</a> <a href="#!">T-Shirts</a></li>
+									<li><strong>Tags:</strong> <a href="#!">Hot</a> <a href="#!">Women</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- details_section - end
+			================================================== -->
+{% endblock %}
