@@ -1,61 +1,51 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 
 from django.contrib.auth.decorators import login_required
 
+
+
+from .cart import Cart
+
+from django.conf import settings
+
 from . models import Category, Product
 
-@login_required
+@login_required(login_url='/auth/login/')
 def index(request):
     categories = Category.objects.filter(status=1)
     return render(request, "ness/category.html", {"categories":categories})
 
 def procat(request, slug):
-    products = Product.objects.filter(category__slug = slug) 
+    products = Product.objects.filter(category__slug = slug)
     return render(request, "ness/products.html", {"products":products})
 
+#@login_required
 def single(request, category, slug):
-    try:
-        product = Product.objects.get(
-                category__slug=category, 
-                slug = slug)
-    except Product.DoesNotExist:
-        product = None
-    return render(request, "ness/single.html", {"product":product})
-
-
-class Cart:
-    def __init__(self, request, pid):
-        self.pid = pid
-        self.cart = {}
-        request.session["cart"] = self.cart
-        self.sess = request.session["cart"]
-    def __iter__(self):
-        return self.sess.get("cart")
-
-    def add(self):
-        if self.pid in self.sess:
-            self.sess[self.pid] += 1
-        else:
-            self.sess[self.pid] = 1
-        return self.sess
-
-    def remove(self):
+    if request.POST:
+        cart = Cart(request)
+        units = request.POST.get("units")
+        amount = request.POST.get("amount")
+        product = Product.objects.get(                   slug = slug)
+        cart.add(product, quantity=int(units)) 
+        return HttpResponse({"a":cart})
+    else:
         try:
-            del self.sess
-        except KeyError:
-            pass
+            product = Product.objects.get(category__slug=category,slug = slug)
+        except Product.DoesNotExist:
+            product = None
         finally:
-            return "deleted..."
+            return render(request, "ness/single.html", {"product":product})
 
+
+
+@login_required
+def shoppingCart(request):
+    cart = Cart(request)
+    return render(request, "ness/cart.html", {"items": cart})
 
 #@login_required
-def addtocart(request, pid):
-    cart = Cart(request, pid=pid)
-    return HttpResponse("ghhhhj")#cart.add())
-
-#@login_required
-def removeFromCart(request, pid):
-    cart = Cart(pid=pid)
-    return HttpResponse("deleted.")
-
-
+def removeItem(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, product_id)
+    if cart.remove(product):
+        return redirect('cart/')

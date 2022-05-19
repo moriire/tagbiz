@@ -9,7 +9,7 @@
 			{% for category in categories %}
 			<div class="grid-item">
 				<div class="ecommerce_category_fullimage">
-					<img src="assets/images/category/classic_ecommerce/img_03.jpg" alt="image_not_found">
+					<img src="{{ category.image.url }}" alt="image_not_found">
 					<h3 class="item_title">
 						<a href="/category/{{category.slug}}">{{ category.title }}</a>
 					</h3>

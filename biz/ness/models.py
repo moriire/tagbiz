@@ -4,6 +4,27 @@ from django.conf import settings
 def upload_path(instance, filename):
     return "images/%s/%s" % (instance.category.id, filename)
 
+def cat_path(instance, filename):
+    return "cat/%s" %filename
+
+from django.core.exceptions import ValidationError
+
+from django.core.files.images import get_image_dimensions
+
+def validate_cat(image):
+    width, height = get_image_dimensions(image)
+    max_height = 380
+    max_width = 530
+    if width > max_width or height > max_height:
+        raise ValidationError("Height or Width is larger than what is allowed")
+
+
+def validate_product(image):
+    width, height = get_image_dimensions('image')
+    max_height = 380
+    max_width = 530
+    if width > max_width or height > max_height:
+        raise ValidationError("Height or Width is larger than what is allowed")
 
 
 STATUS = (                                         (0,"Draft"),                                   (1,"Publish")                              )
@@ -29,6 +50,7 @@ class Category(models.Model):
     title = models.CharField(max_length=200,    unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
+    image = models.ImageField(upload_to=cat_path, validators=[validate_cat], blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     class Meta:
         ordering = ('-title',)
@@ -42,7 +64,7 @@ class Product(models.Model):
     amount = models.IntegerField(default=0)
     discount = models.IntegerField(default=0)
     modified_on = models.DateTimeField(auto_now = True, blank =True, null=True)
-    image = models.ImageField(upload_to=upload_path, blank=True)
+    image = models.ImageField(upload_to=upload_path, blank=True, validators=[validate_product])
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.ForeignKey(Category, on_delete = models.CASCADE, related_name = "category", null=True, blank=True)
     class Meta:
@@ -80,9 +102,6 @@ class OrderItem(models.Model):
         if self.item.discount_price:
             return self.get_total_discount_item_price()
         return self.get_total_item_price()
-
-
-
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

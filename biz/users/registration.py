@@ -1,17 +1,18 @@
-#from django.contrib.auth.decorators import
 from django.shortcuts import render, redirect
 #from django.contrib.auth.forms import UserCreationForm
 from . models import CustomUser
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
+
 from datetime import datetime as dt
+
 datenow = dt.now().year
-BIRTH_YEAR_CHOICES = [str(date) for date in range(datenow-60, datenow - 18)]
+
 class LoginForm(forms.Form):
     email = forms.EmailField(label='Email', widget=forms.EmailInput(
         attrs = {"id": "email", "placeholder": "Email"}))
-    password = forms.CharField(label='Password', max_length=63, widget=forms.PasswordInput(
+    password = forms.CharField(label='Password', max_length=12, widget=forms.PasswordInput(
         attrs = {"id": "password", "placeholder": "password"}
         ))
 
