@@ -32,6 +32,9 @@ class Item(models.Model):
     def new_price(self):
         return (1-(0.01*self.ptg_discount))*self.price
 
+    def detail_link(self):
+        return f"{self.category.name}/{self.pk}/"
+    
 class Upload(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='upload_item')
     img = models.ImageField(blank=True, null=True, upload_to='images/')
@@ -49,7 +52,7 @@ class Selected(models.Model):
         return self.item
     
     def cart_item_amount(self):
-        return self.item.price * self.unit
+        return self.item.item.price * self.unit
 
 class WishList(models.Model):
     items = models.ManyToManyField(ItemWithThumbs, related_name="wishlist_item")
