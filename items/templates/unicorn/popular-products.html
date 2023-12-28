@@ -1,0 +1,10 @@
+{% load unicorn %}
+<div class="clearfix">
+    <ul id="masonry" class="row g-xl-4 g-3">
+        {% for item in items %}
+        <li class="card-container col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 Begs">
+            {% unicorn 'card' item=item %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

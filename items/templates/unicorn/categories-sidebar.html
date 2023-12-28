@@ -1,0 +1,39 @@
+<div class="browse-category-menu">
+    <a href="javascript:void(0);" class="category-btn">
+        <svg class="me-3" width="21" height="13" viewBox="0 0 21 13" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.248047" y="12" width="20" height="1" fill="white" />
+            <rect x="0.248047" width="20" height="1" fill="white" />
+            <rect x="0.248047" y="6" width="20" height="1" fill="white" />
+        </svg>
+        <span class="category-btn-title">
+            Browse Categories
+        </span>
+        <span class="toggle-arrow ms-auto">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.24805 9L12.248 15L18.248 9" stroke="white"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+    </a>
+    <div class="category-menu-items" style="display: none;">
+        <ul class="nav navbar-nav">
+            {% for category in categories %}
+            <li class="menu-items">
+                <a href="javascript:void(0);">
+                    <img class="me-3" src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
+                    <span>{{ category.name }}</span>
+                    <span class="menu-icon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 12L10 8L6 4" stroke="#24262B" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

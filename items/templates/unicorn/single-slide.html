@@ -1,0 +1,34 @@
+{% load unicorn %}
+<div class="swiper-slide bg-light">
+    <div class="container">
+        <div class="banner-content">
+            <div class="row">
+                <div class="col-xl-6 col-md-6 col-sm-7 align-self-center">
+                    <div class="swiper-content">
+                        <div class="content-info">
+                            <h1 class="offer-title mb-0" data-swiper-parallax="-20">SALE 50%
+                            </h1>
+                            <h2 class="title mb-2" data-swiper-parallax="-20">{{ item.item }}.</h2>
+                            <p class="sub-title mb-0" data-swiper-parallax="-40">{{ item.desc }}</p>
+                        </div>
+                        <div class="content-btn" data-swiper-parallax="-60">
+                            <!--a class="btn btn-secondary  me-3" href="assets/shop-cart.html">ADD
+                                TO CART</a-->
+                                {% unicorn 'add-to-cart-button-big' %}
+                            <a class="btn btn-outline-secondary "
+                                href="assets/product-default.html">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 col-sm-5">
+                    <div class="banner-media">
+                        <div class="img-preview" data-swiper-parallax="-100">
+                            <img src="https://mooncart.dexignzone.com/xhtml/images/main-slider/slider2/pic1.jpg"
+                                alt="banner-media">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="shop-sidebar-cart">
+    {% if selections %}
+    <ul class="sidebar-cart-list">
+        {% for selection in selections %}
+        <li>
+            <div class="cart-widget">
+                <div class="dz-media me-3">
+                    <img src="https://mooncart.dexignzone.com/xhtml/images/shop/shop-cart/pic1.jpg"
+                        alt="">
+                </div>
+                <div class="cart-content">
+                    <h6 class="title"><a href="assets/product-thumbnail.html">Wooden
+                            {{ selection }}</a></h6>
+                    <div class="d-flex align-items-center">
+                        <div class="btn-quantity light quantity-sm me-3">
+                            <input type="text" value="1" name="demo_vertical2">
+                        </div>
+                        <h6 class="dz-price text-primary mb-0">$50.00</h6>
+                    </div>
+                </div>
+                <a href="assets/javascript:void(0);" class="dz-close">
+                    <i class="ti-close"></i>
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="cart-total">
+        <h5 class="mb-0">Subtotal:</h5>
+        <h5 class="mb-0">300.00$</h5>
+    </div>
+    <div class="mt-auto">
+        <div class="shipping-time">
+            <div class="dz-icon">
+                <i class="flaticon flaticon-ship"></i>
+            </div>
+            <div class="shipping-content">
+                <h6 class="title pe-4">Congratulations , you've got free shipping!
+                </h6>
+                <div class="progress">
+                    <div class="progress-bar progress-animated border-0"
+                        style="width: 75%;" role="progressbar">
+                        <span class="sr-only">75% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="assets/shop-checkout.html"
+            class="btn btn-light btn-block m-b20">Checkout</a>
+        <a href="assets/shop-cart.html" class="btn btn-secondary btn-block">View
+            Cart</a>
+    </div>
+    {% else %}
+    <h2>Nothing in cart</h2>
+    {% endif %}
+</div>

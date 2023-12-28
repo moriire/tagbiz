@@ -1,0 +1,12 @@
+<div class="row gx-xl-4 g-3">
+    {% for category in categories %}
+    <div class="col-xl-4 col-lg-4 col-md-4 col-6 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="category-product left">
+            <a href="assets/javascript:void(0);">
+                <img src="https://mooncart.dexignzone.com/xhtml/images/category/pic1.jpg" alt="">
+                <div class="category-badge">{{  category.name }}</div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
