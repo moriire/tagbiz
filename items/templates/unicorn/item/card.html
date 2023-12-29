@@ -1,0 +1,78 @@
+{% load unicorn %}
+<div class="shop-card wow fadeInUp" data-wow-delay="0.4s" unicorn:key="{{ item.id }}">
+    <div class="dz-media">
+        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/5.png"
+            alt="image">
+        <div class="shop-meta">
+            <a href="{{ item.item.detail_link }}" class="btn btn-secondary btn-icon">
+                <i class="fa-solid fa-eye d-md-none d-block"></i>
+                <span class="d-md-block d-none">View Detail </span>
+            </a>
+            {% if request.user.is_authenticated %}
+            <a role="button" class="btn btn-secondary btn-icon" unicorn:click="add_wish_list()">
+                <i class="fa fa-heart"></i>
+            </a>
+            <div class="btn btn-secondary btn-icon" unicorn:click="add_to_cart()">
+                <i class="fa fa-shopping-cart" ></i>
+            </div>
+            {% else %}
+            <a class="btn btn-secondary btn-icon" href="{{ item.item.detail_link }}">
+                <i class="fa fa-shopping-cart" ></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="dz-content">
+        <h5 class="title"><a href="{{ item.item.detail_link }}">{{ item.item.item }}</a>
+        </h5>
+        <!--ul class="star-rating">
+            <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                        fill="#FF8A00"></path>
+                </svg>
+            </li>
+            <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                        fill="#FF8A00"></path>
+                </svg>
+            </li>
+            <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                        fill="#FF8A00"></path>
+                </svg>
+            </li>
+            <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                        fill="#E4E5E8"></path>
+                </svg>
+            </li>
+            <li>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                        fill="#E4E5E8"></path>
+                </svg>
+            </li>
+        </ul-->
+        <h6 class="price">
+            <del>${{ item.item.new_price }}</del>
+            ${{ item.item.price }}
+        </h6>
+    </div>
+    <div class="product-tag">
+        <span class="badge badge-secondary">Sale</span>
+    </div>
+</div>

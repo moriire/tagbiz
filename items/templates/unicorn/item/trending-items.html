@@ -1,0 +1,27 @@
+{% load unicorn %}
+{% if items %}
+<div class="swiper-btn-center-lr">
+
+    <div class="swiper swiper-four">
+
+        <div class="swiper-wrapper">
+            {% for item in items %}
+            {% unicorn 'item.card' item=item key=item.id %}
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="pagination-align">
+        <div class="tranding-button-prev btn-prev">
+            <i class="flaticon flaticon-left-chevron"></i>
+        </div>
+        <div class="tranding-button-next btn-next">
+            <i class="flaticon flaticon-chevron"></i>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="swiper-wrapper">
+    <h2>No trending items yet!!</h2>
+</div>
+{% endif %}

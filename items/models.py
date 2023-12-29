@@ -33,23 +33,24 @@ class Item(models.Model):
         return (1-(0.01*self.ptg_discount))*self.price
 
     def detail_link(self):
-        return f"{self.category.name}/{self.pk}/"
+        return f"product/{self.pk}/"
     
 class Upload(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='upload_item')
     img = models.ImageField(blank=True, null=True, upload_to='images/')
-    
+    def __str__(self) -> str:
+        return self.item.item
 class ItemWithThumbs(models.Model):
     item = models.ForeignKey(Item, related_name="item_with_thumbs", on_delete=models.CASCADE)
     thumbs = models.ManyToManyField(Upload, related_name='item_images', blank=True)
-
+    
 class Selected(models.Model):
     item = models.ForeignKey(ItemWithThumbs, related_name="selected_item", on_delete=models.CASCADE)
     buyer =  models.ForeignKey(User, on_delete=models.CASCADE, related_name="selected_item_buyer")
     unit = models.IntegerField(default=1)
     noted = models.BooleanField(default=False)
     def __unicode__(self) -> str:
-        return self.item
+        return self.item.item.item
     
     def cart_item_amount(self):
         return self.item.item.price * self.unit
@@ -58,4 +59,4 @@ class WishList(models.Model):
     items = models.ManyToManyField(ItemWithThumbs, related_name="wishlist_item")
     buyer =  models.ForeignKey(User, on_delete=models.CASCADE, related_name="wishlist_item")
     def __unicode__(self) -> str:
-        return self.buyer
+        return self.buyer.get_full_name()

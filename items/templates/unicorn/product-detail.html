@@ -1,0 +1,224 @@
+
+<section class="content-inner py-0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-4 col-md-4">
+                <div class="dz-product-detail sticky-top">
+                    <div class="swiper-btn-center-lr">
+                        <div class="swiper product-gallery-swiper2">
+                            <div class="swiper-wrapper" id="lightgallery">
+                                {% for image in images %}
+                                <div class="swiper-slide">
+                                    <div class="dz-media DZoomImage">
+                                        <a class="mfp-link lg-item"
+                                            href="{{ image.img.url }}"
+                                            data-src="{{ image.img.url }}">
+                                            <i class="feather icon-maximize dz-maximize top-left"></i>
+                                        </a>
+                                        <img src="{{ image.img.url }}"
+                                            alt="image">
+                                    </div>
+                                </div>
+                                {% endfor %}
+                             
+                            </div>
+                        </div>
+                        <div class="swiper product-gallery-swiper thumb-swiper-lg">
+                            <div class="swiper-wrapper">
+                                {% for image in images %}
+                                <div class="swiper-slide">
+                                    <img src="{{ image.img.url }}"
+                                        alt="image">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-md-8">
+                <div class="row">
+                    <div class="col-xl-7">
+                        <div class="dz-product-detail style-2 p-t20 ps-0">
+                            <div class="dz-content">
+                                <div class="dz-content-footer">
+                                    <div class="dz-content-start">
+                                        <span class="badge bg-purple mb-2">SALE 20% Off</span>
+                                        <h4 class="title mb-1"><a href="shop-list.html">{{ item.item }}</a></h4>
+                                        <div class="review-num">
+                                            <ul class="dz-rating me-2">
+                                                <li>
+                                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M6.74805 0.234375L8.72301 4.51608L13.4054 5.07126L9.9436 8.27267L10.8625 12.8975L6.74805 10.5944L2.63355 12.8975L3.5525 8.27267L0.090651 5.07126L4.77309 4.51608L6.74805 0.234375Z"
+                                                            fill="#FF8A00"></path>
+                                                    </svg>
+                                                </li>
+                                                <li>
+                                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M6.74805 0.234375L8.72301 4.51608L13.4054 5.07126L9.9436 8.27267L10.8625 12.8975L6.74805 10.5944L2.63355 12.8975L3.5525 8.27267L0.090651 5.07126L4.77309 4.51608L6.74805 0.234375Z"
+                                                            fill="#FF8A00"></path>
+                                                    </svg>
+                                                </li>
+                                                <li>
+                                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M6.74805 0.234375L8.72301 4.51608L13.4054 5.07126L9.9436 8.27267L10.8625 12.8975L6.74805 10.5944L2.63355 12.8975L3.5525 8.27267L0.090651 5.07126L4.77309 4.51608L6.74805 0.234375Z"
+                                                            fill="#FF8A00"></path>
+                                                    </svg>
+                                                </li>
+                                                <li>
+                                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path opacity="0.2"
+                                                            d="M6.74805 0.234375L8.72301 4.51608L13.4054 5.07126L9.9436 8.27267L10.8625 12.8975L6.74805 10.5944L2.63355 12.8975L3.5525 8.27267L0.090651 5.07126L4.77309 4.51608L6.74805 0.234375Z"
+                                                            fill="#5E626F"></path>
+                                                    </svg>
+
+                                                </li>
+                                                <li>
+                                                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path opacity="0.2"
+                                                            d="M6.74805 0.234375L8.72301 4.51608L13.4054 5.07126L9.9436 8.27267L10.8625 12.8975L6.74805 10.5944L2.63355 12.8975L3.5525 8.27267L0.090651 5.07126L4.77309 4.51608L6.74805 0.234375Z"
+                                                            fill="#5E626F"></path>
+                                                    </svg>
+                                                </li>
+                                            </ul>
+                                            <span class="text-secondary me-2">4.7 Rating</span>
+                                            <a href="javascript:void(0);">(5 customer reviews)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="para-text">
+                                    {{ item.item.desc }}
+                                </p>
+                                <div class="meta-content m-b20 d-flex align-items-end">
+                                    <div class="me-3">
+                                        <span class="price-name">Price</span>
+                                        <span class="price-num">$ {{ item.item.price }} <del>$ {{ item.item.new_price }}</del></span>
+                                    </div>
+                                    <div class="btn-quantity quantity-sm light d-xl-none d-blcok d-sm-block">
+                                        <label class="form-label">Quantity</label>
+                                        <input type="text" value="1" name="demo_vertical2">
+                                    </div>
+                                </div>
+                                <div class="product-num">
+                                    <div class="btn-quantity light d-xl-block d-sm-none d-none">
+                                        <label class="form-label">Quantity</label>
+                                        <input type="text" value="1" name="demo_vertical2">
+                                    </div>
+                                    
+                                </div>
+                                <div class="dz-info">
+                                    <ul>
+                                        <li>
+                                            <strong>SKU:</strong>
+                                            <span>PRT584E63A</span>
+                                        </li>
+                                        <li>
+                                            <strong>Category:</strong>
+                                            <span>Bottles,</span>
+                                            <span>Accessories,</span>
+                                            <span>Mats,</span>
+                                            <span>Bottles,</span>
+                                            <span>Trackers</span>
+                                        </li>
+                                        <li>
+                                            <strong>Tags:</strong>
+                                            <span>Trackers,</span>
+                                            <span>Bags,</span>
+                                            <span>Cup,</span>
+                                            <span>Toothbrushes</span>
+                                        </li>
+                                        <li>
+                                            <strong>Share:</strong>
+                                            <span>
+                                                <a href="javascript:void(0);" target="_blank">
+                                                    <i class="fa-brands fa-facebook-f"></i>
+                                                </a>
+                                            </span>
+                                            <span>
+                                                <a href="https://www.linkedin.com/showcase/3686700/admin/"
+                                                    target="_blank">
+                                                    <i class="fa-brands fa-linkedin-in"></i>
+                                                </a>
+                                            </span>
+                                            <span>
+                                                <a href="javascript:void(0);" target="_blank">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </a>
+                                            </span>
+                                            <span>
+                                                <a href="javascript:void(0);" target="_blank">
+                                                    <i class="fa-brands fa-twitter"></i>
+                                                </a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="banner-social-media">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);">Instagram</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">twitter</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="cart-detail">
+                            <div class="icon-bx-wraper style-4 m-b15">
+                                <div class="icon-bx">
+                                    <i class="flaticon flaticon-ship"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <span class="text-primary font-14">Easy Returns</span>
+                                    <h6 class="dz-title">30 Days</h6>
+                                </div>
+                            </div>
+                            <div class="icon-bx-wraper style-4 m-b30">
+                                <div class="icon-bx">
+                                    <img src="https://mooncart.dexignzone.com/xhtml/images/shop/shop-cart/icon-box/pic2.png"
+                                        alt="/">
+                                </div>
+                                <div class="icon-content">
+                                    <h6 class="dz-title">Enjoy The Product</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                                </div>
+                            </div>
+                            <div class="save-text">
+                                <i class="icon feather icon-check-circle"></i>
+                                <span class="m-l10">You will save ₹504 on this order</span>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr class="total">
+                                        <td>
+                                            <h6 class="mb-0">Total</h6>
+                                        </td>
+                                        <td class="price">
+                                            $125.75
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="shop-cart.html" class="btn btn-secondary w-100">ADD TO CART</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

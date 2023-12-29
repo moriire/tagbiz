@@ -4,7 +4,7 @@
     <div class="main-swiper">
         <div class="swiper-wrapper">
             {% for item in items %}
-            {% unicorn 'single-slide' item=item %}
+            {% unicorn 'single-slide' item=item key=item.id %}
             {% endfor %}
         </div>
         <div class="banner-social-media style-2 left">

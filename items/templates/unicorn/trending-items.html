@@ -6,7 +6,7 @@
 
         <div class="swiper-wrapper">
             {% for item in items %}
-            {% unicorn 'card' item=item %}
+            {% unicorn 'card' item=item key=item.id %}
             {% endfor %}
         </div>
 

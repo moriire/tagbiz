@@ -210,7 +210,7 @@
                     <div class="row gx-xl-4 g-3">
                         {% for item in items %}
                         <div class="col-6 col-xl-4 col-lg-4 col-md-4 col-sm-6 m-md-b15 m-b30">
-                            {% unicorn 'card' item=item %}
+                            {% unicorn 'card' item=item key=item.id %}
                             
                         </div>
                         {% endfor %}

@@ -465,27 +465,6 @@ var MoonCart = function(){
 		});
 	}
 	
-	/* Website Launch Date */ 
-	var WebsiteLaunchDate = new Date();
-	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	WebsiteLaunchDate.setMonth(WebsiteLaunchDate.getMonth() + 1);
-	WebsiteLaunchDate =  WebsiteLaunchDate.getDate() + " " + monthNames[WebsiteLaunchDate.getMonth()] + " " + WebsiteLaunchDate.getFullYear();
-	/* Website Launch Date END */ 
-	
-	/* Countdown ============ */
-	var handleCountDown = function(WebsiteLaunchDate){
-		/* Time Countr Down Js */
-		if($(".countdown").length)
-		{
-			$('.countdown').countdown({date: WebsiteLaunchDate+' 23:5'}, function() {
-				$('.countdown').text('we are live');
-			});
-		}
-		/* Time Countr Down Js End */
-	}
-		
-	
-	
 	var boxHover = function(){
 		jQuery('.box-hover').on('mouseenter',function(){
 			var selector = jQuery(this).parent().parent();

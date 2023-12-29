@@ -1,0 +1,24 @@
+{% load unicorn %}
+<div class="main-slider style-2">
+    <div class="main-swiper">
+        <div class="swiper-wrapper">
+            {% for item in items %}
+            {% unicorn 'item.single-slide' item=item key=item.id %}
+            {% endfor %}
+        </div>
+        <div class="banner-social-media style-2 left">
+            <ul>
+                <li>
+                    <a href="assets/javascript:void(0);" target="_blank">Instagram</a>
+                </li>
+                <li>
+                    <a href="assets/javascript:void(0);" target="_blank">Facebook</a>
+                </li>
+                <li>
+                    <a href="assets/javascript:void(0);" target="_blank">twitter</a>
+                </li>
+            </ul>
+        </div>
+        <a href="assets/contact-us-1.html" class="service-btn btn-dark">Let’s talk</a>
+    </div>
+</div>

@@ -1,3 +1,34 @@
-<div>
-    <!-- put component code here -->
+<div class="shop-sidebar-cart">
+    {% if wishes %}
+    <ul class="sidebar-cart-list">
+        {% for wish in wishes %}
+        <li>
+            <div class="cart-widget">
+                <div class="dz-media me-3">
+                    <img src="https://mooncart.dexignzone.com/xhtml/images/shop/shop-cart/pic1.jpg"
+                        alt="">
+                </div>
+                <div class="cart-content">
+                    <h6 class="title"><a href="{{ wish.item.thumbs }}">{{ wish.item.item.thumbs }}
+                            {{ wish.item.item }}</a></h6>
+                    <div class="d-flex align-items-center">
+                        <h6 class="dz-price text-primary mb-0">${{ wish.item.price }}</h6>
+                    </div>
+                </div>
+                <a href="assets/javascript:void(0);" class="dz-close">
+                    <i class="ti-close"></i>
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>
+        No wishes from you yet
+    </h2>
+    {% endif %}
+    <div class="mt-auto">
+        <a href="/wish-list/"
+            class="btn btn-secondary btn-block">Check Your Favourite</a>
+    </div>
 </div>
