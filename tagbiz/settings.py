@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-71#skgp=xz08in(nv95husesw7u!ioubh+ng8_%hu=n%vwz-of'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", '127.0.0.1']
 
 # Application definition
 
@@ -38,6 +38,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'tagbiz.urls'
@@ -110,8 +111,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATIC_ROOT = BASE_DIR/"static"
-STATICFILES_DIRS = (BASE_DIR/'static',)
-
+STATIC_ROOT = BASE_DIR/"static"
+#STATICFILES_DIRS = (BASE_DIR/'static',)
+##STATICFILES_DIRS = (BASE_DIR/'productionfiles', BASE_DIR/'static',)
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
 
