@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-71#skgp=xz08in(nv95husesw7u!ioubh+ng8_%hu=n%vwz-of
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", '127.0.0.1', 'onrender.com', 'https://tagbiz.onrender.com']
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", '127.0.0.1', 'onrender.com', 'tagbiz.onrender.com']
 
 # Application definition
 
