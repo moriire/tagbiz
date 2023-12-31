@@ -1,5 +1,4 @@
 {% load unicorn %}
-{#% unicorn 'header' categories=categories selections=selections wishlists=wishlists cart_count=cart_count wish_count=wish_count %#}	
 <header class="site-header mo-left header style-2">
     <!-- Main Header -->
     <div class="header-info-bar">
@@ -39,39 +38,39 @@
             </div>
 
             <!-- header search nav -->
-            <div class="header-search-nav">
-                <form class="header-item-search">
-                    <div class="input-group search-input">
-                        <select class="default-select">
-                            <option>All Categories</option>
-                            <option>Photography </option>
-                            <option>Arts</option>
-                            <option>Adventure</option>
-                            <option>Action</option>
-                            <option>Games</option>
-                            <option>Movies</option>
-                            <option>Comics</option>
-                            <option>Biographies</option>
-                            <option>Children’s Books</option>
-                            <option>Historical</option>
-                            <option>Contemporary</option>
-                            <option>Classics</option>
-                            <option>Education</option>
-                        </select>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                            placeholder="Search for products">
-                        <button class="btn" type="button">
-                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <!--div class="header-search-nav">
+            <form class="header-item-search">
+                <div class="input-group search-input">
+                    <select class="default-select">
+                        <option>All Categories</option>
+                        <option>Photography </option>
+                        <option>Arts</option>
+                        <option>Adventure</option>
+                        <option>Action</option>
+                        <option>Games</option>
+                        <option>Movies</option>
+                        <option>Comics</option>
+                        <option>Biographies</option>
+                        <option>Children’s Books</option>
+                        <option>Historical</option>
+                        <option>Contemporary</option>
+                        <option>Classics</option>
+                        <option>Education</option>
+                    </select>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                        placeholder="Search for products">
+                    <button class="btn" type="button">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div-->
         </div>
     </div>
     <!-- Main Header End -->
@@ -82,14 +81,13 @@
             <div class="container clearfix">
                 <!-- Website Logo -->
                 <div class="logo-header logo-dark">
-                    <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg"
-                            alt="logo"></a>
+                    <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt="logo"></a>
                 </div>
 
                 <!-- Nav Toggle Button -->
                 <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -101,7 +99,7 @@
                         <ul class="header-right">
                             <li class="nav-item login-link">
                                 <a class="nav-link" href="{% url 'login' %}">
-                                    LOGIN 
+                                    LOGIN
                                 </a>
                             </li>
                             <li class="nav-item login-link">
@@ -137,9 +135,8 @@
                                 </a>
                             </li>
                             <li class="nav-item cart-link">
-                                <a href="javascript:void(0);" class="nav-link cart-btn"
-                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                    aria-controls="offcanvasRight">
+                                <a href="javascript:void(0);" class="nav-link cart-btn" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -162,8 +159,7 @@
                 <!-- Main Nav -->
                 <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
                     <div class="logo-header">
-                        <a href="/"><img
-                                src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt=""></a>
+                        <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt=""></a>
                     </div>
                     <div class="browse-category-menu">
                         <a href="javascript:void(0);" class="category-btn">
@@ -179,17 +175,18 @@
                             <span class="toggle-arrow ms-auto">
                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.24805 9L12.248 15L18.248 9" stroke="white"
-                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.24805 9L12.248 15L18.248 9" stroke="white" stroke-linecap="round"
+                                        stroke-linejoin="round" />
                                 </svg>
                             </span>
                         </a>
                         <div class="category-menu-items" style="display: none;">
                             <ul class="nav navbar-nav">
                                 {% for category in categories %}
-                                <li class="menu-items">
+                                <li class="menu-items" unicorn:key="category.id">
                                     <a href="javascript:void(0);">
-                                        <img class="me-3" src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
+                                        <img class="me-3"
+                                            src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
                                         <span>{{ category.name }}</span>
                                         <span class="menu-icon">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -205,40 +202,40 @@
                         </div>
                     </div>
                     {#% unicorn 'categories-sidebar' %#}
-                    
+
                     <ul class="nav navbar-nav dark-nav">
                         <li><a href="/">home</a></li>
                         <li><a href="shop/">Shop</a></li>
 
                         <!--li class="sub-menu sub-menu-down"><a
-                                href="assets/javascript:void(0);"><span>Pages</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="assets/about-us.html">About Us</a></li>
-                                <li><a href="assets/about-me.html">About Me</a></li>
-                                <li><a href="assets/pricing-table.html">Pricing Table</a></li>
-                                <li><a href="assets/our-gift-vouchers.html">Our Gift Vouchers</a></li>
-                                <li><a href="assets/what-we-do.html">What We Do</a></li>
-                                <li><a href="assets/faqs-1.html">Faqs</a></li>
-                                <li><a href="assets/our-team.html">Our Team</a></li>
-                                <li><a href="assets/contact-us-1.html">Contact Us</a></li>
-                                <li><a href="assets/error-1.html">Error 404</a></li>
-                                <li><a href="assets/under-construction.html">Under Construction</a></li>
-                                <li><a href="assets/coming-soon.html">Coming Soon</a></li>
-                            </ul>
-                        </li-->
+                            href="assets/javascript:void(0);"><span>Pages</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="assets/about-us.html">About Us</a></li>
+                            <li><a href="assets/about-me.html">About Me</a></li>
+                            <li><a href="assets/pricing-table.html">Pricing Table</a></li>
+                            <li><a href="assets/our-gift-vouchers.html">Our Gift Vouchers</a></li>
+                            <li><a href="assets/what-we-do.html">What We Do</a></li>
+                            <li><a href="assets/faqs-1.html">Faqs</a></li>
+                            <li><a href="assets/our-team.html">Our Team</a></li>
+                            <li><a href="assets/contact-us-1.html">Contact Us</a></li>
+                            <li><a href="assets/error-1.html">Error 404</a></li>
+                            <li><a href="assets/under-construction.html">Under Construction</a></li>
+                            <li><a href="assets/coming-soon.html">Coming Soon</a></li>
+                        </ul>
+                    </li-->
                         <li><a href="assets/contact-us-1.html">FAQ</a></li>
                         <li><a href="assets/contact-us-1.html">Contact Us</a></li>
                     </ul>
                     <div class="dz-social-icon">
                         <ul>
-                            <li><a class="fab fa-facebook-f" target="_blank"
-                                    href="assets/javascript:void(0);"></a></li>
+                            <li><a class="fab fa-facebook-f" target="_blank" href="assets/javascript:void(0);"></a>
+                            </li>
                             <li><a class="fab fa-twitter" target="_blank" href="assets/javascript:void(0);"></a>
                             </li>
                             <li><a class="fab fa-linkedin-in" target="_blank"
                                     href="assets/https://www.linkedin.com/showcase/3686700/admin/"></a></li>
-                            <li><a class="fab fa-instagram" target="_blank"
-                                    href="assets/javascript:void(0);"></a></li>
+                            <li><a class="fab fa-instagram" target="_blank" href="assets/javascript:void(0);"></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -437,20 +434,24 @@
                                 {% if selections %}
                                 <ul class="sidebar-cart-list">
                                     {% for selection in selections %}
-                                    <li>{{ selection.item.thumbs }}
+                                    <li unicorn:key="selection.id">
                                         <div class="cart-widget">
                                             <div class="dz-media me-3">
-                                                <img src="{{ selection.item }}"
-                                                    alt="">
+                                                <img src="{{ selection.item.thumbs.first.img.url }}" alt="">
                                             </div>
                                             <div class="cart-content">
-                                                <h6 class="title"><a href="assets/product-thumbnail.html">
-                                                        {{ selection.item.item.item }}</a></h6>
+                                                <h6 class="title">
+                                                    <a href="assets/product-thumbnail.html">
+                                                        {{ selection.item.item.item }}
+                                                    </a>
+                                                </h6>
                                                 <div class="d-flex align-items-center">
                                                     <div class="btn-quantity light quantity-sm me-3">
-                                                        <input type="text" value="{{ selection.unit }}" name="demo_vertical2">
+                                                        <input type="text" value="{{ selection.unit }}"
+                                                            name="demo_vertical2">
                                                     </div>
-                                                    <h6 class="dz-price text-primary mb-0">${{ selection.item.item.new_price }}</h6>
+                                                    <h6 class="dz-price text-primary mb-0">
+                                                        $ {{ selection.item.item.new_price }}</h6>
                                                 </div>
                                             </div>
                                             <a href="assets/javascript:void(0);" class="dz-close">
@@ -490,7 +491,39 @@
                         </div>
                         <div class="tab-pane fade" id="wishlist-pane" role="tabpanel" aria-labelledby="wishlist"
                             tabindex="0">
-                            {#% unicorn 'wishlist-items' wishlists=wishlists wish_count=wish_count %#}    
+                            <div class="shop-sidebar-cart">
+                                <ul class="sidebar-cart-list">
+                                    {% for wishlist in wishlists %}
+                                    <li>
+                                        <div class="cart-widget">
+                                            <div class="dz-media me-3">
+                                                <img src="{{ wishlist.thumbs.first.img.url }}" alt="">
+                                            </div>
+                                            <div class="cart-content">
+                                                <h6 class="title">
+                                                    <a href="{{ wishlist.item.detail_link }}">
+                                                        {{ wishlist.item.item }}
+                                                    </a>
+                                                </h6>
+                                                <div class="d-flex align-items-center">
+                                                    <h6 class="dz-price text-primary mb-0">
+                                                        $ {{ wishlist.item.new_price }}
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:void(0);" class="dz-close">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="mt-auto">
+                                    <a href="shop-wishlist.html" class="btn btn-secondary btn-block">Check Your
+                                        Favourite</a>
+                                </div>
+                            </div>
+                            {#% unicorn 'wishlist-items' wishlists=wishlists wish_count=wish_count %#}
                         </div>
                     </div>
                 </div>
@@ -499,58 +532,3 @@
     </div>
     <!-- Sidebar cart -->
 </header>
-<div class="page-content">
-	<!--banner-->
-	<div class="dz-bnr-inr" style="background-image:url(images/background/bg-shape.jpg);">
-		<div class="container">
-			<div class="dz-bnr-inr-entry">
-				<h1>Wishlist</h1>
-				<nav aria-label="breadcrumb" class="breadcrumb-row">
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html"> Home</a></li>
-						<li class="breadcrumb-item">Wishlist</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- inner page banner End-->
-	
-
-</div>
-<div class="content-inner-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <div class="table-responsive">
-                    <table class="table check-tbl style-1">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Product</th>
-                                <th></th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>{{ cart_count }}
-                            <button unicorn:click="change">Count</button>
-                            {% for wish in  wishlists %}
-                            <tr unicorn:key="wish.id">
-                                <td class="product-item-close"><a href="javascript:void(0);"><i class="ti-close"></i></a></td>
-                                <td class="product-item-img"><img src="{{ wish.thumbs.first.img.url }}" alt="/"></td>
-                                <td class="product-item-name">{{ wish.item.item }} </td>
-                                <td class="product-item-price"><span>${{ wish.item.price }}</span><strong>${{ wish.item.new_price }}</strong></td>
-                                <td class="product-item-stock text-primary">In Stock</td>
-                                <td class="product-item-totle"><a role="button" unicorn:click="add_to_cart({{ wish.pk }})" class="btn btn-gray .btnhover text-nowrap">Add To Cart</a></td>
-                            </tr>
-                            {% endfor %}
-                           
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

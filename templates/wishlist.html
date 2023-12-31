@@ -1,23 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'unicorn/base.html' %}
 {% load unicorn %}
 {% block content %}
-{% unicorn 'header-two' %}
-<div class="page-content">
-	<!--banner-->
-	<div class="dz-bnr-inr" style="background-image:url(images/background/bg-shape.jpg);">
-		<div class="container">
-			<div class="dz-bnr-inr-entry">
-				<h1>Wishlist</h1>
-				<nav aria-label="breadcrumb" class="breadcrumb-row">
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.html"> Home</a></li>
-						<li class="breadcrumb-item">Wishlist</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- inner page banner End-->
-	{#% unicorn 'wishlist' %#}
-</div>
+{% unicorn 'wishlist-items' %}
+
 {% endblock %}

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load unicorn %}
+{% block header %}
+
+{#% unicorn 'header' categories=categories selections=selections wishlists=wishlists cart_count=cart_count wish_count=wish_count %#}	
+
+		{% endblock %}
 {% block content %}
 
 {% unicorn 'items' %}

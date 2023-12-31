@@ -1,4 +1,513 @@
 
+<header class="site-header mo-left header style-2">
+    <!-- Main Header -->
+    <div class="header-info-bar">
+        <div class="container clearfix">
+            <!-- Website Logo -->
+            <div class="logo-header logo-dark">
+                <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt="logo"></a>
+            </div>
+            <!-- EXTRA NAV -->
+            <div class="extra-nav d-md-flex d-none">
+                <div class="extra-cell">
+                    <ul class="navbar-nav header-right">
+                        <li class="nav-item info-box pe-3 d-xl-flex d-none">
+                            <div class="nav-link">
+                                <div class="dz-icon">
+                                    <i class="flaticon flaticon-ship"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span>FREE</span>
+                                    <h6 class="title mb-0">Shipping</h6>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item info-box ">
+                            <div class="nav-link">
+                                <div class="dz-icon">
+                                    <i class="flaticon flaticon-call-center"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span>24/7 SUPPORT</span>
+                                    <h6 class="title mb-0">+00 099 321 312</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- header search nav -->
+            <!--div class="header-search-nav">
+                <form class="header-item-search">
+                    <div class="input-group search-input">
+                        <select class="default-select">
+                            <option>All Categories</option>
+                            <option>Photography </option>
+                            <option>Arts</option>
+                            <option>Adventure</option>
+                            <option>Action</option>
+                            <option>Games</option>
+                            <option>Movies</option>
+                            <option>Comics</option>
+                            <option>Biographies</option>
+                            <option>Children’s Books</option>
+                            <option>Historical</option>
+                            <option>Contemporary</option>
+                            <option>Classics</option>
+                            <option>Education</option>
+                        </select>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                            placeholder="Search for products">
+                        <button class="btn" type="button">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div-->
+        </div>
+    </div>
+    <!-- Main Header End -->
+
+    <!-- Main Header -->
+    <div class="sticky-header main-bar-wraper navbar-expand-lg">
+        <div class="main-bar dark clearfix">
+            <div class="container clearfix">
+                <!-- Website Logo -->
+                <div class="logo-header logo-dark">
+                    <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg"
+                            alt="logo"></a>
+                </div>
+
+                <!-- Nav Toggle Button -->
+                <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- EXTRA NAV -->
+                <div class="extra-nav">
+                    <div class="extra-cell">
+                        <ul class="header-right">
+                            <li class="nav-item login-link">
+                                <a class="nav-link" href="{% url 'login' %}">
+                                    LOGIN 
+                                </a>
+                            </li>
+                            <li class="nav-item login-link">
+                                <a class="nav-link" href="">
+                                    REGISTER
+                                </a>
+                            </li>
+                            <li class="nav-item search-link">
+                                <a class="nav-link" href="javascript:void(0);" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="10.0535" cy="10.55" r="7.49047" stroke="var(--white)"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M15.2632 16.1487L18.1999 19.0778" stroke="var(--white)"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item wishlist-link">
+                                <a class="nav-link" href="javascript:void(0);" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.64119 10.4097C1.74702 7.61808 2.79202 4.42724 5.72285 3.48308C7.26452 2.98558 8.96619 3.27891 10.2479 4.24308C11.4604 3.30558 13.2245 2.98891 14.7645 3.48308C17.6954 4.42724 18.747 7.61808 17.8537 10.4097C16.462 14.8347 10.2479 18.2431 10.2479 18.2431C10.2479 18.2431 4.07952 14.8864 2.64119 10.4097Z"
+                                            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M13.5813 6.32781C14.473 6.61614 15.103 7.41197 15.1788 8.34614"
+                                            stroke="var(--white)" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item cart-link">
+                                <a href="javascript:void(0);" class="nav-link cart-btn"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M1.08374 2.61947C1.08374 2.27429 1.36356 1.99447 1.70874 1.99447H3.29314C3.91727 1.99447 4.4722 2.39163 4.67352 2.98239L5.06379 4.1276H15.4584C17.6446 4.1276 19.4168 5.89981 19.4168 8.08593V11.5379C19.4168 13.7241 17.6446 15.4963 15.4584 15.4963H9.22182C7.30561 15.4963 5.66457 14.1237 5.32583 12.2377L4.00967 4.90953L3.49034 3.3856C3.46158 3.30121 3.3823 3.24447 3.29314 3.24447H1.70874C1.36356 3.24447 1.08374 2.96465 1.08374 2.61947ZM5.36374 5.3776L6.55614 12.0167C6.78791 13.3072 7.91073 14.2463 9.22182 14.2463H15.4584C16.9542 14.2463 18.1668 13.0337 18.1668 11.5379V8.08593C18.1668 6.59016 16.9542 5.3776 15.4584 5.3776H5.36374Z"
+                                            fill="var(--white)" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.16479 17.8278C8.16479 17.1374 8.72444 16.5778 9.4148 16.5778H9.42313C10.1135 16.5778 10.6731 17.1374 10.6731 17.8278C10.6731 18.5182 10.1135 19.0778 9.42313 19.0778H9.4148C8.72444 19.0778 8.16479 18.5182 8.16479 17.8278Z"
+                                            fill="var(--white)" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M14.8315 17.8278C14.8315 17.1374 15.3912 16.5778 16.0815 16.5778H16.0899C16.7802 16.5778 17.3399 17.1374 17.3399 17.8278C17.3399 18.5182 16.7802 19.0778 16.0899 19.0778H16.0815C15.3912 19.0778 14.8315 18.5182 14.8315 17.8278Z"
+                                            fill="var(--white)" />
+                                    </svg>
+                                    <span class="badge badge-circle"> {{ cart_count }} </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Nav -->
+                <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+                    <div class="logo-header">
+                        <a href="/"><img
+                                src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt=""></a>
+                    </div>
+                    <div class="browse-category-menu">
+                        <a href="javascript:void(0);" class="category-btn">
+                            <svg class="me-3" width="21" height="13" viewBox="0 0 21 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.248047" y="12" width="20" height="1" fill="white" />
+                                <rect x="0.248047" width="20" height="1" fill="white" />
+                                <rect x="0.248047" y="6" width="20" height="1" fill="white" />
+                            </svg>
+                            <span class="category-btn-title">
+                                Browse Categories
+                            </span>
+                            <span class="toggle-arrow ms-auto">
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.24805 9L12.248 15L18.248 9" stroke="white"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="category-menu-items" style="display: none;">
+                            <ul class="nav navbar-nav">
+                                {% for category in categories %}
+                                <li class="menu-items">
+                                    <a href="javascript:void(0);">
+                                        <img class="me-3" src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
+                                        <span>{{ category.name }}</span>
+                                        <span class="menu-icon">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 12L10 8L6 4" stroke="#24262B" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {#% unicorn 'categories-sidebar' %#}
+                    
+                    <ul class="nav navbar-nav dark-nav">
+                        <li><a href="/">home</a></li>
+                        <li><a href="shop/">Shop</a></li>
+
+                        <!--li class="sub-menu sub-menu-down"><a
+                                href="assets/javascript:void(0);"><span>Pages</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="assets/about-us.html">About Us</a></li>
+                                <li><a href="assets/about-me.html">About Me</a></li>
+                                <li><a href="assets/pricing-table.html">Pricing Table</a></li>
+                                <li><a href="assets/our-gift-vouchers.html">Our Gift Vouchers</a></li>
+                                <li><a href="assets/what-we-do.html">What We Do</a></li>
+                                <li><a href="assets/faqs-1.html">Faqs</a></li>
+                                <li><a href="assets/our-team.html">Our Team</a></li>
+                                <li><a href="assets/contact-us-1.html">Contact Us</a></li>
+                                <li><a href="assets/error-1.html">Error 404</a></li>
+                                <li><a href="assets/under-construction.html">Under Construction</a></li>
+                                <li><a href="assets/coming-soon.html">Coming Soon</a></li>
+                            </ul>
+                        </li-->
+                        <li><a href="assets/contact-us-1.html">FAQ</a></li>
+                        <li><a href="assets/contact-us-1.html">Contact Us</a></li>
+                    </ul>
+                    <div class="dz-social-icon">
+                        <ul>
+                            <li><a class="fab fa-facebook-f" target="_blank"
+                                    href="assets/javascript:void(0);"></a></li>
+                            <li><a class="fab fa-twitter" target="_blank" href="assets/javascript:void(0);"></a>
+                            </li>
+                            <li><a class="fab fa-linkedin-in" target="_blank"
+                                    href="assets/https://www.linkedin.com/showcase/3686700/admin/"></a></li>
+                            <li><a class="fab fa-instagram" target="_blank"
+                                    href="assets/javascript:void(0);"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Header End -->
+
+    <!-- SearchBar -->
+    <div class="dz-search-area dz-offcanvas offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            &times;
+        </button>
+        <div class="container">
+            <form class="header-item-search">
+                <div class="input-group search-input">
+                    <select class="default-select">
+                        <option>All Categories</option>
+                        <option>Wooden Bottles </option>
+                        <option>Wooden Furniture</option>
+                        <option>Metal Utensils</option>
+                        <option>Wooden Utensils</option>
+                        <option>Baby Products</option>
+                        <option>Yoga Mats</option>
+                        <option>Eco-Friendly</option>
+                        <option>Childern's Strollers</option>
+                        <option>Bamboo products</option>
+                        <option>Healthy Products</option>
+                        <option>Luxury Couch</option>
+                        <option>Video Instructors</option>
+                    </select>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                        placeholder="Search Product">
+                    <button class="btn" type="button">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="recent-tag">
+                    <li class="pe-0"><span>Quick Search :</span></li>
+                    <li><a href="assets/shop-list.html">Wooden Products</a></li>
+                    <li><a href="assets/shop-list.html">Metal Products</a></li>
+                    <li><a href="assets/shop-list.html">Baby Products</a></li>
+                    <li><a href="assets/shop-list.html">Yoga Mats</a></li>
+                </ul>
+            </form>
+            <div class="row">
+                <div class="col-xl-12">
+                    <h5 class="mb-3">You May Also Like</h5>
+                    <div class="swiper category-swiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/1.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Wooden Water
+                                                Bottles</a></h6>
+                                        <h6 class="price">$40.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/3.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Bamboo
+                                                toothbrushes</a></h6>
+                                        <h6 class="price">$30.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/4.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Eco friendly bags</a>
+                                        </h6>
+                                        <h6 class="price">$35.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/2.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Wooden Cup</a></h6>
+                                        <h6 class="price">$20.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/5.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Bamboo
+                                                toothbrushes</a></h6>
+                                        <h6 class="price">$70.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/6.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Eco friendly bags</a>
+                                        </h6>
+                                        <h6 class="price">$45.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/7.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Wooden Bottles</a>
+                                        </h6>
+                                        <h6 class="price">$40.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="shop-card">
+                                    <div class="dz-media">
+                                        <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/4.png"
+                                            alt="image">
+                                    </div>
+                                    <div class="dz-content">
+                                        <h6 class="title"><a href="assets/shop-list.html">Paper Bags</a></h6>
+                                        <h6 class="price">$60.00</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SearchBar -->
+
+    <!-- Sidebar cart -->
+    <div class="offcanvas dz-offcanvas offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            &times;
+        </button>
+        <div class="offcanvas-body">
+            <div class="product-description">
+                <div class="dz-tabs">
+                    <ul class="nav nav-tabs center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="shopping-cart" data-bs-toggle="tab"
+                                data-bs-target="#shopping-cart-pane" type="button" role="tab"
+                                aria-controls="shopping-cart-pane" aria-selected="true">Shopping Cart
+                                <span class="badge badge-light">{{ cart_count }}</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="wishlist" data-bs-toggle="tab"
+                                data-bs-target="#wishlist-pane" type="button" role="tab"
+                                aria-controls="wishlist-pane" aria-selected="false">Wishlist
+                                <span class="badge badge-light">{{ wish_count }}</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content pt-4" id="dz-shopcart-sidebar">
+                        <div class="tab-pane fade show active" id="shopping-cart-pane" role="tabpanel"
+                            aria-labelledby="shopping-cart" tabindex="0">
+                            {#% unicorn 'cart-items' selections=selections cart_count=cart_count %#}
+                            <div class="shop-sidebar-cart">
+                                {% if selections %}
+                                <ul class="sidebar-cart-list">
+                                    {% for selection in selections %}
+                                    <li>{{ selection.item.thumbs }}
+                                        <div class="cart-widget">
+                                            <div class="dz-media me-3">
+                                                <img src="{{ selection.item }}"
+                                                    alt="">
+                                            </div>
+                                            <div class="cart-content">
+                                                <h6 class="title"><a href="assets/product-thumbnail.html">
+                                                        {{ selection.item.item.item }}</a></h6>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="btn-quantity light quantity-sm me-3">
+                                                        <input type="text" value="{{ selection.unit }}" name="demo_vertical2">
+                                                    </div>
+                                                    <h6 class="dz-price text-primary mb-0">${{ selection.item.item.new_price }}</h6>
+                                                </div>
+                                            </div>
+                                            <a href="assets/javascript:void(0);" class="dz-close">
+                                                <i class="ti-close"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="cart-total">
+                                    <h5 class="mb-0">Subtotal:</h5>
+                                    <h5 class="mb-0">300.00$</h5>
+                                </div>
+                                <div class="mt-auto">
+                                    <div class="shipping-time">
+                                        <div class="dz-icon">
+                                            <i class="flaticon flaticon-ship"></i>
+                                        </div>
+                                        <div class="shipping-content">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-animated border-0"
+                                                    style="width: 75%;" role="progressbar">
+                                                    <span class="sr-only">75% Complete</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="assets/shop-checkout.html"
+                                        class="btn btn-light btn-block m-b20">Checkout</a>
+                                    <a href="/view-cart/" class="btn btn-secondary btn-block">View
+                                        Cart</a>
+                                </div>
+                                {% else %}
+                                <h2>Nothing in cart</h2>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="wishlist-pane" role="tabpanel" aria-labelledby="wishlist"
+                            tabindex="0">
+                            {#% unicorn 'wishlist-items' wishlists=wishlists wish_count=wish_count %#}    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sidebar cart -->
+</header>
+<div class="page-content">
+    
+	<div class="d-sm-flex justify-content-between container-fluid py-3">
+		<nav aria-label="breadcrumb" class="breadcrumb-row">
+			<ul class="breadcrumb mb-0">
+				<li class="breadcrumb-item"><a href="/"> Home</a></li>
+				<li class="breadcrumb-item">Shop Standard With Details</li>
+			</ul>
+		</nav>
+	</div>
 <section class="content-inner py-0">
     <div class="container-fluid">
         <div class="row">
@@ -222,3 +731,557 @@
         </div>
     </div>
 </section>
+
+<section class="content-inner-1 overlay-white-middle overflow-hidden">
+    <div class="container">
+        <div class="section-head style-2">
+            <div class="left-content">
+                <h2 class="title mb-0">Related products</h2>
+            </div>
+            <a href="shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See all products
+                <i class="icon feather icon-chevron-right font-18"></i>
+            </a>
+        </div>
+        <div class="swiper-btn-center-lr">
+            <div class="swiper swiper-four">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="shop-card">
+                            <div class="dz-media">
+                                <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/5.png"
+                                    alt="image">
+                                <div class="shop-meta">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-icon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-eye d-md-none d-block"></i>
+                                        <span class="d-md-block d-none">Quick View</span>
+                                    </a>
+                                    <div class="btn btn-primary meta-icon dz-wishicon">
+                                        <svg class="dz-heart-fill" width="14" height="12" viewBox="0 0 14 12"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.6412 5.80113C13.0778 6.9649 12.0762 8.02624 11.1657 8.8827C10.5113 9.49731 9.19953 10.7322 7.77683 11.62C7.30164 11.9159 6.69842 11.9159 6.22323 11.62C4.80338 10.7322 3.4888 9.49731 2.83435 8.8827C1.92382 8.02624 0.92224 6.96205 0.358849 5.80113C-0.551681 3.91747 0.344622 1.44196 2.21121 0.557041C3.98674 -0.282354 5.54034 0.292418 7.00003 1.44765C8.45972 0.292418 10.0133 -0.282354 11.786 0.557041C13.6554 1.44196 14.5517 3.91747 13.6412 5.80113Z"
+                                                fill="white" />
+                                        </svg>
+                                        <svg class="dz-heart feather feather-heart"
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                        <svg class="dz-cart-check" width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.9144 3.73438L5.49772 10.151L2.58105 7.23438" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <svg class="dz-cart-out" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.6033 10.4092C9.70413 10.4083 8.97452 11.1365 8.97363 12.0357C8.97274 12.9348 9.70097 13.6644 10.6001 13.6653C11.4993 13.6662 12.2289 12.938 12.2298 12.0388C12.2298 12.0383 12.2298 12.0378 12.2298 12.0373C12.2289 11.1391 11.5014 10.4109 10.6033 10.4092Z"
+                                                fill="white" />
+                                            <path
+                                                d="M13.4912 2.6132C13.4523 2.60565 13.4127 2.60182 13.373 2.60176H3.46022L3.30322 1.55144C3.20541 0.853911 2.60876 0.334931 1.90439 0.334717H0.627988C0.281154 0.334717 0 0.61587 0 0.962705C0 1.30954 0.281154 1.59069 0.627988 1.59069H1.90595C1.9858 1.59011 2.05338 1.64957 2.06295 1.72886L3.03004 8.35727C3.16263 9.19953 3.88712 9.8209 4.73975 9.82363H11.2724C12.0933 9.8247 12.8015 9.24777 12.9664 8.44362L13.9884 3.34906C14.0543 3.00854 13.8317 2.67909 13.4912 2.6132Z"
+                                                fill="white" />
+                                            <path
+                                                d="M6.61539 11.9676C6.57716 11.0948 5.85687 10.4077 4.98324 10.4108C4.08483 10.4471 3.38595 11.2048 3.42225 12.1032C3.45708 12.9653 4.15833 13.6505 5.02092 13.6653H5.06017C5.95846 13.626 6.65474 12.8658 6.61539 11.9676Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dz-content">
+                                <h5 class="title"><a href="shop-list.html">Wooden Toothbrushes</a></h5>
+                                <ul class="star-rating">
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <h6 class="price">
+                                    <del>$45.00</del>
+                                    $40.00
+                                </h6>
+                            </div>
+                            <div class="product-tag">
+                                <span class="badge badge-secondary">-31%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="shop-card">
+                            <div class="dz-media">
+                                <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/6.png"
+                                    alt="image">
+                                <div class="shop-meta">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-icon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-eye d-md-none d-block"></i>
+                                        <span class="d-md-block d-none">Quick View</span>
+                                    </a>
+                                    <div class="btn btn-primary meta-icon dz-wishicon">
+                                        <svg class="dz-heart-fill" width="14" height="12" viewBox="0 0 14 12"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.6412 5.80113C13.0778 6.9649 12.0762 8.02624 11.1657 8.8827C10.5113 9.49731 9.19953 10.7322 7.77683 11.62C7.30164 11.9159 6.69842 11.9159 6.22323 11.62C4.80338 10.7322 3.4888 9.49731 2.83435 8.8827C1.92382 8.02624 0.92224 6.96205 0.358849 5.80113C-0.551681 3.91747 0.344622 1.44196 2.21121 0.557041C3.98674 -0.282354 5.54034 0.292418 7.00003 1.44765C8.45972 0.292418 10.0133 -0.282354 11.786 0.557041C13.6554 1.44196 14.5517 3.91747 13.6412 5.80113Z"
+                                                fill="white" />
+                                        </svg>
+                                        <svg class="dz-heart feather feather-heart"
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                        <svg class="dz-cart-check" width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.9144 3.73438L5.49772 10.151L2.58105 7.23438" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <svg class="dz-cart-out" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.6033 10.4092C9.70413 10.4083 8.97452 11.1365 8.97363 12.0357C8.97274 12.9348 9.70097 13.6644 10.6001 13.6653C11.4993 13.6662 12.2289 12.938 12.2298 12.0388C12.2298 12.0383 12.2298 12.0378 12.2298 12.0373C12.2289 11.1391 11.5014 10.4109 10.6033 10.4092Z"
+                                                fill="white" />
+                                            <path
+                                                d="M13.4912 2.6132C13.4523 2.60565 13.4127 2.60182 13.373 2.60176H3.46022L3.30322 1.55144C3.20541 0.853911 2.60876 0.334931 1.90439 0.334717H0.627988C0.281154 0.334717 0 0.61587 0 0.962705C0 1.30954 0.281154 1.59069 0.627988 1.59069H1.90595C1.9858 1.59011 2.05338 1.64957 2.06295 1.72886L3.03004 8.35727C3.16263 9.19953 3.88712 9.8209 4.73975 9.82363H11.2724C12.0933 9.8247 12.8015 9.24777 12.9664 8.44362L13.9884 3.34906C14.0543 3.00854 13.8317 2.67909 13.4912 2.6132Z"
+                                                fill="white" />
+                                            <path
+                                                d="M6.61539 11.9676C6.57716 11.0948 5.85687 10.4077 4.98324 10.4108C4.08483 10.4471 3.38595 11.2048 3.42225 12.1032C3.45708 12.9653 4.15833 13.6505 5.02092 13.6653H5.06017C5.95846 13.626 6.65474 12.8658 6.61539 11.9676Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dz-content">
+                                <h5 class="title"><a href="shop-list.html">Eco friendly bags</a></h5>
+                                <ul class="star-rating">
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <h6 class="price">
+                                    <del>$95.00</del>
+                                    $35.00
+                                </h6>
+                            </div>
+                            <div class="product-tag">
+                                <span class="badge badge-secondary">-40%</span>
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="shop-card">
+                            <div class="dz-media">
+                                <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/7.png"
+                                    alt="image">
+                                <div class="shop-meta">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-icon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-eye d-md-none d-block"></i>
+                                        <span class="d-md-block d-none">Quick View</span>
+                                    </a>
+                                    <div class="btn btn-primary meta-icon dz-wishicon">
+                                        <svg class="dz-heart-fill" width="14" height="12" viewBox="0 0 14 12"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.6412 5.80113C13.0778 6.9649 12.0762 8.02624 11.1657 8.8827C10.5113 9.49731 9.19953 10.7322 7.77683 11.62C7.30164 11.9159 6.69842 11.9159 6.22323 11.62C4.80338 10.7322 3.4888 9.49731 2.83435 8.8827C1.92382 8.02624 0.92224 6.96205 0.358849 5.80113C-0.551681 3.91747 0.344622 1.44196 2.21121 0.557041C3.98674 -0.282354 5.54034 0.292418 7.00003 1.44765C8.45972 0.292418 10.0133 -0.282354 11.786 0.557041C13.6554 1.44196 14.5517 3.91747 13.6412 5.80113Z"
+                                                fill="white" />
+                                        </svg>
+                                        <svg class="dz-heart feather feather-heart"
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                        <svg class="dz-cart-check" width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.9144 3.73438L5.49772 10.151L2.58105 7.23438" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <svg class="dz-cart-out" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.6033 10.4092C9.70413 10.4083 8.97452 11.1365 8.97363 12.0357C8.97274 12.9348 9.70097 13.6644 10.6001 13.6653C11.4993 13.6662 12.2289 12.938 12.2298 12.0388C12.2298 12.0383 12.2298 12.0378 12.2298 12.0373C12.2289 11.1391 11.5014 10.4109 10.6033 10.4092Z"
+                                                fill="white" />
+                                            <path
+                                                d="M13.4912 2.6132C13.4523 2.60565 13.4127 2.60182 13.373 2.60176H3.46022L3.30322 1.55144C3.20541 0.853911 2.60876 0.334931 1.90439 0.334717H0.627988C0.281154 0.334717 0 0.61587 0 0.962705C0 1.30954 0.281154 1.59069 0.627988 1.59069H1.90595C1.9858 1.59011 2.05338 1.64957 2.06295 1.72886L3.03004 8.35727C3.16263 9.19953 3.88712 9.8209 4.73975 9.82363H11.2724C12.0933 9.8247 12.8015 9.24777 12.9664 8.44362L13.9884 3.34906C14.0543 3.00854 13.8317 2.67909 13.4912 2.6132Z"
+                                                fill="white" />
+                                            <path
+                                                d="M6.61539 11.9676C6.57716 11.0948 5.85687 10.4077 4.98324 10.4108C4.08483 10.4471 3.38595 11.2048 3.42225 12.1032C3.45708 12.9653 4.15833 13.6505 5.02092 13.6653H5.06017C5.95846 13.626 6.65474 12.8658 6.61539 11.9676Z"
+                                                fill="white" />
+                                            <clipPath id="clip0_502_306">
+                                                <rect width="14" height="14" fill="white" />
+                                            </clipPath>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dz-content">
+                                <h5 class="title"><a href="shop-list.html">Wooden Water Bottles</a></h5>
+                                <ul class="star-rating">
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <h6 class="price">
+                                    <del>$85.00</del>
+                                    $40.00
+                                </h6>
+                            </div>
+                            <div class="product-tag">
+                                <span class="badge badge-secondary">Sale</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="shop-card">
+                            <div class="dz-media">
+                                <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/8.png"
+                                    alt="image">
+                                <div class="shop-meta">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-icon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-eye d-md-none d-block"></i>
+                                        <span class="d-md-block d-none">Quick View</span>
+                                    </a>
+                                    <div class="btn btn-primary meta-icon dz-wishicon">
+                                        <svg class="dz-heart-fill" width="14" height="12" viewBox="0 0 14 12"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.6412 5.80113C13.0778 6.9649 12.0762 8.02624 11.1657 8.8827C10.5113 9.49731 9.19953 10.7322 7.77683 11.62C7.30164 11.9159 6.69842 11.9159 6.22323 11.62C4.80338 10.7322 3.4888 9.49731 2.83435 8.8827C1.92382 8.02624 0.92224 6.96205 0.358849 5.80113C-0.551681 3.91747 0.344622 1.44196 2.21121 0.557041C3.98674 -0.282354 5.54034 0.292418 7.00003 1.44765C8.45972 0.292418 10.0133 -0.282354 11.786 0.557041C13.6554 1.44196 14.5517 3.91747 13.6412 5.80113Z"
+                                                fill="white" />
+                                        </svg>
+                                        <svg class="dz-heart feather feather-heart"
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                        <svg class="dz-cart-check" width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.9144 3.73438L5.49772 10.151L2.58105 7.23438" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <svg class="dz-cart-out" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.6033 10.4092C9.70413 10.4083 8.97452 11.1365 8.97363 12.0357C8.97274 12.9348 9.70097 13.6644 10.6001 13.6653C11.4993 13.6662 12.2289 12.938 12.2298 12.0388C12.2298 12.0383 12.2298 12.0378 12.2298 12.0373C12.2289 11.1391 11.5014 10.4109 10.6033 10.4092Z"
+                                                fill="white" />
+                                            <path
+                                                d="M13.4912 2.6132C13.4523 2.60565 13.4127 2.60182 13.373 2.60176H3.46022L3.30322 1.55144C3.20541 0.853911 2.60876 0.334931 1.90439 0.334717H0.627988C0.281154 0.334717 0 0.61587 0 0.962705C0 1.30954 0.281154 1.59069 0.627988 1.59069H1.90595C1.9858 1.59011 2.05338 1.64957 2.06295 1.72886L3.03004 8.35727C3.16263 9.19953 3.88712 9.8209 4.73975 9.82363H11.2724C12.0933 9.8247 12.8015 9.24777 12.9664 8.44362L13.9884 3.34906C14.0543 3.00854 13.8317 2.67909 13.4912 2.6132Z"
+                                                fill="white" />
+                                            <path
+                                                d="M6.61539 11.9676C6.57716 11.0948 5.85687 10.4077 4.98324 10.4108C4.08483 10.4471 3.38595 11.2048 3.42225 12.1032C3.45708 12.9653 4.15833 13.6505 5.02092 13.6653H5.06017C5.95846 13.626 6.65474 12.8658 6.61539 11.9676Z"
+                                                fill="white" />
+                                            <clipPath id="clip0_502_906">
+                                                <rect width="14" height="14" fill="white" />
+                                            </clipPath>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dz-content">
+                                <h5 class="title"><a href="shop-list.html">Wooden Cup</a></h5>
+                                <ul class="star-rating">
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <h6 class="price">
+                                    <del>$25.00</del>
+                                    $10.00
+                                </h6>
+                            </div>
+                            <div class="product-tag">
+                                <span class="badge badge-secondary">-25%</span>
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="shop-card">
+                            <div class="dz-media">
+                                <img src="https://mooncart.dexignzone.com/xhtml/images/shop/product/8.png"
+                                    alt="image">
+                                <div class="shop-meta">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-icon"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-eye d-md-none d-block"></i>
+                                        <span class="d-md-block d-none">Quick View</span>
+                                    </a>
+                                    <div class="btn btn-primary meta-icon dz-wishicon">
+                                        <svg class="dz-heart-fill" width="14" height="12" viewBox="0 0 14 12"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.6412 5.80113C13.0778 6.9649 12.0762 8.02624 11.1657 8.8827C10.5113 9.49731 9.19953 10.7322 7.77683 11.62C7.30164 11.9159 6.69842 11.9159 6.22323 11.62C4.80338 10.7322 3.4888 9.49731 2.83435 8.8827C1.92382 8.02624 0.92224 6.96205 0.358849 5.80113C-0.551681 3.91747 0.344622 1.44196 2.21121 0.557041C3.98674 -0.282354 5.54034 0.292418 7.00003 1.44765C8.45972 0.292418 10.0133 -0.282354 11.786 0.557041C13.6554 1.44196 14.5517 3.91747 13.6412 5.80113Z"
+                                                fill="white" />
+                                        </svg>
+                                        <svg class="dz-heart feather feather-heart"
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                            </path>
+                                        </svg>
+
+                                    </div>
+                                    <div class="btn btn-primary meta-icon dz-carticon">
+                                        <svg class="dz-cart-check" width="15" height="15" viewBox="0 0 15 15"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.9144 3.73438L5.49772 10.151L2.58105 7.23438" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <svg class="dz-cart-out" width="14" height="14" viewBox="0 0 14 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.6033 10.4092C9.70413 10.4083 8.97452 11.1365 8.97363 12.0357C8.97274 12.9348 9.70097 13.6644 10.6001 13.6653C11.4993 13.6662 12.2289 12.938 12.2298 12.0388C12.2298 12.0383 12.2298 12.0378 12.2298 12.0373C12.2289 11.1391 11.5014 10.4109 10.6033 10.4092Z"
+                                                fill="white" />
+                                            <path
+                                                d="M13.4912 2.6132C13.4523 2.60565 13.4127 2.60182 13.373 2.60176H3.46022L3.30322 1.55144C3.20541 0.853911 2.60876 0.334931 1.90439 0.334717H0.627988C0.281154 0.334717 0 0.61587 0 0.962705C0 1.30954 0.281154 1.59069 0.627988 1.59069H1.90595C1.9858 1.59011 2.05338 1.64957 2.06295 1.72886L3.03004 8.35727C3.16263 9.19953 3.88712 9.8209 4.73975 9.82363H11.2724C12.0933 9.8247 12.8015 9.24777 12.9664 8.44362L13.9884 3.34906C14.0543 3.00854 13.8317 2.67909 13.4912 2.6132Z"
+                                                fill="white" />
+                                            <path
+                                                d="M6.61539 11.9676C6.57716 11.0948 5.85687 10.4077 4.98324 10.4108C4.08483 10.4471 3.38595 11.2048 3.42225 12.1032C3.45708 12.9653 4.15833 13.6505 5.02092 13.6653H5.06017C5.95846 13.626 6.65474 12.8658 6.61539 11.9676Z"
+                                                fill="white" />
+                                            <clipPath id="clip0_50_3906">
+                                                <rect width="14" height="14" fill="white" />
+                                            </clipPath>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dz-content">
+                                <h5 class="title"><a href="shop-list.html">Wooden Cup</a></h5>
+                                <ul class="star-rating">
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#FF8A00"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                    <li>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.24805 0.734375L9.22301 5.01608L13.9054 5.57126L10.4436 8.77267L11.3625 13.3975L7.24805 11.0944L3.13355 13.3975L4.0525 8.77267L0.590651 5.57126L5.27309 5.01608L7.24805 0.734375Z"
+                                                fill="#E4E5E8"></path>
+                                        </svg>
+                                    </li>
+                                </ul>
+                                <h6 class="price">
+                                    <del>$55.00</del>
+                                    $40.00
+                                </h6>
+                            </div>
+                            <div class="product-tag">
+                                <span class="badge badge-secondary">-15%</span>
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-align">
+                <div class="tranding-button-prev btn-prev">
+                    <i class="flaticon flaticon-left-chevron"></i>
+                </div>
+                <div class="tranding-button-next btn-next">
+                    <i class="flaticon flaticon-chevron"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

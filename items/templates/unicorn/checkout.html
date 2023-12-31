@@ -1,8 +1,6 @@
-{% load unicorn %}
 
 <div class="page-wraper">
-    {#% unicorn 'header' %#}
-    <header class="site-header mo-left header style-2">
+	<header class="site-header mo-left header style-2">
         <!-- Main Header -->
         <div class="header-info-bar">
             <div class="container clearfix">
@@ -39,70 +37,71 @@
                         </ul>
                     </div>
                 </div>
-
+    
                 <!-- header search nav -->
-                <!--div class="header-search-nav">
-                <form class="header-item-search">
-                    <div class="input-group search-input">
-                        <select class="default-select">
-                            <option>All Categories</option>
-                            <option>Photography </option>
-                            <option>Arts</option>
-                            <option>Adventure</option>
-                            <option>Action</option>
-                            <option>Games</option>
-                            <option>Movies</option>
-                            <option>Comics</option>
-                            <option>Biographies</option>
-                            <option>Children’s Books</option>
-                            <option>Historical</option>
-                            <option>Contemporary</option>
-                            <option>Classics</option>
-                            <option>Education</option>
-                        </select>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                            placeholder="Search for products">
-                        <button class="btn" type="button">
-                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-            </div-->
+                <div class="header-search-nav">
+                    <form class="header-item-search">
+                        <div class="input-group search-input">
+                            <select class="default-select">
+                                <option>All Categories</option>
+                                <option>Photography </option>
+                                <option>Arts</option>
+                                <option>Adventure</option>
+                                <option>Action</option>
+                                <option>Games</option>
+                                <option>Movies</option>
+                                <option>Comics</option>
+                                <option>Biographies</option>
+                                <option>Children’s Books</option>
+                                <option>Historical</option>
+                                <option>Contemporary</option>
+                                <option>Classics</option>
+                                <option>Education</option>
+                            </select>
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                                placeholder="Search for products">
+                            <button class="btn" type="button">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10.0535" cy="10.5399" r="7.49047" stroke="#0D775E"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M15.2632 16.1387L18.1999 19.0677" stroke="#0D775E" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <!-- Main Header End -->
-
+    
         <!-- Main Header -->
         <div class="sticky-header main-bar-wraper navbar-expand-lg">
             <div class="main-bar dark clearfix">
                 <div class="container clearfix">
                     <!-- Website Logo -->
                     <div class="logo-header logo-dark">
-                        <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt="logo"></a>
+                        <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg"
+                                alt="logo"></a>
                     </div>
-
+    
                     <!-- Nav Toggle Button -->
                     <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-
+    
                     <!-- EXTRA NAV -->
                     <div class="extra-nav">
                         <div class="extra-cell">
                             <ul class="header-right">
                                 <li class="nav-item login-link">
                                     <a class="nav-link" href="{% url 'login' %}">
-                                        LOGIN
+                                        LOGIN 
                                     </a>
                                 </li>
                                 <li class="nav-item login-link">
@@ -138,8 +137,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item cart-link">
-                                    <a href="javascript:void(0);" class="nav-link cart-btn" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                    <a href="javascript:void(0);" class="nav-link cart-btn"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight">
                                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -158,11 +158,12 @@
                             </ul>
                         </div>
                     </div>
-
+    
                     <!-- Main Nav -->
                     <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
                         <div class="logo-header">
-                            <a href="/"><img src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt=""></a>
+                            <a href="/"><img
+                                    src="https://mooncart.dexignzone.com/xhtml/images/logo.svg" alt=""></a>
                         </div>
                         <div class="browse-category-menu">
                             <a href="javascript:void(0);" class="category-btn">
@@ -178,18 +179,17 @@
                                 <span class="toggle-arrow ms-auto">
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6.24805 9L12.248 15L18.248 9" stroke="white" stroke-linecap="round"
-                                            stroke-linejoin="round" />
+                                        <path d="M6.24805 9L12.248 15L18.248 9" stroke="white"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </span>
                             </a>
                             <div class="category-menu-items" style="display: none;">
                                 <ul class="nav navbar-nav">
                                     {% for category in categories %}
-                                    <li class="menu-items" unicorn:key="category.id">
+                                    <li class="menu-items">
                                         <a href="javascript:void(0);">
-                                            <img class="me-3"
-                                                src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
+                                            <img class="me-3" src="https://mooncart.dexignzone.com/xhtml/images/svg/menu.svg" alt="">
                                             <span>{{ category.name }}</span>
                                             <span class="menu-icon">
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -205,40 +205,40 @@
                             </div>
                         </div>
                         {#% unicorn 'categories-sidebar' %#}
-
+                        
                         <ul class="nav navbar-nav dark-nav">
                             <li><a href="/">home</a></li>
                             <li><a href="shop/">Shop</a></li>
-
+    
                             <!--li class="sub-menu sub-menu-down"><a
-                                href="assets/javascript:void(0);"><span>Pages</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="assets/about-us.html">About Us</a></li>
-                                <li><a href="assets/about-me.html">About Me</a></li>
-                                <li><a href="assets/pricing-table.html">Pricing Table</a></li>
-                                <li><a href="assets/our-gift-vouchers.html">Our Gift Vouchers</a></li>
-                                <li><a href="assets/what-we-do.html">What We Do</a></li>
-                                <li><a href="assets/faqs-1.html">Faqs</a></li>
-                                <li><a href="assets/our-team.html">Our Team</a></li>
-                                <li><a href="assets/contact-us-1.html">Contact Us</a></li>
-                                <li><a href="assets/error-1.html">Error 404</a></li>
-                                <li><a href="assets/under-construction.html">Under Construction</a></li>
-                                <li><a href="assets/coming-soon.html">Coming Soon</a></li>
-                            </ul>
-                        </li-->
+                                    href="assets/javascript:void(0);"><span>Pages</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="assets/about-us.html">About Us</a></li>
+                                    <li><a href="assets/about-me.html">About Me</a></li>
+                                    <li><a href="assets/pricing-table.html">Pricing Table</a></li>
+                                    <li><a href="assets/our-gift-vouchers.html">Our Gift Vouchers</a></li>
+                                    <li><a href="assets/what-we-do.html">What We Do</a></li>
+                                    <li><a href="assets/faqs-1.html">Faqs</a></li>
+                                    <li><a href="assets/our-team.html">Our Team</a></li>
+                                    <li><a href="assets/contact-us-1.html">Contact Us</a></li>
+                                    <li><a href="assets/error-1.html">Error 404</a></li>
+                                    <li><a href="assets/under-construction.html">Under Construction</a></li>
+                                    <li><a href="assets/coming-soon.html">Coming Soon</a></li>
+                                </ul>
+                            </li-->
                             <li><a href="assets/contact-us-1.html">FAQ</a></li>
                             <li><a href="assets/contact-us-1.html">Contact Us</a></li>
                         </ul>
                         <div class="dz-social-icon">
                             <ul>
-                                <li><a class="fab fa-facebook-f" target="_blank" href="assets/javascript:void(0);"></a>
-                                </li>
+                                <li><a class="fab fa-facebook-f" target="_blank"
+                                        href="assets/javascript:void(0);"></a></li>
                                 <li><a class="fab fa-twitter" target="_blank" href="assets/javascript:void(0);"></a>
                                 </li>
                                 <li><a class="fab fa-linkedin-in" target="_blank"
                                         href="assets/https://www.linkedin.com/showcase/3686700/admin/"></a></li>
-                                <li><a class="fab fa-instagram" target="_blank" href="assets/javascript:void(0);"></a>
-                                </li>
+                                <li><a class="fab fa-instagram" target="_blank"
+                                        href="assets/javascript:void(0);"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -246,7 +246,7 @@
             </div>
         </div>
         <!-- Main Header End -->
-
+    
         <!-- SearchBar -->
         <div class="dz-search-area dz-offcanvas offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -404,7 +404,7 @@
             </div>
         </div>
         <!-- SearchBar -->
-
+    
         <!-- Sidebar cart -->
         <div class="offcanvas dz-offcanvas offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -437,24 +437,20 @@
                                     {% if selections %}
                                     <ul class="sidebar-cart-list">
                                         {% for selection in selections %}
-                                        <li unicorn:key="selection.id">
+                                        <li>{{ selection.item.thumbs }}
                                             <div class="cart-widget">
                                                 <div class="dz-media me-3">
-                                                    <img src="{{ selection.item.thumbs.first.img.url }}" alt="">
+                                                    <img src="{{ selection.item }}"
+                                                        alt="">
                                                 </div>
                                                 <div class="cart-content">
-                                                    <h6 class="title">
-                                                        <a href="assets/product-thumbnail.html">
-                                                            {{ selection.item.item.item }}
-                                                        </a>
-                                                    </h6>
+                                                    <h6 class="title"><a href="assets/product-thumbnail.html">
+                                                            {{ selection.item.item.item }}</a></h6>
                                                     <div class="d-flex align-items-center">
                                                         <div class="btn-quantity light quantity-sm me-3">
-                                                            <input type="text" value="{{ selection.unit }}"
-                                                                name="demo_vertical2">
+                                                            <input type="text" value="{{ selection.unit }}" name="demo_vertical2">
                                                         </div>
-                                                        <h6 class="dz-price text-primary mb-0">
-                                                            $ {{ selection.item.item.new_price }}</h6>
+                                                        <h6 class="dz-price text-primary mb-0">${{ selection.item.item.new_price }}</h6>
                                                     </div>
                                                 </div>
                                                 <a href="assets/javascript:void(0);" class="dz-close">
@@ -494,39 +490,7 @@
                             </div>
                             <div class="tab-pane fade" id="wishlist-pane" role="tabpanel" aria-labelledby="wishlist"
                                 tabindex="0">
-                                <div class="shop-sidebar-cart">
-                                    <ul class="sidebar-cart-list">
-                                        {% for wishlist in wishlists %}
-                                        <li>
-                                            <div class="cart-widget">
-                                                <div class="dz-media me-3">
-                                                    <img src="{{ wishlist.thumbs.first.img.url }}" alt="">
-                                                </div>
-                                                <div class="cart-content">
-                                                    <h6 class="title">
-                                                        <a href="{{ wishlist.item.detail_link }}">
-                                                            {{ wishlist.item.item }}
-                                                        </a>
-                                                    </h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <h6 class="dz-price text-primary mb-0">
-                                                            $ {{ wishlist.item.new_price }}
-                                                        </h6>
-                                                    </div>
-                                                </div>
-                                                <a href="javascript:void(0);" class="dz-close">
-                                                    <i class="fa fa-close"></i>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                    <div class="mt-auto">
-                                        <a href="shop-wishlist.html" class="btn btn-secondary btn-block">Check Your
-                                            Favourite</a>
-                                    </div>
-                                </div>
-                                {#% unicorn 'wishlist-items' wishlists=wishlists wish_count=wish_count %#}
+                                {#% unicorn 'wishlist-items' wishlists=wishlists wish_count=wish_count %#}    
                             </div>
                         </div>
                     </div>
@@ -535,252 +499,280 @@
         </div>
         <!-- Sidebar cart -->
     </header>
-    <div class="page-content bg-white">
-
-        <!--Swiper Banner Start -->
-        {% unicorn 'home-slider' %}
-        <!--Swiper Banner End-->
-        <!-- Icon Box Start -->
-        <section class="content-inner py-0">
-            <div class="container-fluid px-0">
-                <div class="row gx-0">
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="icon-bx-wraper style-2 bg-light wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="icon-bx">
-                                <img src="https://mooncart.dexignzone.com/xhtml/images/svg/icon-bx/password-check.svg"
-                                    alt="">
-                            </div>
-                            <div class="icon-content">
-                                <h5 class="dz-title">Filter & Discover</h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                            </div>
-                            <div class="data-text">01</div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="icon-bx-wraper style-2 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="icon-bx">
-                                <img src="https://mooncart.dexignzone.com/xhtml/images/svg/icon-bx/cart.svg" alt="">
-                            </div>
-                            <div class="icon-content">
-                                <h5 class="dz-title">Add to cart</h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                            </div>
-                            <div class="data-text">02</div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="icon-bx-wraper style-2 bg-light wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="icon-bx">
-                                <img src="https://mooncart.dexignzone.com/xhtml/images/svg/icon-bx/discovery.svg"
-                                    alt="">
-                            </div>
-                            <div class="icon-content">
-                                <h5 class="dz-title">Fast Shipping</h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                            </div>
-                            <div class="data-text">03</div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="icon-bx-wraper style-2 wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="icon-bx">
-                                <img src="https://mooncart.dexignzone.com/xhtml/images/svg/icon-bx/box-tick.svg" alt="">
-                            </div>
-                            <div class="icon-content">
-                                <h5 class="dz-title">Enjoy The Product</h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                            </div>
-                            <div class="data-text">04</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Icon Box End -->
-
-        <!--Featured Section Start-->
-        <section class="content-inner overlay-white-middle">
-            <div class="container">
-                <div class="section-head style-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="left-content">
-                        <h2 class="title">Featured Categories</h2>
-                        <p>Discover the most trending products in Mooncart.</p>
-                    </div>
-                    <a href="assets/shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See
-                        all
-                        products
-                        <i class="icon feather icon-chevron-right font-18"></i>
-                    </a>
-                </div>
-                {% unicorn 'featured-categories' %}
-            </div>
-        </section>
-        <!--Featured Section End-->
-        <!-- Tranding Start-->
-        <section class="content-inner-1 overlay-white-middle overflow-hidden">
-            <div class="container">
-                <div class="section-head style-2 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="left-content">
-                        <h2 class="title">What's trending now</h2>
-                        <p>Discover the most trending products in Mooncart.</p>
-                    </div>
-                    <a href="assets/shop-list.html" class="text-secondary font-14 d-flex align-items-center gap-1">See
-                        all
-                        products
-                        <i class="icon feather icon-chevron-right font-18"></i>
-                    </a>
-                </div>
-                {% unicorn 'trending-items' %}
-
-            </div>
-        </section>
-        <!-- Tranding Stop-->
-
-        <!-- Video Bx Start-->
-        <section class="content-inner overlay-black-light"
-            style="background-image: url('https://mooncart.dexignzone.com/xhtml/images/background/bg3.jpg'); background-repeat: no-repeat; background-size: cover;">
-            <div class="container">
-                <div class="row align-items-center dz-content-bx style-1">
-                    <div class="col-xl-7 col-lg-7 m-b30 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="dz-media video-bx1 dz-img-overlay1">
-                            <img src="https://mooncart.dexignzone.com/xhtml/images/video-img.png" alt="image">
-                            <a href="assets/https://www.youtube.com/watch?v=IT94xC35u6k"
-                                class="popup-youtube video-btn">
-                                <svg width="26" height="34" viewBox="0 0 26 34" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M0.709318 2.07991C0.703817 0.454314 2.53706 -0.498418 3.86423 0.440304L24.3738 14.947C25.4952 15.7401 25.5017 17.4016 24.3866 18.2035L3.97574 32.8813C2.65517 33.8309 0.813587 32.8908 0.808083 31.2643L0.709318 2.07991Z"
-                                        fill="white" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 m-b30 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="inner-content">
-                            <div class="section-head">
-                                <h2 class="title">Enjoy the best quality and features made by MoonCart.</h2>
-                                <p class="max-w500">It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout. The point of
-                                    using.</p>
-                            </div>
-                            <a href="assets/shop-list.html" class="btn text-uppercase btn-outline-light me-3">Shop
-                                Now</a>
-                            <a href="assets/product-default.html" class="btn text-uppercase btn-outline-light">View
-                                Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Video Bx End-->
-
-        <!--Recommend Section Start-->
-        <section class="content-inner-1">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <!--div class="col-xl-3">
-					<div class="row">
-						<div class="col-xl-12 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.1s">
-							<div class="offer-card text-center">
-								<div class="dz-media">
-									<img src="https://mooncart.dexignzone.com/xhtml/images/offer/pic1.jpg" alt="">
+	<div class="page-content">
+		<!--banner-->
+		<div class="dz-bnr-inr" style="background-image:url(images/background/bg-shape.jpg);">
+			<div class="container">
+				<div class="dz-bnr-inr-entry">
+					<h1>Checkout</h1>
+					<nav aria-label="breadcrumb" class="breadcrumb-row">
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"> Home</a></li>
+							<li class="breadcrumb-item">Checkout</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- inner page banner End-->
+		<div class="content-inner-1">
+			<div class="container">
+				<div class="row shop-checkout">
+					<div class="col-xl-8">
+						<h4 class="title m-b15">Billing details</h4>
+						<div class="accordion dz-accordion accordion-sm" id="accordionFaq">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingOne">
+									<a href="#" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										Returning customer? &nbsp; <span class="text-primary">Click here to login</span>
+										<span class="toggle-close"></span>
+									</a>
+								</h2>
+								<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+									<div class="accordion-body">
+										<p class="m-b0">If your order has not yet shipped, you can contact us to change your shipping address</p>
+									</div>
 								</div>
-								<div class="offer-content">
-									<h3 class="title">Yoga mats and accessories</h3>
-									<span class="offer">UP TO 60% OFF</span>
-									<a href="assets/shop-list.html" class="btn btn-outline-secondary">Shop
-										Now</a>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingTwo">
+									<a href="#" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+										Have a coupon? &nbsp; <span class="text-primary">Click here to enter your code</span>
+										<span class="toggle-close"></span>
+									</a>
+								</h2>
+								<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFaq">
+									<div class="accordion-body">
+										<p class="m-b0">If your order has not yet shipped, you can contact us to change your shipping address</p>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-12 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-							<div class="offer-card text-center">
-								<div class="dz-media">
-									<img src="https://mooncart.dexignzone.com/xhtml/images/offer/pic2.jpg" alt="">
-								</div>
-								<div class="offer-content">
-									<h3 class="title">Plant-based protein supplements</h3>
-									<span class="offer">UP TO 60% OFF</span>
-									<a href="assets/shop-list.html" class="btn btn-outline-secondary">Shop
-										Now</a>
+						<form class="row">
+							<div class="col-md-6">
+								<div class="form-group m-b25">
+									<label class="label-title">First Name</label>
+									<input name="dzName" required="" class="form-control">
 								</div>
 							</div>
+							<div class="col-md-6">
+								<div class="form-group m-b25">
+									<label class="label-title">Last Name</label>
+									<input name="dzName" required="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group m-b25">
+									<label class="label-title">Company name (optional)</label>
+									<input name="dzName" required="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="m-b25">
+									<label class="label-title">Country / Region *</label>
+									<div class="form-select">
+										<select class="default-select w-100">
+											<option selected>India</option>
+											<option value="1">Another option</option>
+											<option value="2">UK</option>
+											<option value="3">Iraq</option>
+										</select>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group m-b25">
+									<label class="label-title">Street address *</label>
+									<input name="dzName" required="" class="form-control m-b15" placeholder="House number and street name">
+									<input name="dzName" required="" class="form-control" placeholder="Apartment, suite, unit, etc. (optional)">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="m-b25">
+									<label class="label-title">Town / City *</label>
+									<div class="form-select">
+										<select class="default-select w-100">
+											<option selected>Kota</option>
+											<option value="1">Another option</option>
+											<option value="2">Jaipur</option>
+											<option value="3">Udaipur</option>
+										</select>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="m-b25">
+									<label class="label-title">State *</label>
+									<div class="form-select">
+										<select class="default-select w-100">
+											  <option selected>Rajasthan</option>
+											  <option value="1">Another option</option>
+											  <option value="2">Rajasthan</option>
+											  <option value="3">Rajasthan</option>
+										</select>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group m-b25">
+									<label class="label-title">ZIP Code *</label>
+									<input name="dzName" required="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group m-b25">
+									<label class="label-title">Phone *</label>
+									<input name="dzName" required="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group m-b25">
+									<label class="label-title">Email address *</label>
+									<input name="dzName" required="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-12 m-b25">
+								<div class="form-group m-b5">
+								   <div class="custom-control custom-checkbox">
+										<input type="checkbox" class="form-check-input" id="basic_checkbox_1">
+										<label class="form-check-label" for="basic_checkbox_1">Create an account? </label>
+									</div>
+								</div>
+								<div class="form-group">
+								   <div class="custom-control custom-checkbox">
+										<input type="checkbox" class="form-check-input" id="basic_checkbox_2">
+										<label class="form-check-label" for="basic_checkbox_2">Ship to a different address?</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 m-b25">
+								<div class="form-group">
+									<label class="label-title">Order notes (optional)</label>
+									<textarea id="comments" placeholder="Notes about your order, e.g. special notes for delivery." class="form-control" name="comment" cols="90" rows="5" required="required"></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-xl-4 side-bar">
+						<h4 class="title m-b15">Your Order</h4>
+						<div class="order-detail sticky-top">
+							<div class="cart-item style-1">
+								<div class="dz-media">
+									<img src="images/shop/shop-cart/pic1.jpg" alt="/">
+								</div>
+								<div class="dz-content">
+									<h6 class="title mb-0">Wooden Water<br> Bottles</h6>
+									<span class="price">$40.00</span>
+								</div>
+							</div>
+							<div class="cart-item style-1 mb-0">
+								<div class="dz-media">
+									<img src="images/shop/shop-cart/pic2.jpg" alt="/">
+								</div>
+								<div class="dz-content">
+									<h6 class="title mb-0">Wooden Cup</h6>
+									<span class="price">$36.00</span>
+								</div>
+							</div>
+							<table>
+								<tbody>
+									<tr class="subtotal">
+										<td>Subtotal</td>
+										<td class="price">$100</td>
+									</tr>
+									<tr class="title">
+										<td><h6 class="title font-weight-500">Shipping</h6></td>
+										<td></td>
+									</tr>
+									<tr class="shipping">
+										<td>
+											<div class="custom-control custom-checkbox">
+											  <input class="form-check-input radio" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+											  <label class="form-check-label" for="flexRadioDefault1">
+												Free shipping
+											  </label>
+											</div>
+											<div class="custom-control custom-checkbox">
+											  <input class="form-check-input radio" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+											  <label class="form-check-label" for="flexRadioDefault2">
+												Flat Rate:
+											  </label>
+											</div>
+										</td>
+										<td class="price">25.75</td>
+									</tr>
+									<tr class="total">
+										<td>Total</td>
+										<td class="price">$125.75</td>
+										
+									</tr>
+								</tbody>
+							</table>
+							
+							<div class="accordion dz-accordion accordion-sm" id="accordionFaq1">
+								<div class="accordion-item">
+									<div class="accordion-header" id="heading1">
+										<div class="accordion-button collapsed custom-control custom-checkbox" data-bs-toggle="collapse" data-bs-target="#collapse1" role="navigation"  aria-expanded="true" aria-controls="collapse1">
+											<input class="form-check-input radio" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+											<label class="form-check-label" for="flexRadioDefault3">
+												Direct bank transfer
+											</label>
+										</div>
+									</div>
+									<div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionFaq1">
+										<div class="accordion-body">
+											<p class="m-b0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<div class="accordion-header" id="heading2">
+										<div class="accordion-button collapsed custom-control custom-checkbox" data-bs-toggle="collapse" data-bs-target="#collapse2" role="navigation" aria-expanded="true" aria-controls="collapse2">
+											<input class="form-check-input radio" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+											<label class="form-check-label" for="flexRadioDefault5">
+												Cash on delivery
+											</label>
+										</div>
+									</div>
+									<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="collapse2" data-bs-parent="#accordionFaq1">
+										<div class="accordion-body">
+											<p class="m-b0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<div class="accordion-header" id="heading3">
+										<div class="accordion-button collapsed custom-control custom-checkbox" data-bs-toggle="collapse" data-bs-target="#collapse3" role="navigation" aria-expanded="true" aria-controls="collapse3">
+											<input class="form-check-input radio" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+											<label class="form-check-label" for="flexRadioDefault4">
+												Paypal
+											</label>
+											<img src="images/shop/payment.jpg" alt="/">
+											<a href="javascript:void(0);">What is PayPal?</a>
+										</div>
+									</div>
+									<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionFaq1">
+										<div class="accordion-body">
+											<p class="m-b0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class="text">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="javascript:void(0);">privacy policy.</a></p>
+							<div class="form-group">
+								<div class="custom-control custom-checkbox d-flex m-b15">
+									<input type="checkbox" class="form-check-input" id="basic_checkbox_3">
+									<label class="form-check-label" for="basic_checkbox_3">I have read and agree to the website terms and conditions </label>
+								</div>
+							</div>
+							<a href="shop-checkout.html" class="btn btn-secondary w-100">PLACE ORDER</a>
 						</div>
 					</div>
-				</div-->
-                    <div class="col-xl-10">
-                        <div class="wow fadeInUp" data-wow-delay="0.3s">
-                            <h3 class="title">Most popular products</h3>
-                            <div class="site-filters clearfix d-flex align-items-center">
-                                <ul class="filters" data-bs-toggle="buttons">
-                                    <li class="btn active">
-                                        <input type="radio">
-                                        <a href="assets/javascript:void(0);">All Products <span>(20)</span></a>
-                                    </li>
-                                    <li data-filter=".Bottle" class="btn">
-                                        <input type="radio">
-                                        <a href="assets/javascript:void(0);">Bottle <span>(10)</span></a>
-                                    </li>
-                                    <li data-filter=".Begs" class="btn">
-                                        <input type="radio">
-                                        <a href="assets/javascript:void(0);">Begs <span>(02)</span></a>
-                                    </li>
-                                    <li data-filter=".Toothbrushes" class="btn">
-                                        <input type="radio">
-                                        <a href="assets/javascript:void(0);">Toothbrushes <span>(08)</span></a>
-                                    </li>
-                                </ul>
-                                <a href="assets/shop-list.html"
-                                    class="product-link text-secondary font-14 d-flex align-items-center gap-1 text-nowrap">See
-                                    all products
-                                    <i class="icon feather icon-chevron-right font-18"></i>
-                                </a>
-                            </div>
-                        </div>
-                        {% unicorn 'popular-products' %}
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Recommend Section End-->
+				</div>
+			</div>
+		</div>
 
-        <!-- Newsletter -->
-        <section class="overlay-black-light newsletter-wrapper style-2"
-            style="background-image: url('images/background/bg4.jpg'); background-repeat: no-repeat; background-size: cover;">
-            <div class="container">
-                <div class="subscride-inner wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="section-head">
-                                <h3 class="title">SUBSCRIBE TO OUR NEWSLETTER</h3>
-                                <p class="sub-title">Get latest news, offers and discounts.</p>
-                            </div>
-                            <form class="dzSubscribe" action="script/mailchamp.php" method="post">
-                                <div class="dzSubscribeMsg"></div>
-                                <div class="form-group">
-                                    <div class="input-group mb-0">
-                                        <input name="dzEmail" required="required" type="email" class="form-control"
-                                            placeholder="Your Email Address">
-                                        <div class="input-group-addon">
-                                            <button name="submit" value="Submit" type="submit" class="btn">
-                                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none">
-                                                    <path d="M4.20972 10.7344H15.8717" stroke="#0D775E" stroke-width="2"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M10.0408 4.90112L15.8718 10.7345L10.0408 16.5678"
-                                                        stroke="#0D775E" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Newsletter End -->
-    </div>
+	</div>
+
+	
 </div>

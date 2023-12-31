@@ -50,17 +50,11 @@ class ItemsView(LoginRequiredMixin, UnicornView):
         self.selected_item.buyer = self.user
         self.selected_item.item = item
         self.selected_item.save()
-        for child in self.children:
-             if hasattr(child, 'update_header'):
-                print('yes')
-                child.update_header()
+        self.update_selection()
 
     def add_wish_list(self, item:ItemWithThumbs):
         print('saving wish list')
         wl = WishList.objects.get(buyer=self.user)
         wl.items.add(item)
         wl.save()
-        for child in self.children:
-             if hasattr(child, 'update_header'):
-                print('yes')
-                child.update_header()
+        self.update_wishlist()

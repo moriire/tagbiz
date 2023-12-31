@@ -14,16 +14,18 @@
                         <div class="content-btn" data-swiper-parallax="-60">
                             <!--a class="btn btn-secondary  me-3" href="assets/shop-cart.html">ADD
                                 TO CART</a-->
-                                {% unicorn 'add-to-cart-button-big' %}
+
+                                <a class="btn btn-secondary me-3" role="button" unicorn:click="add_to_cart()">ADD
+                                    TO CART</a>
                             <a class="btn btn-outline-secondary "
-                                href="assets/product-default.html">VIEW DETAILS</a>
+                                href="{{ item.item.detail_link }}">VIEW DETAILS</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6 col-sm-5">
                     <div class="banner-media">
                         <div class="img-preview" data-swiper-parallax="-100">
-                            <img src="https://mooncart.dexignzone.com/xhtml/images/main-slider/slider2/pic1.jpg"
+                            <img src="{{ item.thumbs.first.img.url }}"
                                 alt="banner-media">
                         </div>
                     </div>

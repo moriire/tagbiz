@@ -798,7 +798,7 @@ var MoonCart = function(){
 			$(this).find('.mfp-link i').css({opacity : 0,zIndex : 1})
 		});
 	}
-	
+	/*
 	var handleOpenModal = function(){
 		
 		var modalBox = `<div class="modal fade inquiry-modal style-1" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -844,7 +844,7 @@ var MoonCart = function(){
 			}, 5000)
 		}
 	}
-	
+	*/
 	var setCookie = function(cname, cvalue, exhours) {
 		var d = new Date();
 		d.setTime(d.getTime() + (exhours*60*1000)); /* exhours=30 means 30 Minutes*/

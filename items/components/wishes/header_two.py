@@ -16,3 +16,4 @@ class HeaderTwoView(UnicornView):
         self.wishlists = self.parent.wishlists
         self.cart_count = self.parent.cart_count
         self.wish_count = self.parent.wish_count
+        

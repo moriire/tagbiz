@@ -7,8 +7,8 @@ class CardView(UnicornView):
         
     def add_to_cart(self):
         print('saving')
-        self.parent.parent.add_to_cart(self.item, self.request.user)
+        self.parent.parent.add_to_cart(self.item)
 
     def add_wish_list(self):
         print('saving wish list')
-        self.parent.parent.add_wish_list(self.item, self.request.user)
+        self.parent.parent.add_wish_list(self.item)
