@@ -5,10 +5,11 @@ from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.views.static import serve
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("unicorn/", include('django_unicorn.urls')),
-    path('', TemplateView.as_view(template_name='index.html')),
+    path('', login_required(TemplateView.as_view(template_name='index.html'))),
     path('shop/', TemplateView.as_view(template_name='shop.html')),
     path('product/<int:pk>/', TemplateView.as_view(template_name='product.html')),
     path('carts/', TemplateView.as_view(template_name='cart.html')),
