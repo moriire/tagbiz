@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "mmdddmm")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", 1)))
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", 'tagbiz.pythonanywhere.com']
 
 if os.environ.get("ALLOWED_HOSTS") is not None:
     try:
@@ -132,12 +132,8 @@ if not DEBUG:
     REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = (
             "rest_framework.renderers.JSONRenderer",
         )
-    
+
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.twitter.TwitterOAuth',  
-    'users.backend.EmailOrUsernameBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -166,29 +162,27 @@ USE_I18N = True
 USE_TZ = True
 
 DJOSER = {
-    "EMAIL_FRONTEND_PROTOCOL": "http",
+    #"EMAIL_FRONTEND_PROTOCOL": "http",
     "EMAIL_FRONTEND_DOMAIN": "localhost:5173",
     "EMAIL_FRONTEND_SITE_NAME": "DooDoo",
    'LOGIN_FIELD' : 'email',
-    'USERNAME_CHANGED_EMAIL_CONFIRMATION' : True,
-    'PASSWORD_CHANGED_EMAIL_CONFIRMATION' : True,
-    'SEND_EMAIL_CONFIRMATION' : True,
+    #'USERNAME_CHANGED_EMAIL_CONFIRMATION' : True,
+    #'PASSWORD_CHANGED_EMAIL_CONFIRMATION' : True,
+    #'SEND_EMAIL_CONFIRMATION' : True,
     'SET_USERNAME_RETYPE' : True,
     'SET_PASSWORD_RETYPE' : True,
-    'USERNAME_RESET_CONFIRM_URL' : 'password/reset/confirm/{uid}/{token}',
-    'PASSWORD_RESET_CONFIRM_URL' : 'email/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL' : 'auth/activate/{uid}/{token}',
-    "SEND_CONFIRMATION_EMAIL": True,
-    'SEND_ACTIVATION_EMAIL' : True,
+    #'USERNAME_RESET_CONFIRM_URL' : 'password/reset/confirm/{uid}/{token}',
+    #'PASSWORD_RESET_CONFIRM_URL' : 'email/reset/confirm/{uid}/{token}',
+    #'ACTIVATION_URL' : 'auth/activate/{uid}/{token}',
+   # "SEND_CONFIRMATION_EMAIL": True,
+    #'SEND_ACTIVATION_EMAIL' : True,
      "USER_ID_FIELD": "id",
-     "EMAIL": {"activation": "users.emails.ActivationEmail"},
+     #"EMAIL": {"activation": "users.emails.ActivationEmail"},
      "SERIALIZERS":{
          "token_create": "users.serializers.CustomTokenObtainSerializer",
-          
+
      },
-     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': [
-        'http://localhost:8000/temporary-redirect-for-testing/',
-    ]
+
 }
 
 from datetime import timedelta
@@ -203,38 +197,10 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "/static/"
-#STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 #STATICFILE = ("static/",)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = "127.0.0.1"
-EMAIL_PORT = 1025
 
-DEFAULT_FROM_EMAIL = 'webmaster@localhost'  # Set your email address
-EMAIL_SUBJECT_PREFIX = 'Tagbiz'  # Optional: Add a prefix to email subject lines
-SERVER_EMAIL = 'root@localhost'
-
-# Social Auth keys (Get these from Google/Facebook/Twitter developer console)
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
-
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
-
-SOCIAL_AUTH_TWITTER_KEY = ''
-SOCIAL_AUTH_TWITTER_SECRET = ''
-
-# Default redirect for successful social login
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
-
-# Celery settings
-CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'

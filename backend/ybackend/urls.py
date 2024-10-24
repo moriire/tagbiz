@@ -5,6 +5,12 @@ from django.urls import path, include
 from product.views import ProductView
 from thumbs.views import ProductImageView
 from rest_framework.routers import SimpleRouter
+
+admin.site.site_header = 'Tagbiz Admin'
+admin.site.site_title = "Tagbiz"
+admin.site.index_title = "Tagbiz Site administration"
+admin.site.site_url = "/"
+
 router = SimpleRouter(trailing_slash=True)
 router.register("products", ProductView)
 router.register("upload", ProductImageView)
