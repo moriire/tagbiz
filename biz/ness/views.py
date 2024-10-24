@@ -10,7 +10,7 @@ from django.conf import settings
 
 from . models import Category, Product
 
-@login_required(login_url='/auth/login/')
+#@login_required(login_url='/auth/login/')
 def index(request):
     categories = Category.objects.filter(status=1)
     return render(request, "ness/category.html", {"categories":categories})
