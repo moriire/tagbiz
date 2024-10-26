@@ -46,7 +46,7 @@ const modules = [FreeMode, Navigation, Thumbs]
             }" :spaceBetween="10" :navigation="true" :thumbs="{ swiper: thumbsSwiper }"
                 :modules="modules" class="mySwiper2">
                 <swiper-slide v-for="thumb in images">
-                    <img :src="thumb.img.startsWith('http://')? thumb.img: 'http://127.0.0.1:8000'+ thumb.img" />
+                    <img :src="thumb.img" />
                 </swiper-slide>
             </swiper>
             <swiper @swiper="setThumbsSwiper" :spaceBetween="10" :slidesPerView="3" :freeMode="true"
