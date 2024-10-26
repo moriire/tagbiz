@@ -1,1 +1,0 @@
-import{c as t,g as e,o as c}from"./index-CSa8JcRq.js";const n={class:"container vh-100"},i={__name:"SuccessView",setup(o){return(r,s)=>(c(),t("div",n,s[0]||(s[0]=[e("div",{class:"row align-items-center justify-content-center h-100"},[e("div",{class:"col text-center"},[e("h2",null,"Success")])],-1)])))}};export{i as default};
