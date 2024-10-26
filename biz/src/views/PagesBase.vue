@@ -45,12 +45,11 @@ onMounted(async () => {
                     <div class="col-lg-8 d-lg-block d-none">
                         <nav class="site-navigation">
                             <ul class="main-menu list-unstyled justify-content-center">
-
                                 <template v-for="(nav, index) in navSection" v-bind:key="index">
 
                                     <li class="menu-list-item nav-item has-dropdown" v-if="nav.submenu">
                                         <div class="mega-menu-header">
-                                            <a type="button" class="nav-link" href="#">
+                                            <a type="button" class="nav-link" >
                                                 {{ nav.loc }}
                                             </a>
                                             <span class="open-submenu">
@@ -69,7 +68,6 @@ onMounted(async () => {
                                                     <RouterLink class="nav-link-sub nav-text-sub" :to="sm.route">{{
                                                         sm.loc }}</RouterLink>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </li>
@@ -102,7 +100,7 @@ onMounted(async () => {
                     </div>
                     <div class="col-lg-2 col-md-8 col-8">
                         <div class="header-action d-flex align-items-center justify-content-end">
-                            <a class="header-action-item header-search" href="javascript:void(0)">
+                            <a class="header-action-item header-search" type="button">
                                 <svg class="icon icon-search" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -180,7 +178,7 @@ onMounted(async () => {
                         <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
                         <li class="footer-menu-item"><a href="about-us.html">Terms & Conditions</a></li>
                     </ul>
-                    <p class="copyright footer-text">TagBiz Limited ©<span class="current-year">2024</span> </p>
+                    <p class="copyright footer-text">TagBiz Limited © <span class="current-year">2024</span> </p>
                 </div>
             </div>
         </div>

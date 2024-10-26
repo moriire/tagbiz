@@ -1,4 +1,12 @@
 import { createRouter,  createWebHashHistory  } from 'vue-router'
+import HomeView from '@/views/pages/HomeView.vue'
+import ProductDetail from '@/views/pages/ProductDetail.vue'
+import CartView from '@/views/pages/CartView.vue'
+import CheckoutView from '@/views/pages/CheckoutView.vue'
+import SuccessView from '../views/pages/SuccessView.vue'
+import CategoryPageView from '@/views/pages/CategoryPageView.vue'
+import ShopView from '@/views/pages/ShopView.vue'
+import PagesBase from '../views/PagesBase.vue'
 const router = createRouter({
   history: createWebHashHistory("/tagbiz/"),
   linkActiveClass: 'active',
@@ -11,46 +19,46 @@ const router = createRouter({
         {
           path: '',
           name: 'home',
-          component: () => import('../views/pages/HomeView.vue')
+          component: HomeView
         },
         {
           path: 'product/:product',
           name: 'product-detail',
-          component: () => import('../views/pages/ProductDetail.vue')
+          component: ProductDetail
         },
         {
           path: ':categories_slug',
           name: 'categories',
-          component: () => import('../views/pages/CategoryPageView.vue')
+          component: CategoryPageView
         },
         {
           path: '/cart',
           name: 'cart',
-          component: () => import('../views/pages/CartView.vue'),
+          component: CartView,
           //meta: { requiresAuth: true }
         },
         {
           path: '/checkout',
           name: 'checkout',
-          component: () => import('../views/pages/CheckoutView.vue'),
+          component: CheckoutView,
           meta: { requiresAuth: true }
         },
         {
           path: '/orders',
           name: 'orders',
-          component: () => import('../views/pages/OrderReview.vue'),
+          component: () => import('@/views/pages/OrderReview.vue'),
           meta: { requiresAuth: true }
         },
         {
           path: '/payment-success',
           name: 'payment-success',
-          component: () => import('../views/pages/SuccessView.vue'),
+          component: SuccessView,
           meta: { requiresAuth: true }
         },
         {
           path: 'shop',
           name: 'shop',
-          component: () => import('../views/pages/ShopView.vue'),
+          component: ShopView
           // meta: { requiresAuth: true }
         },
         {
@@ -59,7 +67,7 @@ const router = createRouter({
           component: () => import('../views/pages/AboutView.vue')
         },
       ],
-      component: () => import('../views/PagesBase.vue')
+      component: PagesBase.vue
     }
   ]
 })

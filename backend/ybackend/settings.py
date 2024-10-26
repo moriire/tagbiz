@@ -144,7 +144,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://127.0.0.1:3000",
      "http://127.0.0.1:6379",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    'https://tagbiz.pythonanywhere.com'
     ]
 
 CORS_ORIGIN_ALLOW_ALL = True
