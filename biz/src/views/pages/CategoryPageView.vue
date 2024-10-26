@@ -3,12 +3,12 @@ import { onMounted, ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { useCategoryStore } from '@/stores/categories';
 import HomeSkeleton from "@/components/category/HomeSkeleton.vue"
-import HeroSlide from "@/components/category/HeroSlide.vue"
+//import HeroSlide from "@/components/category/HeroSlide.vue"
 //import Testimonial from "@/components/category/Testimonial.vue"
 import ProductPage from "@/components/ProductPage.vue"
 import { useProductStore } from '@/stores/products';
 import CategoriesSlide from "@/components/category/CategoriesSlide.vue"
-import VendorSlide from '@/components/VendorSlide.vue';
+//import VendorSlide from '@/components/VendorSlide.vue';
 import DiscountedSlide from "@/components/category/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
 import { useBycategoriesStore } from '@/stores/bycategories';
@@ -132,18 +132,4 @@ onMounted(async () => {
             </div>
         </template>
     </HomeSkeleton>
-    <!--Testimonial /-->
-    <!--div class="featured-collection mt-100 overflow-hidden">
-        <div class="collection-tab-inner">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-heading">Verified Vendors</h2>
-                </div>
-                <div class="row">
-                    <VendorSlide />
-                </div>
-            </div>
-        </div>
-    </div-->
-
 </template>
