@@ -15,3 +15,12 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     
+    def price_in_kobo(self):
+        return self.price*100
+
+    def discounted_price(self):
+        return int(self.price)*int(self.discount)/100
+
+    def new_price(self):
+        return int(self.price) - self.discounted_price()
+    

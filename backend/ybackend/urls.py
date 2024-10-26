@@ -3,17 +3,22 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from product.views import ProductView
+from location.views import LocationView
+from category.views import ProductCategoryView
 from thumbs.views import ProductImageView
-from rest_framework.routers import SimpleRouter
+from rest_framework.routers import  DefaultRouter
 
 admin.site.site_header = 'Tagbiz Admin'
 admin.site.site_title = "Tagbiz"
 admin.site.index_title = "Tagbiz Site administration"
 admin.site.site_url = "/"
 
-router = SimpleRouter(trailing_slash=True)
+router = DefaultRouter()
 router.register("products", ProductView)
+router.register("categories", ProductCategoryView)
+router.register("locations", LocationView)
 router.register("upload", ProductImageView)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include(router.urls))

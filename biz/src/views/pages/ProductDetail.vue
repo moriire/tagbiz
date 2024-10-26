@@ -1,0 +1,37 @@
+<script setup>
+import { useProductStore } from '@/stores/products';
+import { onMounted, watchEffect } from 'vue';
+import { useRoute } from 'vue-router';
+import ProductSingle from '@/components/ProductSingle.vue';
+//import DiscountedSlide from '@/components/home/DiscountedSlide.vue';
+const prod = useProductStore();
+const route = useRoute()
+watchEffect(
+    async () => await prod.singeProduct(route.params.product)
+)
+onMounted(async () => await prod.singeProduct(route.params.product))
+</script>
+<template>
+    <div class="product-page mt-100">
+        <div class="container">
+            <div class="row">
+                <!-- product quickview start -->
+                <ProductSingle :images="prod.product.images" :product="prod.product" @addCart="prod.addToCartLocal(prod.product)"
+                    @addWish="prod.addToCartLocal(prod.product.id)" />
+                <!-- product quickview end -->
+            </div>
+        </div>
+    </div>
+
+    <!-- you may also like start -->
+    <!--div class="featured-collection-section mt-100 home-section overflow-hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-heading">You may also like</h2>
+            </div>
+
+           <DiscountedSlide title="You May Also Like" :products="prod.products" />
+        </div>
+    </div-->
+    <!-- you may also lik end -->
+</template>
