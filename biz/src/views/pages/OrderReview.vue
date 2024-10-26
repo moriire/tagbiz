@@ -1,19 +1,12 @@
 <script setup>
-import CartItem from '@/components/CartItem.vue';
 import { usePaymentStore } from '@/stores/payment';
 import { useProductStore } from '@/stores/products';
 import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import axiosInstance from '@/axios';
-import { useAuthStore } from '@/stores/auth';
-const user = useAuthStore()
 const prod = useProductStore();
 const pay = usePaymentStore();
-//const payment = pay.doPayment(prod.orders.created_by.email, 20000, {
-//    "cart_id": prod.id})
 
 onMounted(async () => {
-  await prod.getCart(),
   await prod.getOrders()
 })
 </script>

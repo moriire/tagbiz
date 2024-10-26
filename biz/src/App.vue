@@ -9,8 +9,7 @@ const prod = useProductStore()
 const cat = useCategoryStore()
 onMounted(async () => {
   await cat.getCategories();
-  //await prod.getCart() //,
-  // await prod.getCartSubtotal()
+  
 })
 </script>
 

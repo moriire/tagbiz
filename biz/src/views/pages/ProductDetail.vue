@@ -22,16 +22,4 @@ onMounted(async () => await prod.singeProduct(route.params.product))
             </div>
         </div>
     </div>
-
-    <!-- you may also like start -->
-    <!--div class="featured-collection-section mt-100 home-section overflow-hidden">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-heading">You may also like</h2>
-            </div>
-
-           <DiscountedSlide title="You May Also Like" :products="prod.products" />
-        </div>
-    </div-->
-    <!-- you may also lik end -->
 </template>

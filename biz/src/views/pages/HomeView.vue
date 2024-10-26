@@ -92,19 +92,4 @@ onMounted(async () => {
             </div>
         </template>
     </HomeSkeleton>
-    <!--Testimonial /-->
-    <!--div class="featured-collection mt-100 overflow-hidden">
-        <div class="collection-tab-inner">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-heading">Verified Vendors</h2>
-                </div>
-                <div class="row">
-                    <VendorSlide />
-                </div>
-            </div>
-        </div>
-    </div-->
-   
 </template>
-<style scoped></style>
