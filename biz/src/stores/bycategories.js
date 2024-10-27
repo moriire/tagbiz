@@ -8,7 +8,7 @@ export const useBycategoriesStore = defineStore('bycategories', () => {
   const productsInCategory = ref([])
   const getProductsByCategory = async (category_slug) => {
     try {
-      const res = await axios.get(`api/products/?product__category__slug=${category_slug}`)
+      const res = await axios.get(`api/products/?slug=${category_slug}`)
       productsInCategory.value = res.data
       console.log(res.data)
     } catch (e) {

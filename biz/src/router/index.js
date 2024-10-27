@@ -32,42 +32,44 @@ const router = createRouter({
         {
           path: ':categories_slug',
           name: 'categories',
-          component: CategoryPageView
+          component: CategoryPageView,
+          meta: { title: `Products in category` }
         },
         {
           path: '/cart',
           name: 'cart',
           component: CartView,
-          //meta: { requiresAuth: true }
+          meta: { title: "Cart" }
         },
         {
           path: '/checkout',
           name: 'checkout',
           component: CheckoutView,
-          meta: { requiresAuth: true }
+          meta: { title: "Pay Securely" }
         },
         {
           path: '/orders',
           name: 'orders',
           component: () => import('@/views/pages/OrderReview.vue'),
-          meta: { requiresAuth: true }
+          meta: { title: "Orders" }
         },
         {
           path: '/payment-success',
           name: 'payment-success',
           component: SuccessView,
-          meta: { requiresAuth: true }
+          meta: { title: "Payment Success" }
         },
         {
           path: 'shop',
           name: 'shop',
-          component: ShopView
-          // meta: { requiresAuth: true }
+          component: ShopView,
+          meta: { title: "Trending Products" }
         },
         {
           path: '/about',
           name: 'about',
-          component: () => import('../views/pages/AboutView.vue')
+          component: () => import('../views/pages/AboutView.vue'),
+          meta: { title: "About" }
         },
       ],
       component: PagesBase
@@ -80,7 +82,9 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-router.afterEach(() => {
+router.afterEach((to) => {
+  document.title = `Tagbiz | ${to.meta.title}`
+  //console.log(router)
   setTimeout(() => hideLoader(), 500); 
 })
 export default router

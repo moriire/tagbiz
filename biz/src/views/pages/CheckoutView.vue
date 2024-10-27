@@ -10,7 +10,7 @@ let uid = uuid4()
 const prod = useProductStore()
 const ship = useShippingStore()
 const current = ref(!true)
-const deliv = ref("")
+const deliv = ref("ship")
 const deliveryTypes = {
   ship: "Ship",
   pickup: "pick up in store"
@@ -51,7 +51,7 @@ const submitCheckout = async () => {
 }
 onMounted(async () => {
   await ship.getShipping()
-  await ship.getShippingCost()
+  //await ship.getShippingCost()
 })
 </script>
 
@@ -62,7 +62,7 @@ onMounted(async () => {
         <div class="col-xl-9 col-lg-8 col-md-12 col-12">
           <div class="header">
             <h2 class=".pb-1">Billing address</h2>
-          </div>
+          </div>{{ deliv }}
           <div class="shipping-address-area">
             <div class=".shipping-address-form-wrapper">
               <form @submit.prevent="prod.addForShipping">
@@ -89,26 +89,45 @@ onMounted(async () => {
                     />
                   </div>
                 </div>
+     
                 <div class="row my-3">
+                  <h2 class="shipping-address-heading pb-1 my-3">Delivery</h2>
+
                  <div
-                    class="form-check "
-                    v-for="(delivery, index) in Object.keys(deliveryTypes)"
-                  >
-                    <input
-                      class="form-check-input"
+                    class=".form-check" >
+                    
+                    <label class=" d-flex justify-content-between align-items-center form-check-label " for="ship" style="border:1px solid; padding: 2px 5px !important;">
+                     <span>
+                      <input
+                    required
+                      class=".form-check-input my-3 .d-block me-2"
                       type="radio"
-                      :value="delivery"
-                      :id="'delivery' + index"
+                      value="ship"
+                      id="ship"
                       v-model="deliv"
-                      :checked="index === 0 ? true : false"
-                    />
-                    <label class="form-check-label" :for="'delivery' + index">
-                      {{ deliveryTypes[delivery] }}
+                      
+                    /> Ship </span> <span class="float-end "><i class="fa-solid fa-truck-fast"></i></span>
+                  
                     </label>
-                    <span class="float-end ">ggg</span>
-                  </div>
+                    </div>
+                  <div class=".form-check ">
+                    <label class=" d-flex justify-content-between align-items-center .form-check-label" for="ship" style="border:1px solid; padding: 2px 5px !important;">
+                      <span>
+                    <input
+                      class=".form-check-input my-3 .d-block me-2"
+                      reuired
+                      type="radio"
+                      value="pickup"
+                      id="pickup"
+                      v-model="deliv"
+                    />Pick Up</span>
+                    <span class="float-end "><i class="fa-solid fa-house-circle-check"></i></span>
+                 
+                    </label>
+                   </div>
                 </div>
-                <div class="row my-3">
+
+                <div class="row my-3" v-if="deliv==='ship'">
                   
                   <div class="col-lg-6 col-md-12 col-12">
                     <label class="form-label" for="first_name"
@@ -207,9 +226,11 @@ onMounted(async () => {
                       <label class="form-check-label" :for="'location' + index">
                         {{ location.region }}
                       </label>
+                      <span class="float-end ">&#8358; {{ location.cost }}</span>
                     </div>
                   </div>
                 </div>
+                
                 <div class="col-md-12 col-12">
                   <div
                     class="d-flex align-items-center justify-content-between flex-wrap"
@@ -269,7 +290,7 @@ onMounted(async () => {
                   loading
                 </p>
                 <p class="subtotal-value" v-else>
-                  &#x20A6;{{ ship.shippingCost[0].price || 0 }}
+                  &#x20A6;{{ ship.shippingCost[0].price || 0.0 }}
                 </p>
               </div>
               <div class="subtotal-item discount-box">

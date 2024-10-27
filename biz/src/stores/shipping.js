@@ -24,16 +24,17 @@ export const useShippingStore = defineStore('Shipping', () => {
     try {
       const res = await axios.get('api/locations/')
       locations.value = res.data
-      //shippingDetail.value.city = res.data.data.city
-      //console.log(shippingDetail)
+      shippingDetail.value.city = res.data.region
+      console.log(res.data)
     } catch (e) {
       console.log(e.response)
     }
   }
   const getShippingCost = async () => {
     try {
-      const res = await axios.get('shipping-cost')
+      const res = await axios.get('api/locations/')
       getShippingCostData.value = res.data
+      console.log(getShippingCost.value)
     } catch (e) {
       console.log(e.response)
     }
