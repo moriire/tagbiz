@@ -11,7 +11,6 @@ import CategoriesSlide from "@/components/home/CategoriesSlide.vue"
 import DiscountedSlide from "@/components/home/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
 import GridedProducts from '@/components/GridedProducts.vue';
-import LoaderSpinner from "@/components/LoaderSpinner.vue"
 
 const cat = useCategoryStore()
 const prod = useProductStore()
@@ -19,18 +18,16 @@ const home = useHomeStore()
 prod.pages.limit = 8
 const loading = ref(false)
 onMounted(async () => {
-    loading.value = true
-    await home.getLatest(),
-        await home.getPromoted(),
-        await home.getDiscounted(),
-        await prod.getProducts(),
+    loading.value = true;
+    await home.getLatest();
+        await home.getPromoted();
+        await home.getDiscounted();
+        await prod.getProducts();
         loading.value=false
 })
 </script>
 <template>
-    <LoaderSpinner  v-if="loading" />
-    <HomeSkeleton v-else>
-       
+    <HomeSkeleton>
         <template v-slot:categories>
             <!-- promotinal product start -->
             <div class="promotinal-product-section overlay-tools overflow-hidden">
@@ -66,7 +63,7 @@ onMounted(async () => {
                             <h2 class="section-heading">Latest Products</h2>
                         </div>
                         <div class="row">
-                            <ProductPage :products="home.latests" v-if="home.latests.length" />
+                            <ProductPage :products="prod.products" v-if="home.latests.length" />
                             <template v-else>
                                 <div class="vh-100 d-flex justify-content-center align-items-center">
                                     <h2>No Products Uploaded yet</h2>

@@ -1,30 +1,29 @@
-<script setup>
-    defineProps({
-        loading:{
-            type: Boolean,
-            required: true
-        }
-    })
-</script>
+<!-- src/components/Loader.vue -->
 <template>
-    <div class="loading-overlay" v-if="loading">
-        <div class="spinner-grow" role="status">
-            <span class="visually-hidden">Loading...</span>
+    <Teleport to="body">
+      <div v-if="isVisible" class="loader-overlay d-flex justify-content-center align-items-center">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-    </div>
-
-</template>
-<style scoped>
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0a021de7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1050;
-}
-</style>
+      </div>
+    </Teleport>
+  </template>
+  
+  <script setup>
+  import { useLoader } from '../composables/useLoader.js';
+  
+  const { isVisible } = useLoader();
+  </script>
+  
+  <style scoped>
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(9, 6, 6, 0.8);
+    z-index: 1050; /* Ensures it stays above other content */
+  }
+  </style>
+  

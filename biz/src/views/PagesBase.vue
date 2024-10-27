@@ -6,7 +6,7 @@ import { useProductStore } from '../stores/products';
 import { useCategoryStore } from '../stores/categories';
 import BreadCrumb from "@/components/BreadCrumb.vue"
 const prod = useProductStore()
-const cat = useCategoryStore()
+//const cat = useCategoryStore()
 const navSection = [
     { loc: "Home", route: "/", icon: "las la-home" },
     {
@@ -16,25 +16,25 @@ const navSection = [
             { loc: "All Products", route: "/shop" },
             { loc: "View Cart", route: "/cart", icon: "las la-cart-plus" },
             { loc: "Checkout", route: "/checkout", icon: "las la-cash-register" },
-
         ]
     },
     { loc: "About Us", route: "/contact", icon: "las la-book" },
     { loc: "Contact Us", route: "/contact", icon: "las la-pen" }
 ];
-onMounted(async () => {
-    await cat.getCategories();
-})
+//onMounted(async () => {
+    //await cat.getCategories();
+//})
 
 </script>
 
 <template>
     <!-- header start -->
     <header class="sticky-header border-btm-black header-1">
-        <div class="header-bottom">
+        <div class="header-bottom"> 
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-md-4 col-4">
+                       
                         <div class="header-logo">
                             <RouterLink to="/" class="logo-main">
                                 <h2>Tag<span class="text-warning">Biz</span></h2>
@@ -45,7 +45,7 @@ onMounted(async () => {
                     <div class="col-lg-8 d-lg-block d-none">
                         <nav class="site-navigation">
                             <ul class="main-menu list-unstyled justify-content-center">
-                                <template v-for="(nav, index) in navSection" v-bind:key="index">
+                                <template v-for="(nav, index) in navSection" v-bind:key="index" >
 
                                     <li class="menu-list-item nav-item has-dropdown" v-if="nav.submenu">
                                         <div class="mega-menu-header">
@@ -65,8 +65,7 @@ onMounted(async () => {
                                             <ul class="submenu list-unstyled">
                                                 <li class="menu-list-item nav-item-sub" v-for="(sm, ind) in nav.submenu"
                                                     v-bind:key="ind">
-                                                    <RouterLink class="nav-link-sub nav-text-sub" :to="sm.route">{{
-                                                        sm.loc }}</RouterLink>
+                                                    <RouterLink class="nav-link-sub nav-text-sub" :to="sm.route">{{ sm.loc }}</RouterLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -159,9 +158,7 @@ onMounted(async () => {
                 </div>
             </div>
         </div>
-    </header>
-    <!-- header end -->
-    
+    </header> 
      <bread-crumb></bread-crumb>
     <main id="MainContent" class="content-for-layout">
         <RouterView />

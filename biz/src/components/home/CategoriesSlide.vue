@@ -8,7 +8,7 @@ defineProps({
   items: Array,
   required: true
 })
-const modules = [Autoplay, Pagination, Navigation]
+const modules = [Autoplay, Navigation]
 </script>
 <template>
   <swiper :spaceBetween="20" :slidesPerView="1" :autoplay="{
@@ -26,9 +26,7 @@ const modules = [Autoplay, Pagination, Navigation]
         slidesPerView: 3
       },
     }" 
-  :pagination="{
-    clickable: true,
-  }" :navigation="true" :modules="modules" class="mySwiper">
+   :navigation="true" :modules="modules" class="mySwiper">
 
     <swiper-slide  :style="`background-image: url(${item.img}); background-position: center;background-repeat: no-repeat; background-size: cover; height: 18rem !important;`"
     v-for="(item, index) in items" v-bind:key="index" class=" py-4 card d-block d-flex align-items-center mb-3">

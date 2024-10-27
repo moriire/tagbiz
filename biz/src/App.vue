@@ -4,6 +4,7 @@ import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useProductStore } from '@/stores/products'
 import { useCategoryStore } from './stores/categories'
+import LoaderSpinner from "@/components/LoaderSpinner.vue"
 
 const prod = useProductStore()
 const cat = useCategoryStore()
@@ -15,6 +16,7 @@ onMounted(async () => {
 
 <template>
   <RouterView />
+  <LoaderSpinner />
 </template>
 <style>
 :root {

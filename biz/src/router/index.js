@@ -7,6 +7,9 @@ import SuccessView from '../views/pages/SuccessView.vue'
 import CategoryPageView from '@/views/pages/CategoryPageView.vue'
 import ShopView from '@/views/pages/ShopView.vue'
 import PagesBase from '../views/PagesBase.vue'
+import { useLoader } from '../composables/useLoader.js';
+const { showLoader, hideLoader } = useLoader();
+
 const router = createRouter({
   history: createWebHashHistory("/tagbiz/"),
   linkActiveClass: 'active',
@@ -67,9 +70,17 @@ const router = createRouter({
           component: () => import('../views/pages/AboutView.vue')
         },
       ],
-      component: PagesBase.vue
+      component: PagesBase
     }
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  showLoader();
+  next();
+});
+
+router.afterEach(() => {
+  setTimeout(() => hideLoader(), 500); 
+})
 export default router

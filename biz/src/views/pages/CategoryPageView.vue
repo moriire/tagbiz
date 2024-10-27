@@ -2,17 +2,13 @@
 import { onMounted, ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { useCategoryStore } from '@/stores/categories';
-import HomeSkeleton from "@/components/category/HomeSkeleton.vue"
-//import HeroSlide from "@/components/category/HeroSlide.vue"
-//import Testimonial from "@/components/category/Testimonial.vue"
+import CatSkeleton from "@/components/category/CatSkeleton.vue"
 import ProductPage from "@/components/ProductPage.vue"
 import { useProductStore } from '@/stores/products';
-import CategoriesSlide from "@/components/category/CategoriesSlide.vue"
-//import VendorSlide from '@/components/VendorSlide.vue';
+import CategoriesSlide from "@/components/home/CategoriesSlide.vue"
 import DiscountedSlide from "@/components/category/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
 import { useBycategoriesStore } from '@/stores/bycategories';
-import router from '@/router';
 const route = useRoute()
 const cat = useBycategoriesStore()
 const prod = useProductStore()
@@ -23,18 +19,17 @@ watch(
   async () => await cat.getProductsByCategory(route.params.categories_slug)
 )
 onMounted(async () => {
-    await cat.getProductsByCategory(route.params.categories_slug),
-        await home.getPromoted(),
-        await home.getDiscounted(),
+    await cat.getProductsByCategory(route.params.categories_slug);
+        await home.getPromoted();
+        await home.getDiscounted();
         await prod.getProducts()
 })
 </script>
 <template>
-    <HomeSkeleton>
-       
+    <CatSkeleton>
         <template v-slot:categories>
             <!-- promotinal product start -->
-            <div class="promotinal-product-section overlay-tools mt-100 overflow-hidden">
+            <div class="promotinal-product-section overlay-tools .mt-100 overflow-hidden">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-12 d-flex align-items-center">
@@ -52,7 +47,7 @@ onMounted(async () => {
                             </div>
                         </div>
                         <div class="col-lg-8 col-12 align-self-center">
-                            <CategoriesSlide :items="slideCat.categories" />
+                            <CategoriesSlide :items="slideCat.categories" v-if="slideCat.categories.length" />
 
                         </div>
                     </div>
@@ -131,5 +126,5 @@ onMounted(async () => {
                 </div>
             </div>
         </template>
-    </HomeSkeleton>
+    </CatSkeleton>
 </template>

@@ -51,12 +51,12 @@ const modules = [Autoplay,  Navigation]//, EffectFade],
     }" :modules="modules" class=".container mySwiper">
         <template v-for="(product, index) in products" v-bind:key="index" >
             <swiper-slide  v-if="product.images.length" >
-                <ProductCard :name="product.product.name" :price="product.product.new_price"
+                <ProductCard :name="product.name" :price="product.new_price"
                
-                    :costPrice="product.product.price" :product_id="product.product.id"
-                    :image="product.images[0].img" :discount="product.product.discount"
-                    :condition="product.product.condition" @addCart="prod.addToCart(product)"
-                    @addWish="wish.addWishlist(product.product.id)" @click="modalShow(product)" />
+                    :costPrice="product.price" :product_id="product.id"
+                    :image="product.images[0].img" :discount="product.discount"
+                    :condition="product.condition" @addCart="prod.addToCart(product)"
+                    @addWish="wish.addWishlist(product.id)" @click="modalShow(product)" />
                     </swiper-slide>
         </template>
         <!--div class="row bg-dark">
@@ -64,9 +64,9 @@ const modules = [Autoplay,  Navigation]//, EffectFade],
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex align-items-center">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_18 mb-3 text-white">{{ product.product.category.name }}</p>
-                                <h2 class="heading_34 text-white">{{ product.product.discount }}% off for <br>{{
-                                    product.product.name }}</h2>
+                                <p class="heading_18 mb-3 text-white">{{ product.category.name }}</p>
+                                <h2 class="heading_34 text-white">{{ product.discount }}% off for <br>{{
+                                    product.name }}</h2>
                             </div>
                         </div>
                     </div>

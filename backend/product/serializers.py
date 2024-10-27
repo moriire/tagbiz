@@ -1,6 +1,7 @@
 
 from rest_framework import serializers
 from .models import Product
+from category.serializers import ProductCategorySerializer
 from thumbs.models import ProductImage
 from thumbs.serializers import ProductImageSerializer
 
@@ -11,6 +12,7 @@ class ProductSerializer(serializers.ModelSerializer):
         write_only=True,
         required=False
     )
+    category = ProductCategorySerializer()
     class Meta:
         model = Product
         fields = ("id", "name", "description", "category", "price", "images", "uploads", "discount", "discounted_price", "new_price")
