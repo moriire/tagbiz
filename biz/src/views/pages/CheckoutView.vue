@@ -10,10 +10,10 @@ let uid = uuid4()
 const prod = useProductStore()
 const ship = useShippingStore()
 const current = ref(!true)
-const deliv = ref("ship")
+const deliv = ref('ship')
 const deliveryTypes = {
-  ship: "Ship",
-  pickup: "pick up in store"
+  ship: 'Ship',
+  pickup: 'pick up in store',
 }
 const form = ref({
   tx_ref: uid,
@@ -62,7 +62,8 @@ onMounted(async () => {
         <div class="col-xl-9 col-lg-8 col-md-12 col-12">
           <div class="header">
             <h2 class=".pb-1">Billing address</h2>
-          </div>{{ deliv }}
+          </div>
+          {{ deliv }}
           <div class="shipping-address-area">
             <div class=".shipping-address-form-wrapper">
               <form @submit.prevent="prod.addForShipping">
@@ -89,46 +90,47 @@ onMounted(async () => {
                     />
                   </div>
                 </div>
-     
+
                 <div class="row my-3">
                   <h2 class="shipping-address-heading pb-1 my-3">Delivery</h2>
-
-                 <div
-                    class=".form-check" >
-                    
-                    <label class=" d-flex justify-content-between align-items-center form-check-label " for="ship" style="border:1px solid; padding: 2px 5px !important;">
-                     <span>
-                      <input
-                    required
-                      class=".form-check-input my-3 .d-block me-2"
-                      type="radio"
-                      value="ship"
-                      id="ship"
-                      v-model="deliv"
-                      
-                    /> Ship </span> <span class="float-end "><i class="fa-solid fa-truck-fast"></i></span>
-                  
-                    </label>
-                    </div>
-                  <div class=".form-check ">
-                    <label class=" d-flex justify-content-between align-items-center .form-check-label" for="ship" style="border:1px solid; padding: 2px 5px !important;">
-                      <span>
+                  <div class=".form-check d-grid gap-2">
                     <input
-                      class=".form-check-input my-3 .d-block me-2"
-                      reuired
                       type="radio"
-                      value="pickup"
-                      id="pickup"
+                      class="btn-check"
+                      id="ship"
+                      autocomplete="off"
                       v-model="deliv"
-                    />Pick Up</span>
-                    <span class="float-end "><i class="fa-solid fa-house-circle-check"></i></span>
-                 
+                       value="ship"
+                    />
+                    <label
+                      class="btn btn-secondary d-flex justify-content-between"
+                      for="ship"
+                    >
+                      <span>Ship</span>
+                      <span><i class="fa-solid fa-truck-fast"></i></span>
                     </label>
-                   </div>
+                  </div>
+                  <div class=".form-check d-grid gap-2">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                       value="pickup"
+                      id="pickup"
+                      autocomplete="off"
+                      v-model="deliv"
+                    />
+                    <label
+                      class="btn btn-secondary d-flex justify-content-between"
+                      for="pickup"
+                    >
+                      <span>Pick Up</span>
+                      <span><i class="fa-solid fa-house-circle-check"></i></span>
+                    </label>
+                  </div>
+                  
                 </div>
 
-                <div class="row my-3" v-if="deliv==='ship'">
-                  
+                <div class="row my-3" v-if="deliv === 'ship'">
                   <div class="col-lg-6 col-md-12 col-12">
                     <label class="form-label" for="first_name"
                       >First name</label
@@ -226,11 +228,26 @@ onMounted(async () => {
                       <label class="form-check-label" :for="'location' + index">
                         {{ location.region }}
                       </label>
-                      <span class="float-end ">&#8358; {{ location.cost }}</span>
+                      <span class="float-end">&#8358; {{ location.cost }}</span>
                     </div>
                   </div>
                 </div>
-                
+                 
+                  <div class="row my-3" v-if="deliv === 'pickup'">
+                    <h2 class="shipping-address-heading pb-1 my-3">
+                      Store Location
+                    </h2>
+
+                    <div
+                      class="border border-primary py-4 px-4 mb-4 d-flex justify-content-between"
+              
+                    >
+                     <p>
+                      <strong class="">Put your store address here</strong><br>
+                      Adress description</p>
+                     <p>Free</p>
+                     </div>
+                </div>
                 <div class="col-md-12 col-12">
                   <div
                     class="d-flex align-items-center justify-content-between flex-wrap"
@@ -323,3 +340,4 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+<style scoped></style>
