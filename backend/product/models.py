@@ -14,7 +14,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+    def get_similar_products(self):
+        similar_products = Product.objects.filter(category=self.category).exclude(id=self.id)[:4]
+        return similar_products
+
     def price_in_kobo(self):
         return self.price*100
 

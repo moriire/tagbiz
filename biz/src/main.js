@@ -5,6 +5,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import "bootstrap/dist/js/bootstrap.min.js"
 import "@fortawesome/fontawesome-free/js/all.min.js"
+//import "./assets/js/vendor.js"
+//import "./assets/js/main.js"
+
 import "alertifyjs/build/css/alertify.min.css"
 
 import AOS from 'aos';

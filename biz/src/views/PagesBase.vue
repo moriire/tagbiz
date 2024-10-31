@@ -1,12 +1,16 @@
 <script setup>
-import { onMounted } from 'vue'
 import CartMenu from '@/components/CartMenu.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useProductStore } from '../stores/products'
 import { useCategoryStore } from '../stores/categories'
 import BreadCrumb from '@/components/BreadCrumb.vue'
+import { ref } from 'vue'
 const prod = useProductStore()
+const isSearchVisible = ref(false)
 //const cat = useCategoryStore()
+const toggleSearch = () => {
+  isSearchVisible.value = !isSearchVisible.value
+}
 const navSection = [
   { loc: 'Home', route: '/', icon: 'las la-home' },
   {
@@ -41,11 +45,11 @@ const mobileNavSection = [
 
 <template>
   <!-- header start -->
-  <header class="sticky-header border-btm-black header-1">
-    <div class="header-bottom">
+  <header class="sticky-header border-btm-black .header-1">
+    <div class="header-top border-btm-black">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-2 col-md-4 col-4">
+          <div class="col-lg-3 col-md-4 col-4">
             <div class="header-logo">
               <RouterLink to="/" class="logo-main">
                 <h2>Tag<span class="text-warning">Biz</span></h2>
@@ -53,7 +57,7 @@ const mobileNavSection = [
               </RouterLink>
             </div>
           </div>
-          <div class="col-lg-8 d-lg-block d-none">
+          <!--div class="col-lg-8 d-lg-block d-none">
             <nav class="site-navigation">
               <ul class="main-menu list-unstyled justify-content-center">
                 <template v-for="(nav, index) in navSection" v-bind:key="index">
@@ -126,12 +130,52 @@ const mobileNavSection = [
                 </li>
               </ul>
             </nav>
+          </div-->
+          <div class="col-lg-6 d-lg-block d-none">
+            <div class="header-search">
+              <form
+                action="#"
+                method="get"
+                role="search"
+                class="search-form d-flex justify-content-center"
+              >
+                <div class="field field-search">
+                  <input
+                    class="field-input input-reset"
+                    type="search"
+                    name="q"
+                    value=""
+                    placeholder="Search here"
+                    autocomplete="off"
+                  />
+                  <button class="search-button btn-reset" type="submit">
+                    <svg
+                      class="icon icon-search"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.75 0.250183C11.8838 0.250183 15.25 3.61639 15.25 7.75018C15.25 9.54608 14.6201 11.1926 13.5625 12.4846L19.5391 18.4611L18.4609 19.5392L12.4844 13.5627C11.1924 14.6203 9.5459 15.2502 7.75 15.2502C3.61621 15.2502 0.25 11.884 0.25 7.75018C0.25 3.61639 3.61621 0.250183 7.75 0.250183ZM7.75 1.75018C4.42773 1.75018 1.75 4.42792 1.75 7.75018C1.75 11.0724 4.42773 13.7502 7.75 13.7502C11.0723 13.7502 13.75 11.0724 13.75 7.75018C13.75 4.42792 11.0723 1.75018 7.75 1.75018Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="col-lg-2 col-md-8 col-8">
+          <div class="col-lg-3 col-md-8 col-8">
             <div
               class="header-action d-flex align-items-center justify-content-end"
             >
-              <a class="header-action-item header-search" type="button">
+              <a
+                class="header-action-item .header-search d-lg-none"
+                type="button"
+                @click="toggleSearch()"
+              >
                 <svg
                   class="icon icon-search"
                   width="20"
@@ -197,12 +241,14 @@ const mobileNavSection = [
           </div>
         </div>
       </div>
-      <div class="search-wrapper">
+
+      <div class="search-wrapper d-lg-none" v-if="isSearchVisible">
         <div class="container">
-          <form action="#" class="search-form d-flex align-items-center">
+          <form  class="search-form d-flex align-items-center">
             <button
               type="submit"
               class="search-submit bg-transparent pl-0 text-start"
+              
             >
               <svg
                 class="icon icon-search"
@@ -218,7 +264,7 @@ const mobileNavSection = [
                 />
               </svg>
             </button>
-            <div class="search-input mr-4">
+            <div class="search-input mr-4" >
               <input
                 type="text"
                 placeholder="Search your products..."

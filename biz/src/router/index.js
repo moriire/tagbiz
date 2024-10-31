@@ -22,15 +22,17 @@ const router = createRouter({
         {
           path: '',
           name: 'home',
-          component: HomeView
+          component: HomeView,
+          meta: { title: `Welcome` }
         },
         {
           path: 'product/:product',
           name: 'product-detail',
-          component: ProductDetail
+          component: ProductDetail,
+          meta: { title: `Products` }
         },
         {
-          path: ':categories_slug',
+          path: 'category/:categories_slug',
           name: 'categories',
           component: CategoryPageView,
           meta: { title: `Products in category` }
@@ -84,7 +86,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach((to) => {
   document.title = `Tagbiz | ${to.meta.title}`
-  //console.log(router)
+  console.log(router.value)
   setTimeout(() => hideLoader(), 500); 
 })
 export default router

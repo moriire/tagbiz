@@ -30,18 +30,18 @@ onMounted(async () => {
     <HomeSkeleton>
         <template v-slot:categories>
             <!-- promotinal product start -->
-            <div class="promotinal-product-section overlay-tools overflow-hidden">
+            <div class="promotinal-product-section overlay-tools overflow-hidden" style="background:#000000 url(tagbiz-bg.jpg) no-repeat center; background-size: cover; color: white">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-12 d-flex align-items-center">
                             <div class="promotinal-product-content" data-aos="fade-up" data-aos-duration="700">
-                                <p class="heading_18 primary-color mb-3">Navigate our various product categories</p>
-                                <h2 class="heading_34 text-white mb-3">Products Categories</h2>
-                                <p class="text_16 text-white mb-3">
-                                    Discover a wide range of products on Tagbiz. Explore categories like electronics, fashion, home goods, beauty, sports, and more. Find everything you need in one convenient place with great deals and fast shipping.
+                                <!--p class="heading_18 primary-color mb-3">Navigate our various product categories</p-->
+                                <h2 class="heading_34 text-white my-4">What we sell</h2>
+                                <p class="text_16 text-white my-4">
+                                    Discover a wide range of products on Tagbiz. Explore categories like electronics, fashion, home goods, beauty, sports, and more.
                                 </p>
-                                <div class="view-all mt-4">
-                                    <a class="btn-secondary" href="collection-left-sidebar.html">SHOP TOOLS</a>
+                                <div class=".view-all my-4">
+                                    <RouterLink class="btn-primary" to="/shop">START SHOPPING</RouterLink>
                                 </div>
                             </div>
                         </div>
