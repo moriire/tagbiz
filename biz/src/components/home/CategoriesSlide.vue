@@ -1,7 +1,7 @@
 <script setup>
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css/pagination';
+//import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 defineProps({

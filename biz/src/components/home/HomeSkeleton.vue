@@ -7,41 +7,38 @@
             <div class="container">
                 <div class="row justify-content-center trusted-row">
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="trusted-badge rounded p-0">
-                            <div class="trusted-icon">
-                                <img class="icon-trusted" src="/src/assets/img/trusted/1.png" alt="icon-1">
-                            </div>
-                            <div class="trusted-content">
-                                <h2 class="heading_18 trusted-heading">Free Shipping & Return</h2>
-                                <p class="text_16 trusted-subheading trusted-subheading-2">On all order over
-                                    $99.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="trusted-badge rounded p-0">
-                            <div class="trusted-icon">
-                                <img class="icon-trusted" src="/src/assets/img/trusted/2.png" alt="icon-2">
-                            </div>
-                            <div class="trusted-content">
-                                <h2 class="heading_18 trusted-heading">Customer Support 24/7</h2>
-                                <p class="text_16 trusted-subheading trusted-subheading-2">Instant access to
-                                    support</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="trusted-badge rounded p-0">
-                            <div class="trusted-icon">
-                                <img class="icon-trusted" src="/src/assets/img/trusted/3.png" alt="icon-3">
-                            </div>
-                            <div class="trusted-content">
-                                <h2 class="heading_18 trusted-heading">100% Secure Payment</h2>
-                                <p class="text_16 trusted-subheading trusted-subheading-2">We ensure secure
-                                    payment!</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="trusted-badge bg-4 rounded">
+                  <div class="trusted-icon">
+                    <img class="icon-trusted" src="/src/assets/img/trusted/4.png" alt="icon-1">
+                  </div>
+                  <div class="trusted-content">
+                    <h2 class="heading_18 trusted-heading text-white">Pickup & Delivery Option</h2>
+                    <p class="text_16 trusted-subheading trusted-subheading-3">Free Pickup & Delivery Option</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="trusted-badge bg-4 rounded">
+                  <div class="trusted-icon">
+                    <img class="icon-trusted" src="/src/assets/img/trusted/5.png" alt="icon-2">
+                  </div>
+                  <div class="trusted-content">
+                    <h2 class="heading_18 trusted-heading text-white">Customer Support 24/7</h2>
+                    <p class="text_16 trusted-subheading trusted-subheading-3">Instant access to support</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="trusted-badge bg-4 rounded">
+                  <div class="trusted-icon">
+                    <img class="icon-trusted" src="/src/assets/img/trusted/6.png" alt="icon-3">
+                  </div>
+                  <div class="trusted-content">
+                    <h2 class="heading_18 trusted-heading text-white">100% Secure Payment</h2>
+                    <p class="text_16 trusted-subheading trusted-subheading-3">We ensure secure payment!</p>
+                  </div>
+                </div>
+              </div>
                 </div>
             </div>
         </div>

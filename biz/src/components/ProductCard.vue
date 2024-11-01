@@ -29,7 +29,7 @@ const prop = defineProps({
           <div class="product-badge">
             <span class="badge-label badge-percentage rounded">{{ prop.product.discount > 0 ? `-${prop.product.discount}%` : prop.product.condition }}</span>
           </div>
-          <img class="primary-img" :src="prop.image.startsWith('/media')? 'http://127.0.0.1:8000'+ image:image" alt="product-img">
+          <img class="primary-img" :src="prop.image" :alt="prop.product.name">
           </RouterLink>
 
         <div class="product-card-action product-card-action-2">
@@ -41,7 +41,12 @@ const prop = defineProps({
         <!--RfcButton :product_id="prop.delObjectId" v-if="cta === 'remove'" /-->
       </div>
       <div class="product-card-details text-center">
-        <h3 class="product-card-title"><a href="collection-left-sidebar.html">{{ prop.product.name }}</a>
+        
+        <h3 class="product-card-title">
+          <RouterLink  :to="{name: 'product-detail', params:{product: prop.product.id } }">
+            {{ prop.product.name }}
+         </RouterLink>
+         
         </h3>
         <div class="product-card-product.price">
           <span class="card-price-regular">&#x20A6;{{ prop.product.price }}</span>

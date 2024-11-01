@@ -46,6 +46,7 @@ const prevPage = () => {
 const orders = ref({})
 const count = ref(0)
 const products = ref([])
+const similar = ref([])
 const product = ref({})
 const paginatedProducts = ref([])
 const cartItemsReview = ref([])
@@ -66,6 +67,18 @@ const getProducts = async () => {
     console.log(e)
   }
 }
+
+
+const getSimilar = async (product_id) => {
+  try {
+    const res = await axios.get(`api/products/${product_id}/similar`)
+    similar.value = res.data
+    //pages.items = pages.total/pages.limit;
+    console.log(res.data)
+  } catch (e) {
+    console.log(e)
+  }
+};
 
 const cartSubtotalReview = computed(() => {
   console.log(cartItemsReview.value)
@@ -106,8 +119,6 @@ const addToCartLocal =  (product_obj) => {
     }
 }
 
-
-
 const deleteCartLocal = async (item) => {
   cartItems.value.pop(item);
   const cartArray = JSON.stringify(cartItems.value);
@@ -134,6 +145,7 @@ const singeProduct = async (product_id) => {
     console.log(e)
   }
 };
+
 const addCartForShipping = async (user, product, count) => {
   try {
     const res = await axios.post(`cart`,
@@ -184,6 +196,7 @@ return {
   count,
   product,
   products,
+  similar,
   cartItems,
   cartItemsReview,
   cartSubtotal,
@@ -200,6 +213,7 @@ return {
   addForShipping,
   deleteCartLocal,
   getProducts,
+  getSimilar,
   singeProduct,
   incCartLocal,
   addToCartLocal,

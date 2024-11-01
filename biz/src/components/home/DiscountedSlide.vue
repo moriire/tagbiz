@@ -8,8 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 //import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-//import 'swiper/css/effect-fade';
-// import required modules
+
 import {
     Autoplay,
     Navigation
