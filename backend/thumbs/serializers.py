@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import ProductImage
 
 class ProductImageSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField('get_image_url')
+    #image_url = serializers.SerializerMethodField('get_image_url')
 
     class Meta:
         model = ProductImage
