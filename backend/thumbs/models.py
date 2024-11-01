@@ -9,11 +9,19 @@ User = get_user_model()
 
 def product_image_path(instance, filename):
     return '/'.join([str(instance.product.id), filename])
-    
+
+
+from django.db import models
+
+class ImageField(models.ImageField):
+    def value_to_string(self, obj): # obj is Model instance, in this case, obj is 'Class'
+        return obj.img.url # not return self.url
+
+
 class ProductImage(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)
-    img = models.ImageField(_("Upload Image"), upload_to=product_image_path)
+    img = ImageField(_("Upload Image"), upload_to=product_image_path)
     uploaded_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
