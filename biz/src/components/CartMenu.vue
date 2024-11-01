@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 import CartItem from './CartItem.vue';
 import { useProductStore } from '@/stores/products';
 defineProps({
@@ -9,6 +9,8 @@ defineProps({
   }
 });
 const prod = useProductStore()
+const router = useRouter()
+const goTo = (loc)=> router.push(loc)
 </script>
 
 <template>
@@ -21,7 +23,12 @@ const prod = useProductStore()
             </div>
             <div class="offcanvas-body p-0">
                 <div class="cart-content-area d-flex justify-content-between flex-column">
-                    <div class="minicart-loop custom-scrollbar"> 
+                  <div class="m-2 text-center" v-if="cartItems.length === 0">
+                    <h3>
+                      No item in cart. Go to <RouterLink to="/shop">Shop</RouterLink> to add product
+                    </h3>
+                  </div>  
+                  <div class="minicart-loop custom-scrollbar" v-else> 
                       <template v-for="(cart, index) in cartItems" v-bind:key="index">
                          <CartItem 
                          :item = "cart"
@@ -39,8 +46,8 @@ const prod = useProductStore()
                             </p>
                         </div>
                         <div class="minicart-btn-area d-flex align-items-center justify-content-between">
-                            <RouterLink to="/cart" class="minicart-btn btn-secondary">View Cart</RouterLink>
-                            <RouterLink to="/checkout" class="minicart-btn btn-primary">Checkout</RouterLink>
+                            <button @click="goTo('/cart')" class="minicart-btn btn-secondary" :disabled="cartItems.length === 0" >View Cart</button>
+                            <button @click="goTo('/checkout')" class="minicart-btn btn-primary" :disabled="cartItems.length === 0" >Checkout</button>
                         </div>
                     </div>
                 </div>
