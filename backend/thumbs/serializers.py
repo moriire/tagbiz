@@ -10,5 +10,5 @@ class ProductImageSerializer(serializers.ModelSerializer):
         read_only_field = ("image_url",)
 
     def get_image_url(self, obj):
-        request = self.context.get("request")
-        return request.build_absolute_uri(obj.img.url)
+        #request = self.context.get("request")
+        return self.build_url_field(obj.img.url)
