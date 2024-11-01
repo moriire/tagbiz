@@ -11,4 +11,4 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
     def get_image_url(self, obj):
         #request = self.context.get("request")
-        return self.build_url_field(obj.img.url)
+        return self.build_url_field(ProductImage, "img")
