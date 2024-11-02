@@ -32,14 +32,30 @@ const form = ref({
   },
 })
 
+const form2 = ref({
+  tx_ref: uid,
+  amount: 5000,
+  paymentMethod: 'credit_card',
+  redirect_url: '',
+  max_retry_attempt: 5,
+  customer: {
+    email: 'ibmabdulsalam@gmail.com',
+    name: 'IBM Abdulsalam',
+    phonenumber: '08100482341',
+  },
+  customizations: {
+    title: 'Welcome to TagBiz',
+    description: '',
+  },
+})
 const submitCheckout = async () => {
   try {
     const response = await axios.post(
       'https://api.flutterwave.com/v3/payments',
-      form.value,
+      form2.value,
       {
         headers: {
-          Authorization: `Bearer ${process.env.FLW_SECRET_KEY}`,
+          Authorization: `Bearer ${import.meta.env.FLW_SECRET_KEY}`,
           'Content-Type': 'application/json',
         },
       },
@@ -64,7 +80,7 @@ onMounted(async () => {
             <h2 class=".pb-1">Billing address</h2>
           </div>
           {{ deliv }}
-          <div class="shipping-address-area">
+          <!--div class="shipping-address-area">
             <div class=".shipping-address-form-wrapper">
               <form @submit.prevent="prod.addForShipping">
                 <div class="row mb-3">
@@ -263,15 +279,17 @@ onMounted(async () => {
                       type="submit"
                       value="CREATE ORDER"
                     />
-                    <!--div class="input-group-text btn-primary" id="basic" v-show="loading" :disbled="disabled">
+                    <button @click="submitCheckout">pay</button>
+                    <div class="input-group-text btn-primary" id="basic" v-show="loading" :disbled="disabled">
                   <span class="spinner-border spinner-border-sm" aria-hidden="true">
                   </span>
-                </div-->
+                </div>
                   </div>
                 </div>
               </form>
             </div>
-          </div>
+          </div-->
+          <button @click="submitCheckout">pay</button>
         </div>
         <div class="col-xl-3 col-lg-4 col-md-12 col-12">
           <div class="cart-total-area checkout-summary-area">
@@ -333,6 +351,7 @@ onMounted(async () => {
                       Apply Promo Code
                     </a>
                   </div-->
+
             </div>
           </div>
         </div>

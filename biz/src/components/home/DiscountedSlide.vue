@@ -26,24 +26,39 @@ defineProps({
     numSlide: {
         type: Number,
         default: 5
+    },
+    description: {
+        type: String
     }
 
 })
 
+const backend = import.meta.env.VITE_BACKEND;
+const setImage = (img)=>{
+    if (img.startsWith("https://") | img.startsWith("https://")){
+        return img
+    }
+    return `${backend}${img}`
+}
 const modules = [Autoplay, Navigation]//, EffectFade],
 </script>
 <template>
-    <swiper :slidesPerView="5" :spaceBetween="20" :navigation="true" :breakpoints="{
+     <div class="featured-collection-section mt-100 home-section overflow-hidden">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-heading">{{ title }}</h2>
+                    </div>
+    <swiper :slidesPerView="2" :spaceBetween="20" :navigation="true" :breakpoints="{
         '640': {
-            slidesPerView: 1,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            spaceBetween: 10,
         },
         '768': {
-            slidesPerView: 2,
-            spaceBetween: 15,
+            slidesPerView: 3,
+            spaceBetween: 10,
         },
         '1024': {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 20,
         },
     }" :modules="modules" class=".container mySwiper">
@@ -51,29 +66,14 @@ const modules = [Autoplay, Navigation]//, EffectFade],
             <swiper-slide v-for="(product, index) in products" v-bind:key="index">
                 <ProductCard
                     :product="product"
-                    :image="product.images[0].img"
+                    :image="setImage(product.images[0].img)"
                     @addCart="prod.addToCart(product)" @addWish="wish.addWishlist(product.id)"
                     @click="modalShow(product)" 
                 />
             </swiper-slide>
-            <!--div class="row bg-dark">
-                <div class="col">
-                    <div class="content-absolute content-slide">
-                        <div class="container height-inherit d-flex align-items-center">
-                            <div class="content-box banner-content p-4">
-                                <p class="heading_18 mb-3 text-white">{{ product.product.category.name }}</p>
-                                <h2 class="heading_34 text-white">{{ product.product.discount }}% off for <br>{{
-                                    product.product.name }}</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <img class="banner-img" :src="product.images[0].img" alt="banner-1" width="1000" height="446"
-                        style="width: 1000; height: 446;">
-                </div>
-            </div-->
-    </swiper>
+     </swiper>
+    </div>
+</div>
 </template>
 
 <style scoped>

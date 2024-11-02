@@ -79,14 +79,8 @@ onMounted(async () => {
             <!-- collection end -->
         </template>
         <template v-slot:discounted>
-            <div class="featured-collection-section mt-100 home-section overflow-hidden">
-                <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-heading">Highly Discounted Products</h2>
-                    </div>
+           
                     <DiscountedSlide :products="home.discounteds" :numSlide="4" v-if="home.discounteds.length" />
-                </div>
-            </div>
         </template>
     </HomeSkeleton>
 </template>

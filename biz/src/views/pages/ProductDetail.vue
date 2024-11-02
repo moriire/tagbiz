@@ -26,7 +26,7 @@ onMounted(async () => {
             <div class="row">
                 
                 <!-- product quickview start -->
-                <DiscountedSlide :products="prod.similar" :numSlide="4" v-if="prod.similar.length"
+                <DiscountedSlide :products="prod.similar" :numSlide="4" v-if="prod.similar.length" title="Similar Products"
                     />
                 <!-- product quickview end -->
             </div>

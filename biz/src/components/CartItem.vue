@@ -27,13 +27,20 @@ defineProps({
         required: true,
     }
 })
+const backend = import.meta.env.VITE_BACKEND;
+const setImage = (img)=>{
+    if (img.startsWith("https://") | img.startsWith("https://")){
+        return img
+    }
+    return `${backend}${img}`
+}
 </script>
 
 <template>
     <!-- minicart item -->
     <div class="minicart-item d-flex" v-if="item.images">
         <div class="mini-img-wrapper">
-            <img class="mini-img" :src="item.images[0].img" alt="img" >
+            <img class="mini-img" :src="setImage(item.images[0].img)" alt="img" >
         </div>
         <div class="product-info">
             <h2 class="product-title"><a href="#">{{ item.name }}</a></h2>

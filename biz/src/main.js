@@ -18,7 +18,9 @@ import App from './App.vue'
 import router from './router'
 
 //axios.defaults.baseURL="http://127.0.0.1:8000/"
-axios.defaults.baseURL="https://tagbiz.pythonanywhere.com/"
+axios.defaults.baseURL= import.meta.env.VITE_BACKEND
+//"https://tagbiz.pythonanywhere.com/"
+
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)

@@ -3,6 +3,14 @@ import { useProductStore } from '@/stores/products';
 import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 const prod = useProductStore()
+
+const backend = import.meta.env.VITE_BACKEND;
+const setImage = (img)=>{
+    if (img.startsWith("https://") | img.startsWith("https://")){
+        return img
+    }
+    return `${backend}${img}`
+}
 onMounted(async () => {
   await prod.getProducts()
 })
@@ -47,7 +55,7 @@ onMounted(async () => {
                 <tr class="cart-item" v-for="(cart, index) in prod.cartItems" v-bind:key="index">
                   <td class="cart-item-media">
                     <div class="mini-img-wrapper">
-                      <img class="mini-img" :src="cart.images[0].img" alt="img">
+                      <img class="mini-img" :src="setImage(cart.images[0].img)" alt="img">
                     </div>
                   </td>
                   <td class="cart-item-details">
