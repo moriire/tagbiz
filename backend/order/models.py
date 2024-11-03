@@ -16,6 +16,7 @@ class Order(models.Model):
     cart = models.ManyToManyField(Product, blank=True)
     authorization_code = models.CharField(max_length=16, blank=True, null=True)
     reference_code = models.CharField(max_length=12, blank=True, null=True)
+    amount = models.FloatField()
     status = models.CharField(max_length=9, choices=OrderStatus.choices, default="UNPAID")
     address = models.TextField(default="")
     city = models.CharField(max_length=80, null=True, blank=True)
