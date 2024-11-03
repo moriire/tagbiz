@@ -12,6 +12,7 @@ class OrderView(ModelViewSet):
     @action(detail=False, methods=["POST"])
     def payment_hook(self, request):
         data = request.data
+        print(data)
         details = data["data"]
         match data["event"]:
             case 'charge.success':
