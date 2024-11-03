@@ -23,6 +23,10 @@ class CustomUsers(PermissionsMixin, AbstractBaseUser):
 
     REQUIRED_FIELDS = ["email"]
 
+    class Meta:
+        verbose_name =("Admin")
+        verbose_name_plural = ("Administrative Users")
+
     def __str__(self):
         return self.username
     
