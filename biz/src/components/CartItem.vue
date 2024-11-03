@@ -1,14 +1,8 @@
 <script setup>
 import { onMounted } from 'vue';
-const emit = defineEmits(["addCount", "subCount", "removedCart"])
-
+const emit = defineEmits(["addCount", "removedCart"])
 function AddToCount (param) {
     emit("addCount", param)
-    console.log("hello")
-};
-
-function subFromCount(param) {
-    emit("subCount", param)
     console.log("hello")
 };
 
@@ -16,7 +10,6 @@ function removedCart(param) {
     emit("removeCart", param)
     console.log("hello")
 };
-
 defineProps({
     item: {
         type: Object,
@@ -53,7 +46,7 @@ const setImage = (img)=>{
                 </div>
                 <div class="product-remove-area d-flex flex-column align-items-end">
                     <div class="product-price">&#x20A6;{{ item.price }}</div>
-                    <a href="#" class="product-remove" @click="removedCart" type="button">Remove</a>
+                    <button  class="product-remove btn btn-link" @click="removedCart" >Remove</button>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ from product.views import ProductView
 from location.views import LocationView
 from category.views import ProductCategoryView
 from thumbs.views import ProductImageView
+from order.views import OrderView
 from rest_framework.routers import  DefaultRouter
 
 admin.site.site_header = 'Tagbiz Admin'
@@ -18,6 +19,7 @@ router.register("products", ProductView)
 router.register("categories", ProductCategoryView)
 router.register("locations", LocationView)
 router.register("upload", ProductImageView)
+router.register("orders", OrderView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

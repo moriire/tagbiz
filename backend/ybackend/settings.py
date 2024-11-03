@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "mmdddmm")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", 1)))
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", 'tagbiz.pythonanywhere.com']
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", 'tagbiz.pythonanywhere.com', "d449-197-210-53-156.ngrok-free.app"]
 
 if os.environ.get("ALLOWED_HOSTS") is not None:
     try:
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'coreapi',
     'drf_yasg',
     "users",
+    "order",
     "thumbs",
     "product",
     "category",
@@ -145,7 +146,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3000",
      "http://127.0.0.1:6379",
     "http://127.0.0.1:5173",
-    'https://tagbiz.pythonanywhere.com'
+    'https://tagbiz.pythonanywhere.com',
+    
     ]
 
 CORS_ORIGIN_ALLOW_ALL = True

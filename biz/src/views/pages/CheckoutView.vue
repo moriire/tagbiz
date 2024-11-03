@@ -2,64 +2,35 @@
 import { useProductStore } from '@/stores/products'
 import { useShippingStore } from '@/stores/shipping'
 import { onMounted, ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { v4 as uuid4 } from 'uuid'
 import axios from 'axios'
-
+const router = useRouter()
 let uid = uuid4()
 const prod = useProductStore()
 const ship = useShippingStore()
 const current = ref(!true)
-const deliv = ref('ship')
-const deliveryTypes = {
-  ship: 'Ship',
-  pickup: 'pick up in store',
+const paymetApi = import.meta.env.VITE_PAYSTACK_API
+const showCart = () =>{
+  ship.shippingDetail.transaction.metadata.custom_fields = prod.cartItems
+  console.log(ship.shippingDetail)
 }
-const form = ref({
-  tx_ref: uid,
-  amount: prod.totalPrice,
-  paymentMethod: 'credit_card',
-  redirect_url: '',
-  max_retry_attempt: 5,
-  customer: {
-    email: '',
-    name: '',
-    phonenumber: '',
-  },
-  customizations: {
-    title: 'Welcome to TagBiz',
-    description: '',
-  },
-})
-
-const form2 = ref({
-  tx_ref: uid,
-  amount: 5000,
-  paymentMethod: 'credit_card',
-  redirect_url: '',
-  max_retry_attempt: 5,
-  customer: {
-    email: 'ibmabdulsalam@gmail.com',
-    name: 'IBM Abdulsalam',
-    phonenumber: '08100482341',
-  },
-  customizations: {
-    title: 'Welcome to TagBiz',
-    description: '',
-  },
-})
 const submitCheckout = async () => {
+  ship.shippingDetail.transaction.metadata.custom_fields = prod.cartItems
+  ship.shippingDetail.transaction.amount = (prod.cartSubtotal + ship.shippingCost[0].cost - prod.cartTotalDiscount)*100;
   try {
     const response = await axios.post(
-      'https://api.flutterwave.com/v3/payments',
-      form2.value,
+      'https://api.paystack.co/transaction/initialize',
+      ship.shippingDetail.transaction,
       {
         headers: {
-          Authorization: `Bearer ${import.meta.env.FLW_SECRET_KEY}`,
+          Authorization: `Bearer ${paymetApi}`,
           'Content-Type': 'application/json',
         },
       },
     )
+    console.log(response.data.data.authorization_url)
+    location.href = response.data.data.authorization_url
   } catch (err) {
     console.error(err.code)
     console.error(err)
@@ -67,10 +38,8 @@ const submitCheckout = async () => {
 }
 onMounted(async () => {
   await ship.getShipping()
-  //await ship.getShippingCost()
 })
 </script>
-
 <template>
   <div class="checkout-page mt-100">
     <div class="container">
@@ -78,11 +47,10 @@ onMounted(async () => {
         <div class="col-xl-9 col-lg-8 col-md-12 col-12">
           <div class="header">
             <h2 class=".pb-1">Billing address</h2>
-          </div>
-          {{ deliv }}
-          <!--div class="shipping-address-area">
+          </div>{{ship.shippingDetail}}
+          <div class="shipping-address-area">
             <div class=".shipping-address-form-wrapper">
-              <form @submit.prevent="prod.addForShipping">
+              <form @submit.prevent="submitCheckout">
                 <div class="row mb-3">
                   <h2 class="shipping-address-heading pb-1 my-3">Contact</h2>
 
@@ -93,7 +61,7 @@ onMounted(async () => {
                       id="email"
                       class="form-control"
                       type="email"
-                      v-model="ship.shippingDetail.email"
+                      v-model="ship.shippingDetail.transaction.email"
                     />
                   </div>
                   <div class="col-lg-6 col-md-12 col-12">
@@ -102,7 +70,7 @@ onMounted(async () => {
                       required
                       id="phone"
                       class="form-control"
-                      v-model="ship.shippingDetail.phone"
+                      v-model="ship.shippingDetail.transaction.metadata.phone"
                     />
                   </div>
                 </div>
@@ -115,7 +83,7 @@ onMounted(async () => {
                       class="btn-check"
                       id="ship"
                       autocomplete="off"
-                      v-model="deliv"
+                      v-model="ship.shippingDetail.transaction.metadata.delivery_mode"
                        value="ship"
                     />
                     <label
@@ -133,7 +101,7 @@ onMounted(async () => {
                        value="pickup"
                       id="pickup"
                       autocomplete="off"
-                      v-model="deliv"
+                      v-model="ship.shippingDetail.transaction.metadata.delivery_mode"
                     />
                     <label
                       class="btn btn-secondary d-flex justify-content-between"
@@ -146,7 +114,7 @@ onMounted(async () => {
                   
                 </div>
 
-                <div class="row my-3" v-if="deliv === 'ship'">
+                <div class="row my-3" v-if="ship.shippingDetail.transaction.metadata.delivery_mode === 'ship'">
                   <div class="col-lg-6 col-md-12 col-12">
                     <label class="form-label" for="first_name"
                       >First name</label
@@ -155,7 +123,7 @@ onMounted(async () => {
                       required
                       id="first_name"
                       class="form-control"
-                      v-model="ship.shippingDetail.first_name"
+                      v-model="ship.shippingDetail.transaction.metadata.first_name"
                     />
                   </div>
                   <div class="col-lg-6 col-md-12 col-12">
@@ -164,7 +132,7 @@ onMounted(async () => {
                       required
                       id="last_name"
                       class="form-control"
-                      v-model="ship.shippingDetail.last_name"
+                      v-model="ship.shippingDetail.transaction.metadata.last_name"
                     />
                   </div>
                   <div class="col-lg-6 col-md-12 col-12">
@@ -174,7 +142,7 @@ onMounted(async () => {
                       id="email"
                       class="form-control"
                       type="email"
-                      v-model="ship.shippingDetail.email"
+                      v-model="ship.shippingDetail.transaction.metadata.email"
                     />
                   </div>
                   <div class="col-lg-6 col-md-12 col-12">
@@ -183,7 +151,7 @@ onMounted(async () => {
                       required
                       id="phone"
                       class="form-control"
-                      v-model="ship.shippingDetail.phone"
+                      v-model="ship.shippingDetail.transaction.metadata.phone"
                     />
                   </div>
                   <div class="col-lg-6 col-md-12 col-12">
@@ -192,7 +160,7 @@ onMounted(async () => {
                       required
                       id="country"
                       class="form-select"
-                      v-model="ship.shippingDetail.country"
+                      v-model="ship.shippingDetail.transaction.metadata.country"
                     >
                       <option selected value="Nigeria">Nigeria</option>
                     </select>
@@ -201,15 +169,18 @@ onMounted(async () => {
                     <label class="form-label" for="city">City</label>
                     <select
                       required
+                      v-if="ship.locations.length>0"
                       class="form-select"
-                      v-model="ship.shippingDetail.city"
-                    >
-                      <option selected value="city">Select City</option>
+                      v-model="ship.shippingDetail.transaction.metadata.city"
+                    >{{ ship.shippingDetail.transaction.metadata.city }}
+                      <!--option selected value="">Select City</option-->
                       <option
-                        :value="loc.id"
-                        v-for="loc in ship.getShippingCostData"
+                      :key="index"
+                        :value="loc.region"
+                        v-for="(loc, index) in ship.locations"
+                        :selected="index === 0 ? true : false"
                       >
-                        {{ loc.city }}
+                        {{ loc.region }}
                       </option>
                     </select>
                   </div>
@@ -219,7 +190,7 @@ onMounted(async () => {
                       required
                       id="address"
                       class="form-control"
-                      v-model="ship.shippingDetail.address"
+                      v-model="ship.shippingDetail.transaction.metadata.address"
                       length="20"
                     />
                   </div>
@@ -238,7 +209,7 @@ onMounted(async () => {
                         type="radio"
                         :value="location.region"
                         :id="'location' + index"
-                        v-model="ship.shippingDetail.city"
+                        v-model="ship.shippingDetail.transaction.metadata.city"
                         :checked="index === 0 ? true : false"
                       />
                       <label class="form-check-label" :for="'location' + index">
@@ -249,7 +220,7 @@ onMounted(async () => {
                   </div>
                 </div>
                  
-                  <div class="row my-3" v-if="deliv === 'pickup'">
+                  <div class="row my-3" v-if="ship.shippingDetail.transaction.metadata.delivery_mode === 'pickup'">
                     <h2 class="shipping-address-heading pb-1 my-3">
                       Store Location
                     </h2>
@@ -279,7 +250,7 @@ onMounted(async () => {
                       type="submit"
                       value="CREATE ORDER"
                     />
-                    <button @click="submitCheckout">pay</button>
+                   
                     <div class="input-group-text btn-primary" id="basic" v-show="loading" :disbled="disabled">
                   <span class="spinner-border spinner-border-sm" aria-hidden="true">
                   </span>
@@ -288,8 +259,7 @@ onMounted(async () => {
                 </div>
               </form>
             </div>
-          </div-->
-          <button @click="submitCheckout">pay</button>
+          </div>
         </div>
         <div class="col-xl-3 col-lg-4 col-md-12 col-12">
           <div class="cart-total-area checkout-summary-area">
@@ -322,10 +292,10 @@ onMounted(async () => {
               <div class="subtotal-item shipping-box">
                 <h4 class="subtotal-title">Shipping:</h4>
                 <p class="subtotal-value" v-if="!ship.shippingCost[0]">
-                  loading
+                 0
                 </p>
                 <p class="subtotal-value" v-else>
-                  &#x20A6;{{ ship.shippingCost[0].price || 0.0 }}
+                  &#x20A6;{{ ship.shippingCost[0].cost || 0.0 }}
                 </p>
               </div>
               <div class="subtotal-item discount-box">
@@ -340,11 +310,12 @@ onMounted(async () => {
                 <p class="subtotal-value" v-if="ship.shippingCost[0]">
                   &#x20A6;{{
                     prod.cartSubtotal +
-                    ship.shippingCost[0].price -
+                    ship.shippingCost[0].cost -
                     prod.cartTotalDiscount
                   }}
                 </p>
               </div>
+              <button @click="showCart">play</button>
               <!--div class="mt-4 checkout-promo-code">
                     <input class="form-control" class="input-promo-code" type="text" placeholder="Promo code" />
                     <a href="checkout.html" class="btn-apply-code position-relative btn-secondary text-uppercase mt-3">
