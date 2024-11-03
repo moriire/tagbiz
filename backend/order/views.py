@@ -35,7 +35,8 @@ class OrderView(ModelViewSet):
                 order_obj.save()
                 items_bought = metadata.get("custom_fields")
                 for item in items_bought:
-                    order_obj.cart.add(item.get("id)"))
+                    order_obj.cart.add(int(item.get("id")))
+                   
                 return Response({"data": "received"}, status=status.HTTP_201_CREATED)
             case _:
                 print(data)
