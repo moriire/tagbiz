@@ -12,7 +12,7 @@ from rest_framework.routers import  DefaultRouter
 admin.site.site_header = 'Tagbiz Admin'
 admin.site.site_title = "Tagbiz"
 admin.site.index_title = "Tagbiz Site administration"
-admin.site.site_url = "/"
+admin.site.site_url = "https://moriire.github.io/tagbiz/"
 
 router = DefaultRouter()
 router.register("products", ProductView)
