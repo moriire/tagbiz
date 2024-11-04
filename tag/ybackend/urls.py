@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from app_config.views import AppModelRetrieveViewSet
 from product.views import ProductView
 from location.views import LocationView
 from category.views import ProductCategoryView
@@ -15,6 +16,8 @@ admin.site.index_title = "Tagbiz Site administration"
 admin.site.site_url = "https://moriire.github.io/tagbiz/"
 
 router = DefaultRouter()
+
+router.register("config", AppModelRetrieveViewSet)
 router.register("products", ProductView)
 router.register("categories", ProductCategoryView)
 router.register("locations", LocationView)

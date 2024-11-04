@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "product",
     "category",
     "location",
+    "app_config"
 ]
 
 MIDDLEWARE = [

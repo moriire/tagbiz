@@ -3,12 +3,15 @@ import { onMounted } from 'vue'
 //import CartMenu from '@/components/CartMenu.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { useProductStore } from '@/stores/products'
-import { useCategoryStore } from './stores/categories'
+import { useCategoryStore } from './stores/categories';
+import { useConfigStore } from './stores/config';
+
 import LoaderSpinner from "@/components/LoaderSpinner.vue"
 
 const prod = useProductStore()
 const cat = useCategoryStore()
 onMounted(async () => {
+  useConfigStore().getConfig()
   await cat.getCategories();
   
 })

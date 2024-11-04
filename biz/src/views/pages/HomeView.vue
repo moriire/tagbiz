@@ -10,8 +10,9 @@ import CategoriesSlide from "@/components/home/CategoriesSlide.vue"
 //import VendorSlide from '@/components/VendorSlide.vue';
 import DiscountedSlide from "@/components/home/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
-import GridedProducts from '@/components/GridedProducts.vue';
-
+//import GridedProducts from '@/components/GridedProducts.vue';
+import { useConfigStore } from "@/stores/config";
+const app_conf = useConfigStore()
 const cat = useCategoryStore()
 const prod = useProductStore()
 const home = useHomeStore()
@@ -30,13 +31,13 @@ onMounted(async () => {
     <HomeSkeleton>
         <template v-slot:categories>
             <!-- promotinal product start -->
-            <div class="promotinal-product-section overlay-tools overflow-hidden" style="background:#000000 url(tagbiz-bg.jpg) no-repeat center; background-size: cover; color: white">
+            <div class="promotinal-product-section overlay-tools overflow-hidden" :style="`background: url(${app_conf.config.hero})`" style="background:#000000 no-repeat center; background-size: cover; color: white">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-12 d-flex align-items-center">
                             <div class="promotinal-product-content" data-aos="fade-up" data-aos-duration="700">
                                 <!--p class="heading_18 primary-color mb-3">Navigate our various product categories</p-->
-                                <h2 class="heading_34 text-white my-4">What we sell</h2>
+                                <h2 class="heading_34 text-white my-4">{{app_conf.config.subtitle}}</h2>
                                 <p class="text_16 text-white my-4">
                                     Discover a wide range of products on Tagbiz. Explore categories like electronics, fashion, home goods, beauty, sports, and more.
                                 </p>
