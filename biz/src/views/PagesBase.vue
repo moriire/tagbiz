@@ -399,3 +399,20 @@ const mobileNavSection = [
 
   <CartMenu :cartItems="prod.cartItems" />
 </template>
+<style scoped>
+.offcanvas-size-xl {
+    --bs-offcanvas-width: min(95vw, 600px) !important;
+}
+.offcanvas-size-xxl {
+    --bs-offcanvas-width: min(95vw, 90vw) !important;
+}
+.offcanvas-size-md { /* add Responsivenes to default offcanvas */
+    --bs-offcanvas-width: min(95vw, 400px) !important;
+}
+.offcanvas-size-sm {
+    --bs-offcanvas-width: min(70vw, 150px) !important;
+}
+.offcanvas-size-xs {
+    --bs-offcanvas-width: min(95vw, 150px) !important;
+}
+</style>
