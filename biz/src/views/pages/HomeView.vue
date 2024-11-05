@@ -64,7 +64,8 @@ onMounted(async () => {
                             <h2 class="section-heading">Latest Products</h2>
                         </div>
                         <div class="row">
-                            <ProductPage :products="prod.products" v-if="home.latests.length" />
+                            <ProductPage :products="home.latests" v-if="home.latests.length" />
+                          
                             <template v-else>
                                 <div class="vh-100 d-flex justify-content-center align-items-center">
                                     <h2>No Products Uploaded yet</h2>

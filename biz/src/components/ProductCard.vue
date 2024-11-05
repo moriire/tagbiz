@@ -3,7 +3,12 @@ import { RouterLink } from 'vue-router';
 import AtcButton from "./buttons/AtcButton.vue"
 //import AtwButton from './buttons/AtwButton.vue';
 //import RfcButton from './buttons/RfcButton.vue';
-
+const setImage = (img)=>{
+    if (img.startsWith("https://") | img.startsWith("https://")){
+        return img
+    }
+    return `${backend}${img}`
+}
 const prop = defineProps({
   product: {
     type: Object,
@@ -29,7 +34,7 @@ const prop = defineProps({
           <div class="product-badge">
             <span class="badge-label badge-percentage rounded">{{ prop.product.discount > 0 ? `-${prop.product.discount}%` : prop.product.condition }}</span>
           </div>
-          <img class="primary-img" :src="prop.image" :alt="prop.product.name">
+          <img class="primary-img" :src="setImage(prop.image)" :alt="prop.product.name">
           </RouterLink>
 
         <div class="product-card-action product-card-action-2">
