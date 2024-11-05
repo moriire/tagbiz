@@ -4,13 +4,14 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import Product
 from .serializers import ProductSerializer
-from rest_framework.pagination import PageNumberPagination
+from rest_framework.pagination import LimitOffsetPagination
 
-class ProductPagination(PageNumberPagination):
-    page_size = 6  
-    page_size_query_param = 'page_size'
-    max_page_size = 20  # Limit on the page size if the client specifies it
-    
+class ProductPagination(LimitOffsetPagination):
+    default_limit = 6
+    max_limit = 12
+    min_limit = 1
+    min_offset = 0
+    max_offset = 1000000
 
 class ProductView(ModelViewSet):
     serializer_class = ProductSerializer
