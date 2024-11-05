@@ -10,63 +10,18 @@ import { useShippingStore } from './shipping'
 export const useProductStore = defineStore('product', () => {
   const ship = useShippingStore();
   const router = useRouter()
-  const pages = reactive({
-    url: `product-with-images`,
-    previous: null,
-    next: null,
-    limit: 2,
-    offset: 0,
-    count: 0
-  })
-  const hasPrev = computed(() =>
-    pages.previous === null
-  );
-
-  const hasNext = computed(() =>
-    pages.next === null
-);
-
-const perPage = (index) => {
-  let new_url = `products?limit=${pages.limit}&offset=${index}`
-  pages.url = new_url
-  getProducts()
-};
-
-const nextPage = () => {
-  pages.offset += 1;
-  pages.url=pages.next
-  getProducts()
-};
-const prevPage = () => {
-    pages.offset -= 1;
-    pages.url=pages.previous
-    getProducts()
-};
-
+ 
 const orders = ref({})
 const count = ref(0)
 const products = ref([])
 const similar = ref([])
 const product = ref({})
-const paginatedProducts = ref([])
 const cartItemsReview = ref([])
 const cartItems = ref(JSON.parse(localStorage.getItem("carts")) || []); //ref([])
 const cartItemsCount = reactive(JSON.parse(localStorage.getItem("userCartCounter")) || {})
 //const cartSubtotal = ref(0)
 //const cartTotalDiscount = ref(0)
 
-
-const getProducts = async () => {
-  try {
-    const res = await axios.get("api/products/")//pages.url)
-    products.value = res.data//.results
-    pages.count = res.data.count;
-    pages.next = res.data.next;
-    pages.previous = res.data.previous;
-  } catch (e) {
-    console.log(e)
-  }
-}
 
 
 const getSimilar = async (product_id) => {
@@ -202,17 +157,10 @@ return {
   cartSubtotal,
   cartTotalDiscount,
   cartSubtotalReview,
-  hasNext,
-  hasPrev,
-  pages,
-  nextPage,
-  prevPage,
-  perPage,
   //getCartSubtotal,
   //getCartTotalDiscount,
   addForShipping,
   deleteCartLocal,
-  getProducts,
   getSimilar,
   singeProduct,
   incCartLocal,

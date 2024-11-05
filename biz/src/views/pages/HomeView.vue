@@ -16,7 +16,6 @@ const app_conf = useConfigStore()
 const cat = useCategoryStore()
 const prod = useProductStore()
 const home = useHomeStore()
-prod.pages.limit = 8
 const loading = ref(false)
 onMounted(async () => {
     loading.value = true;
