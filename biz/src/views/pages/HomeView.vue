@@ -31,13 +31,13 @@ onMounted(async () => {
     <HomeSkeleton>
         <template v-slot:categories>
             <!-- promotinal product start -->
-            <div class="promotinal-product-section overlay-tools overflow-hidden" :style="`background: url(${app_conf.config.hero})`" style="background:#000000 no-repeat center; background-size: cover; color: white">
+            <div class="promotinal-product-section overlay-tools overflow-hidden" :style="`background-image: url(${app_conf.config.hero})`" style="background-color:#000;  background-repeat: no-repeat; background-position: center; background-size: cover; color: white">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-12 d-flex align-items-center">
                             <div class="promotinal-product-content" data-aos="fade-up" data-aos-duration="700">
                                 <!--p class="heading_18 primary-color mb-3">Navigate our various product categories</p-->
-                                <h2 class="heading_34 text-white my-4">{{app_conf.config.subtitle}}</h2>
+                                <h2 class="heading_34 text-white my-4">{{ app_conf.config.subtitle }}</h2>
                                 <p class="text_16 text-white my-4">
                                     Discover a wide range of products on Tagbiz. Explore categories like electronics, fashion, home goods, beauty, sports, and more.
                                 </p>

@@ -4,13 +4,14 @@ import { RouterLink, RouterView } from 'vue-router'
 import { useProductStore } from '../stores/products'
 import { useCategoryStore } from '../stores/categories'
 import BreadCrumb from '@/components/BreadCrumb.vue'
-import { ref } from 'vue'
+import { onBeforeMount, onMounted, ref } from 'vue'
 const prod = useProductStore()
 const isSearchVisible = ref(false)
 //const cat = useCategoryStore()
 const toggleSearch = () => {
   isSearchVisible.value = !isSearchVisible.value
 }
+const theme = ref(localStorage.getItem("tagbizTheme")|| "light")
 const navSection = [
   { loc: 'Home', route: '/', icon: 'las la-home' },
   {
@@ -38,9 +39,19 @@ const mobileNavSection = [
   { loc: 'About Us', route: '/contact', icon: 'las la-book' },
   { loc: 'Contact Us', route: '/contact', icon: 'las la-pen' },
 ]
-//onMounted(async () => {
+onBeforeMount(()=>{
+  
+})
+const toggleTheme = () => {
+      theme.value = theme.value === 'light' ? 'dark' : 'light';
+      localStorage.setItem("tagbizTheme", theme.value)
+      document.body.setAttribute("data-bs-theme", theme.value)
+    }
+onMounted(async () => {
 //await cat.getCategories();
-//})
+console.log(document.body.attributes)
+document.body.setAttribute("data-bs-theme", theme.value)
+})
 </script>
 
 <template>
@@ -55,6 +66,7 @@ const mobileNavSection = [
                 <h2>Tag<span class="text-warning">Biz</span></h2>
                 <!--img src="/src/assets/img/logo.png" loading="lazy" alt="tagbiz"-->
               </RouterLink>
+              
             </div>
           </div>
           <!--div class="col-lg-8 d-lg-block d-none">
@@ -134,8 +146,6 @@ const mobileNavSection = [
           <div class="col-lg-6 d-lg-block d-none">
             <div class="header-search">
               <form
-                action="#"
-                method="get"
                 role="search"
                 class="search-form d-flex justify-content-center"
               >
@@ -215,6 +225,15 @@ const mobileNavSection = [
                   }}<span class="visually-hidden">Items in Cart</span></span
                 >
               </a>
+              <button @click="toggleTheme" class="btn btn-link-dark header-action-item">
+                <div v-if="theme==='dark'">
+                  <i class="fa-regular fa-sun fs-4" ></i>
+                </div>
+                <div v-if="theme==='light'">
+                  <i class="fa-solid fa-circle-half-stroke fs-4" ></i>
+                </div>
+                
+        </button>
               <a
                 class="header-action-item header-hamburger ms-4 d-lg-none"
                 href="#drawer-menu"
@@ -342,7 +361,7 @@ const mobileNavSection = [
   <!-- scrollup end -->
   <!-- drawer menu start -->
   <div
-    class="offcanvas offcanvas-start d-flex d-lg-none"
+    class="offcanvas offcanvas-start d-flex offcanvas-sm"
     tabindex="-1"
     id="drawer-menu"
   >
@@ -400,19 +419,10 @@ const mobileNavSection = [
   <CartMenu :cartItems="prod.cartItems" />
 </template>
 <style scoped>
-.offcanvas-size-xl {
-    --bs-offcanvas-width: min(95vw, 600px) !important;
+.offcanvas-xs {
+    --bs-offcanvas-width: 65vw !important;
 }
-.offcanvas-size-xxl {
-    --bs-offcanvas-width: min(95vw, 90vw) !important;
-}
-.offcanvas-size-md { /* add Responsivenes to default offcanvas */
-    --bs-offcanvas-width: min(95vw, 400px) !important;
-}
-.offcanvas-size-sm {
-    --bs-offcanvas-width: min(70vw, 150px) !important;
-}
-.offcanvas-size-xs {
-    --bs-offcanvas-width: min(95vw, 150px) !important;
+.offcanvas-sm {
+    --bs-offcanvas-width: 65vw !important;
 }
 </style>

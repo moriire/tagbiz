@@ -15,12 +15,18 @@ class ProductView(ModelViewSet):
             self.queryset = self.queryset.filter(category__slug= slug)
         return self.queryset
     
+    @action(methods=["GET"], detail=False)
+    def latest(self, request):
+        items = self.get_queryset()[:12]
+        ser = ProductSerializer(items, many=True)
+        return Response(ser.data, status=status.HTTP_200_OK)
+    
     @action(methods=["GET"], detail=True)
     def similar(self, request, pk=None):
         try:
             product = Product.objects.get(id=pk)
             similar_products = product.get_similar_products()
-            serializer = ProductSerializer(similar_products, many=True)
+            serializer = ProductSerializer(similar_products)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Product.DoesNotExist:
             return Response({"error": "Product not found"}, status=status.HTTP_404_NOT_FOUND)
