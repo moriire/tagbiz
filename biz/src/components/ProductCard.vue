@@ -4,6 +4,7 @@ import AtcButton from "./buttons/AtcButton.vue"
 //import AtwButton from './buttons/AtwButton.vue';
 //import RfcButton from './buttons/RfcButton.vue';
 const setImage = (img)=>{
+  const backend = import.meta.env.VITE_BACKEND;
     if (img.startsWith("https://") | img.startsWith("https://")){
         return img
     }

@@ -20,8 +20,9 @@ defineProps({
         required: true,
     }
 })
-const backend = import.meta.env.VITE_BACKEND;
+
 const setImage = (img)=>{
+    const backend = import.meta.env.VITE_BACKEND;
     if (img.startsWith("https://") | img.startsWith("https://")){
         return img
     }

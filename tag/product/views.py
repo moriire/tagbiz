@@ -4,10 +4,18 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import Product
 from .serializers import ProductSerializer
+from rest_framework.pagination import PageNumberPagination
+
+class ProductPagination(PageNumberPagination):
+    page_size = 6  
+    page_size_query_param = 'page_size'
+    max_page_size = 20  # Limit on the page size if the client specifies it
+    
 
 class ProductView(ModelViewSet):
     serializer_class = ProductSerializer
     queryset = Product.objects.all().select_related()
+    pagination_class = ProductPagination
 
     def get_queryset(self):
         slug = self.request.query_params.get('slug', None)
