@@ -38,7 +38,7 @@ onMounted(async () => {
                                 <!--p class="heading_18 primary-color mb-3">Navigate our various product categories</p-->
                                 <h2 class="heading_34 text-white my-4">{{ app_conf.config.subtitle }}</h2>
                                 <p class="text_16 text-white my-4">
-                                    Discover a wide range of products on Tagbiz. Explore categories like electronics, fashion, home goods, beauty, sports, and more.
+                                    {{ app_conf.config.description }}
                                 </p>
                                 <div class=".view-all my-4">
                                     <RouterLink class="btn-primary" to="/shop">START SHOPPING</RouterLink>

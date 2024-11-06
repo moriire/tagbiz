@@ -26,7 +26,7 @@ class ProductView(ModelViewSet):
     
     @action(methods=["GET"], detail=False)
     def latest(self, request):
-        items = self.get_queryset()[:12]
+        items = self.get_queryset()[:8]
         ser = ProductSerializer(items, many=True)
         return Response(ser.data, status=status.HTTP_200_OK)
     
