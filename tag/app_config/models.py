@@ -9,6 +9,9 @@ class AppModel(models.Model):
     description = models.TextField(default="")
     email = models.EmailField(null=True, blank=True)
     phone = models.CharField(max_length=14, null=True, blank=True)
+    whatsapp = models.URLField(null=True, blank=True)
+    instagram = models.URLField(null=True, blank=True)
+    facebook = models.URLField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now=True)
 
     class Meta:

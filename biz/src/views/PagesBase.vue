@@ -5,6 +5,9 @@ import { useProductStore } from '../stores/products'
 import { useCategoryStore } from '../stores/categories'
 import BreadCrumb from '@/components/BreadCrumb.vue'
 import { onBeforeMount, onMounted, ref } from 'vue'
+import { useConfigStore } from "@/stores/config";
+import { config } from '@vue/test-utils'
+const app_conf = useConfigStore()
 const prod = useProductStore()
 const isSearchVisible = ref(false)
 //const cat = useCategoryStore()
@@ -40,7 +43,7 @@ const mobileNavSection = [
   { loc: 'Contact Us', route: '/contact', icon: 'las la-pen' },
 ]
 onBeforeMount(()=>{
-  
+  app_conf.getConfig()
 })
 const toggleTheme = () => {
       theme.value = theme.value === 'light' ? 'dark' : 'light';
@@ -231,8 +234,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
                 </div>
                 <div v-if="theme==='light'">
                   <i class="fa-solid fa-circle-half-stroke fs-4" ></i>
-                </div>
-                
+                </div>        
         </button>
               <a
                 class="header-action-item header-hamburger ms-4 d-lg-none"
@@ -396,7 +398,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-phone"></i>
             </span>
-            <a href="callto:+234902334664"> +234(90)2 3394 664 </a>
+            <a href="callto:+234902334664"> {{ app_conf.phone }} </a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
@@ -408,7 +410,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-envelope-open-text"></i>
             </span>
-            <a href="mailto:agesxpat@gmail.com">agesxpat@gmail.com<</a>
+            <a href="mailto:agesxpat@gmail.com">{{ app_conf.email }}<</a>
           </li>
         </ul>
       </div>
