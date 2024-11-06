@@ -105,7 +105,8 @@ onMounted(async () => {
                                     </div>
                                 </div>
                             </div>
-                            <ProductPage :products="getcat.productsInCategory" :show="!true" />
+                            <ProductPage :products="getcat.productsInCategory" v-if="getcat.productsInCategory.length>0" />
+                               
                         </div>
                         <!-- product area end -->
 
