@@ -42,9 +42,6 @@ const mobileNavSection = [
   { loc: 'About Us', route: '/contact', icon: 'las la-book' },
   { loc: 'Contact Us', route: '/contact', icon: 'las la-pen' },
 ]
-onBeforeMount(()=>{
-  app_conf.getConfig()
-})
 const toggleTheme = () => {
       theme.value = theme.value === 'light' ? 'dark' : 'light';
       localStorage.setItem("tagbizTheme", theme.value)
@@ -52,7 +49,6 @@ const toggleTheme = () => {
     }
 onMounted(async () => {
 //await cat.getCategories();
-console.log(document.body.attributes)
 document.body.setAttribute("data-bs-theme", theme.value)
 })
 </script>
@@ -71,80 +67,6 @@ document.body.setAttribute("data-bs-theme", theme.value)
               
             </div>
           </div>
-          <!--div class="col-lg-8 d-lg-block d-none">
-            <nav class="site-navigation">
-              <ul class="main-menu list-unstyled justify-content-center">
-                <template v-for="(nav, index) in navSection" v-bind:key="index">
-                  <li
-                    class="menu-list-item nav-item has-dropdown"
-                    v-if="nav.submenu"
-                  >
-                    <div class="mega-menu-header">
-                      <a type="button" class="nav-link">
-                        {{ nav.loc }}
-                      </a>
-                      <span class="open-submenu">
-                        <svg
-                          class="icon icon-dropdown"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </span>
-                    </div>
-                    <div class="submenu-transform submenu-transform-desktop">
-                      <ul class="submenu list-unstyled">
-                        <li
-                          class="menu-list-item nav-item-sub"
-                          v-for="(sm, ind) in nav.submenu"
-                          v-bind:key="ind"
-                        >
-                          <RouterLink
-                            class="nav-link-sub nav-text-sub"
-                            :to="sm.route"
-                            >{{ sm.loc }}</RouterLink
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="menu-list-item nav-item" v-else>
-                    <RouterLink :to="nav.route" class="nav-link" exact>
-                      <i :class="nav.icon"></i> <span>{{ nav.loc }}</span>
-                    </RouterLink>
-                  </li>
-                </template>
-
-                <li class="menu-list-item nav-item has-dropdown">
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <ul class="submenu list-unstyled">
-                      <li class="menu-list-item nav-item-sub">
-                        <RouterLink class="nav-link-sub nav-text-sub" to="/faq"
-                          >FAQ</RouterLink
-                        >
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <RouterLink
-                          class="nav-link-sub nav-text-sub"
-                          to="/contact"
-                          >Contact
-                        </RouterLink>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div-->
           <div class="col-lg-6 d-lg-block d-none">
             <div class="header-search">
               <form
@@ -317,7 +239,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
             <div class="col-lg-8">
               <nav class="site-navigation">
                 <ul class="main-menu list-unstyled">
-                  <li class="menu-list-item nav-item" v-for="(nav, index) in mobileNavSection"
+                  <li class="menu-list-item nav-item" exact v-for="(nav, index) in mobileNavSection"
                   v-bind:key="index">
                   <RouterLink :to="nav.route" class="nav-link" >{{ nav.loc }}</RouterLink>
                   </li>
@@ -345,7 +267,6 @@ document.body.setAttribute("data-bs-theme", theme.value)
       </div>
     </div>
   </header>
-  <bread-crumb></bread-crumb>
   <main id="MainContent" class="content-for-layout">
     <RouterView />
   </main>
