@@ -67,8 +67,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
             <div class="header-logo">
               <RouterLink to="/" class="logo-main">
                 <h2>Tag<span class="text-warning">Biz</span></h2>
-                <!--img src="/src/assets/img/logo.png" loading="lazy" alt="tagbiz"-->
-              </RouterLink>
+                </RouterLink>
               
             </div>
           </div>
@@ -185,7 +184,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
               class="header-action d-flex align-items-center justify-content-end"
             >
               <a
-                class="header-action-item .header-search d-lg-none"
+                class="header-action-item header-search d-lg-none"
                 type="button"
                 @click="toggleSearch()"
               >
@@ -312,6 +311,38 @@ document.body.setAttribute("data-bs-theme", theme.value)
           </form>
         </div>
       </div>
+      <div class="header-bottom d-lg-block d-none">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-8">
+              <nav class="site-navigation">
+                <ul class="main-menu list-unstyled">
+                  <li class="menu-list-item nav-item" v-for="(nav, index) in mobileNavSection"
+                  v-bind:key="index">
+                  <RouterLink :to="nav.route" class="nav-link" >{{ nav.loc }}</RouterLink>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-lg-4">
+              <nav class="site-navigation">
+                <ul class="main-menu list-unstyled float-end mx-0 px-0">
+                  <li class="menu-list-item nav-item" >
+                  <a :href="app_conf.instagram" class="nav-link" ><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li class="menu-list-item nav-item" >
+                  <a :href="app_conf.facebook" class="nav-link" ><i class="fa-brands fa-facebook"></i></a>
+                  </li>
+                  <li class="menu-list-item nav-item" >
+                  <a :href="app_conf.whatsapp" class="nav-link" ><i class="fa-brands fa-whatsapp"></i></a>
+                  </li>
+                 
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <bread-crumb></bread-crumb>
@@ -330,10 +361,10 @@ document.body.setAttribute("data-bs-theme", theme.value)
             class="footer-bottom-menu list-unstyled d-flex flex-wrap align-items-center mb-0"
           >
             <li class="footer-menu-item">
-              <a href="about-us.html">Privacy policy</a>
+              <a href="/">Privacy policy</a>
             </li>
             <li class="footer-menu-item">
-              <a href="about-us.html">Terms & Conditions</a>
+              <a href="/">Terms & Conditions</a>
             </li>
           </ul>
           <p class="copyright footer-text">
@@ -398,19 +429,31 @@ document.body.setAttribute("data-bs-theme", theme.value)
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-phone"></i>
             </span>
-            <a href="callto:+234902334664"> {{ app_conf.phone }} </a>
+            <a :href="`callto:${app_conf.phone}`"> {{ app_conf.phone }} </a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-brands fa-whatsapp"></i>
             </span>
-            <a href="https://wa.me/+234902334664"> WhatsApp<</a>
+            <a :href="app_conf.whatsapp"> WhatsApp</a>
+          </li>
+          <li class="utilty-menu-item">
+            <span class="utilty-icon-wrapper">
+              <i class="fa-brands fa-facebook"></i>
+            </span>
+            <a :href="app_conf.facebook">Facebook</a>
+          </li>
+          <li class="utilty-menu-item">
+            <span class="utilty-icon-wrapper">
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+            <a :href="app_conf.instagram">Instagram</a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-envelope-open-text"></i>
             </span>
-            <a href="mailto:agesxpat@gmail.com">{{ app_conf.email }}<</a>
+            <a :href="`mailto:${app_conf.email}`">{{ app_conf.email }}</a>
           </li>
         </ul>
       </div>

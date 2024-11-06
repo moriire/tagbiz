@@ -1,4 +1,35 @@
 @charset "UTF-8";
+/*
+Theme Name: Bisum - Multipurpose eCommerce Template
+Theme URI: https://spreethemesprevious.github.io/bisum/
+Author: Spree Themes
+Author URI: https://themeforest.net/user/spreethemes/portfolio
+Description: Bisum – eCommerce HTML template is a clean, modern and well organized template. It's suitable for all store and this template can be easily customized.
+Version: 1.0.1
+*/
+/*============================================================================
+  Prefix mixin for generating vendor prefixes:
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+  Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
+==============================================================================*/
+iframe {
+  width: 100%; }
+
+.container-fluid {
+  padding-left: 160px;
+  padding-right: 160px; }
 
 @media (max-width: 1800px) {
   .container-fluid {
@@ -187,13 +218,13 @@ h3,
 h4,
 h5,
 h6 {
-  /*color: var(--heading-color);*/
+  color: var(--heading-color);
   font-family: var(--heading-font-family);
   font-weight: var(--heading-font-weight); }
 
 body {
-  /*color: var(--body-color);*/
-  /*background-color: var(--body-background-color);*/
+  color: var(--body-color);
+  background-color: var(--body-background-color);
   font-size: var(--body-font-size);
   font-weight: var(--body-font-weight);
   font-family: var(--body-font-family);
@@ -219,8 +250,7 @@ body {
   font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
-  /*color: #000; */
-}
+  color: #000; }
 
 .heading_72 {
   font-weight: 600;
@@ -355,7 +385,7 @@ button,
   height: inherit; }
 
 .section-heading {
-  /*color: var(--section-heading-color);*/
+  color: var(--section-heading-color);
   font-family: var(--section-heading-font-family);
   font-size: var(--section-heading-font-size);
   font-weight: var(--section-heading-font-weight);
@@ -515,12 +545,9 @@ button,
   position: fixed;
   bottom: 30px;
   right: 30px;
-  -webkit-transition: background-color .3s, 
- opacity .5s, visibility .5s;
-  -o-transition: background-color .3s, 
- opacity .5s, visibility .5s;
-  transition: background-color .3s, 
- opacity .5s, visibility .5s;
+  -webkit-transition: background-color .3s,  opacity .5s, visibility .5s;
+  -o-transition: background-color .3s,  opacity .5s, visibility .5s;
+  transition: background-color .3s,  opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
   z-index: 1000;
@@ -588,7 +615,7 @@ button,
   position: sticky;
   top: 0;
   z-index: 99;
-  /*background-color: #fff;*/
+  background-color: #fff;
   width: 100%; }
 
 .field-search {
@@ -2959,7 +2986,7 @@ blockquote {
       height: 7px;
       content: '';
       position: absolute;
-      /*background-color: #F5F5F5;*/
+      background-color: #F5F5F5;
       top: 25px;
       left: -50%;
       z-index: -1;

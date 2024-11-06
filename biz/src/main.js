@@ -1,15 +1,13 @@
 import 'aos/dist/aos.css'
-import "bootstrap/dist/css/bootstrap.min.css"
-import "./assets/css/style.css"
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import "bootstrap/dist/js/bootstrap.min.js"
 import "@fortawesome/fontawesome-free/js/all.min.js"
 //import "./assets/js/vendor.js"
 //import "./assets/js/main.js"
-
+import "bootstrap/dist/css/bootstrap.min.css"
 import "alertifyjs/build/css/alertify.min.css"
-
+import "./assets/css/style.css"
 import AOS from 'aos';
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
