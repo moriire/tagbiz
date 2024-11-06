@@ -10,8 +10,8 @@ import CategoriesSlide from "@/components/home/CategoriesSlide.vue"
 //import VendorSlide from '@/components/VendorSlide.vue';
 import DiscountedSlide from "@/components/home/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
-//import GridedProducts from '@/components/GridedProducts.vue';
-import { useConfigStore } from "@/stores/config";
+    //import GridedProducts from '@/components/GridedProducts.vue';
+    import { useConfigStore } from "@/stores/config";
 const app_conf = useConfigStore()
 const cat = useCategoryStore()
 const prod = useProductStore()
@@ -22,7 +22,7 @@ onMounted(async () => {
     await home.getLatest();
         await home.getPromoted();
         await home.getDiscounted();
-        await prod.getProducts();
+        //await prod.getProducts();
         loading.value=false
 })
 </script>

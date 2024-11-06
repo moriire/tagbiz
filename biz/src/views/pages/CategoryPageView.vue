@@ -9,45 +9,44 @@ import CategoriesSlide from "@/components/home/CategoriesSlide.vue"
 import DiscountedSlide from "@/components/category/DiscountedSlide.vue"
 import { useHomeStore } from '@/stores/home';
 import { useBycategoriesStore } from '@/stores/bycategories';
+import { useConfigStore } from "@/stores/config";
+const app_conf = useConfigStore()
 const route = useRoute()
-const cat = useBycategoriesStore()
+const getcat = useBycategoriesStore()
 const prod = useProductStore()
 const home = useHomeStore()
-const slideCat = useCategoryStore()
-prod.pages.limit = 8
+const cat = useCategoryStore()
 watch(
-  async () => await cat.getProductsByCategory(route.params.categories_slug)
+  async () => await getcat.getProductsByCategory(route.params.categories_slug)
 )
 onMounted(async () => {
-    await cat.getProductsByCategory(route.params.categories_slug);
+    await getcat.getProductsByCategory(route.params.categories_slug);
         await home.getPromoted();
         await home.getDiscounted();
-        await prod.getProducts()
+        //await prod.getProducts()
 })
 </script>
 <template>
     <CatSkeleton>
         <template v-slot:categories>
-            <!-- promotinal product start -->
-            <div class="promotinal-product-section overlay-tools .mt-100 overflow-hidden">
+             <!-- promotinal product start -->
+             <div class="promotinal-product-section overlay-tools overflow-hidden" :style="`background-image: url(${app_conf.config.hero})`" style="background-color:#000;  background-repeat: no-repeat; background-position: center; background-size: cover; color: white">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-4 col-12 d-flex align-items-center">
                             <div class="promotinal-product-content" data-aos="fade-up" data-aos-duration="700">
-                                <p class="heading_18 primary-color mb-3">Navigate our various product categories</p>
-                                <h2 class="heading_34 text-white mb-3">Products Categories</h2>
-                                <p class="text_16 text-white mb-3">
-                                    Discover a wide range of products on Tagbiz. Explore categories like electronics,
-                                    fashion, home goods, beauty, sports, and more. Find everything you need in one
-                                    convenient place with great deals and fast shipping.
+                                <!--p class="heading_18 primary-color mb-3">Navigate our various product categories</p-->
+                                <h2 class="heading_34 text-white my-4">{{ app_conf.config.subtitle }}</h2>
+                                <p class="text_16 text-white my-4">
+                                    {{ app_conf.config.description }}
                                 </p>
-                                <div class="view-all mt-4">
-                                    <a class="btn-secondary" href="collection-left-sidebar.html">SHOP TOOLS</a>
+                                <div class=".view-all my-4">
+                                    <RouterLink class="btn-primary" to="/shop">START SHOPPING</RouterLink>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-8 col-12 align-self-center">
-                            <CategoriesSlide :items="slideCat.categories" v-if="slideCat.categories.length" />
+                            <CategoriesSlide :items="cat.categories" v-if="cat.categories.length"/>
 
                         </div>
                     </div>
@@ -64,7 +63,7 @@ onMounted(async () => {
                             <div class="filter-sort-wrapper d-flex justify-content-between flex-wrap">
                                 <div class="collection-title-wrap d-flex align-items-end">
                                     <h2 class="collection-title heading_24 mb-0">All products</h2>
-                                    <p class="collection-counter text_16 mb-0 ms-2">({{ cat.productsInCategory.length }} items)
+                                    <p class="collection-counter text_16 mb-0 ms-2">({{ getcat.productsInCategory.length }} items)
                                     </p>
                                 </div>
                                 <div class="filter-sorting">
@@ -106,7 +105,7 @@ onMounted(async () => {
                                     </div>
                                 </div>
                             </div>
-                            <ProductPage :products="cat.productsInCategory" :show="!true" />
+                            <ProductPage :products="getcat.productsInCategory" :show="!true" />
                         </div>
                         <!-- product area end -->
 
@@ -116,7 +115,7 @@ onMounted(async () => {
             </div>
 
         </template>
-        <template v-slot:discounted>
+        <!--template v-slot:discounted>
             <div class="featured-collection-section mt-100 home-section overflow-hidden">
                 <div class="container">
                     <div class="section-header">
@@ -125,6 +124,6 @@ onMounted(async () => {
                     <DiscountedSlide :products="home.latests" :numSlide="4" />
                 </div>
             </div>
-        </template>
+        </template-->
     </CatSkeleton>
 </template>
