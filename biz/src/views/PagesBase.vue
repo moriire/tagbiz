@@ -83,19 +83,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
                     autocomplete="off"
                   />
                   <button class="search-button btn-reset" type="submit">
-                    <svg
-                      class="icon icon-search"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7.75 0.250183C11.8838 0.250183 15.25 3.61639 15.25 7.75018C15.25 9.54608 14.6201 11.1926 13.5625 12.4846L19.5391 18.4611L18.4609 19.5392L12.4844 13.5627C11.1924 14.6203 9.5459 15.2502 7.75 15.2502C3.61621 15.2502 0.25 11.884 0.25 7.75018C0.25 3.61639 3.61621 0.250183 7.75 0.250183ZM7.75 1.75018C4.42773 1.75018 1.75 4.42792 1.75 7.75018C1.75 11.0724 4.42773 13.7502 7.75 13.7502C11.0723 13.7502 13.75 11.0724 13.75 7.75018C13.75 4.42792 11.0723 1.75018 7.75 1.75018Z"
-                        fill="black"
-                      />
-                    </svg>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
               </form>
@@ -110,19 +98,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
                 type="button"
                 @click="toggleSearch()"
               >
-                <svg
-                  class="icon icon-search"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.75 0.250183C11.8838 0.250183 15.25 3.61639 15.25 7.75018C15.25 9.54608 14.6201 11.1926 13.5625 12.4846L19.5391 18.4611L18.4609 19.5392L12.4844 13.5627C11.1924 14.6203 9.5459 15.2502 7.75 15.2502C3.61621 15.2502 0.25 11.884 0.25 7.75018C0.25 3.61639 3.61621 0.250183 7.75 0.250183ZM7.75 1.75018C4.42773 1.75018 1.75 4.42792 1.75 7.75018C1.75 11.0724 4.42773 13.7502 7.75 13.7502C11.0723 13.7502 13.75 11.0724 13.75 7.75018C13.75 4.42792 11.0723 1.75018 7.75 1.75018Z"
-                    fill="black"
-                  />
-                </svg>
+              <i class="fa-solid fa-magnifying-glass"></i>
               </a>
 
               <a
@@ -192,19 +168,8 @@ document.body.setAttribute("data-bs-theme", theme.value)
               class="search-submit bg-transparent pl-0 text-start"
               
             >
-              <svg
-                class="icon icon-search"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.75 0.250183C11.8838 0.250183 15.25 3.61639 15.25 7.75018C15.25 9.54608 14.6201 11.1926 13.5625 12.4846L19.5391 18.4611L18.4609 19.5392L12.4844 13.5627C11.1924 14.6203 9.5459 15.2502 7.75 15.2502C3.61621 15.2502 0.25 11.884 0.25 7.75018C0.25 3.61639 3.61621 0.250183 7.75 0.250183ZM7.75 1.75018C4.42773 1.75018 1.75 4.42792 1.75 7.75018C1.75 11.0724 4.42773 13.7502 7.75 13.7502C11.0723 13.7502 13.75 11.0724 13.75 7.75018C13.75 4.42792 11.0723 1.75018 7.75 1.75018Z"
-                  fill="black"
-                />
-              </svg>
+             
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <div class="search-input mr-4" >
               <input
@@ -214,21 +179,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
               />
             </div>
             <div class="search-close">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-close"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <i class="fa-solid fa-magnifying-glass"></i>            
             </div>
           </form>
         </div>
@@ -298,19 +249,7 @@ document.body.setAttribute("data-bs-theme", theme.value)
   <!-- footer end -->
   <!-- scrollup start -->
   <button id="scrollup">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#fff"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
+    <i class="fa-solid fa-caret-up"></i>
   </button>
   <!-- scrollup end -->
   <!-- drawer menu start -->

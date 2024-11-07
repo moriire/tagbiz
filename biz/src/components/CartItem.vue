@@ -41,9 +41,9 @@ const setImage = (img)=>{
             <!--p class="product-vendor">{{ item.profile.store_name || item.profile.username  }}</p-->
             <div class="misc d-flex align-items-end justify-content-between">
                 <div class="quantity d-flex align-items-center justify-content-between">
-                    <button class="qty-btn dec-qty" @click="()=>item.count-=1" ><img src="/src/assets/img/icon/minus.svg" alt="minus"></button>
+                    <button class="qty-btn dec-qty" @click="()=>item.count-=1" ><i class="fa-solid fa-minus"></i></button>
                     <input class="qty-input" type="number" v-model="item.count"  :min="1" :max="12">
-                    <button class="qty-btn inc-qty"  @click="()=>item.count+=1" ><img src="/src/assets/img/icon/plus.svg" alt="plus"></button>
+                    <button class="qty-btn inc-qty"  @click="()=>item.count+=1" ><i class="fa-solid fa-plus"></i></button>
                 </div>
                 <div class="product-remove-area d-flex flex-column align-items-end">
                     <div class="product-price">&#x20A6;{{ item.price }}</div>

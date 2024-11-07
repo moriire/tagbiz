@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios';
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 //import LoaderSpinner from "@/components/LoaderSpinner.vue"
 import { useRoute } from 'vue-router'
 import ProductPage from '@/components/ProductPage.vue'
@@ -39,6 +39,44 @@ const fetchItems = async (url = null) => {
     console.error('Error fetching items:', error)
   }
 }
+
+const sortOption = ref("featured");
+
+    const sortingOptions = [
+      { value: "featured", label: "Featured" },
+      { value: "bestSelling", label: "Best Selling" },
+      { value: "aToZ", label: "Alphabetically, A-Z" },
+      { value: "zToA", label: "Alphabetically, Z-A" },
+      { value: "priceLowToHigh", label: "Price, low to high" },
+      { value: "priceHighToLow", label: "Price, high to low" },
+      { value: "dateOldToNew", label: "Date, old to new" },
+      { value: "dateNewToOld", label: "Date, new to old" },
+    ];
+
+    const sortedProducts = computed(() => {
+      return [...items.value].sort((a, b) => {
+        switch (sortOption.value) {
+          case "aToZ":
+            return a.name.localeCompare(b.name);
+          case "zToA":
+            return b.name.localeCompare(a.name);
+          case "priceLowToHigh":
+            return a.new_price - b.new_price;
+          case "priceHighToLow":
+            return b.new_price - a.new_price;
+          case "dateOldToNew":
+            return new Date(a.created_at) - new Date(b.created_at);
+          case "dateNewToOld":
+            return new Date(b.created_at) - new Date(a.created_at);
+          default:
+            return 0;
+        }
+      });
+    });
+
+    const setSortOption = (option) => {
+      sortOption.value = option;
+    };
 </script>
 
 <template>
@@ -87,15 +125,10 @@ const fetchItems = async (url = null) => {
                   </span>
                 </div>
                 <ul class="sorting-lists list-unstyled m-0">
-                  <li><a href="#" class="text_14">Featured</a></li>
-                  <li><a href="#" class="text_14">Best Selling</a></li>
-                  <li><a href="#" class="text_14">Alphabetically, A-Z</a></li>
-                  <li><a href="#" class="text_14">Alphabetically, Z-A</a></li>
-                  <li><a href="#" class="text_14">Price, low to high</a></li>
-                  <li><a href="#" class="text_14">Price, high to low</a></li>
-                  <li><a href="#" class="text_14">Date, old to new</a></li>
-                  <li><a href="#" class="text_14">Date, new to old</a></li>
-                </ul>
+      <li v-for="option in sortingOptions" :key="option.value">
+        <a href="#" @click.prevent="setSortOption(option.value)" class="text_14">{{ option.label }}</a>
+      </li>
+    </ul>
               </div>
               <div
                 class="filter-drawer-trigger mobile-filter d-flex align-items-center d-lg-none"
