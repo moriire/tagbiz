@@ -1,0 +1,1 @@
+import{_ as n,c,e,j as o}from"./index-C7Tyh8Ty.js";const s={},r={class:"container vh-100"};function a(i,t){return o(),c("div",r,t[0]||(t[0]=[e("div",{class:"row align-items-center justify-content-center h-100"},[e("div",{class:"col text-center"},[e("h2",null,"Coming Soon")])],-1)]))}const _=n(s,[["render",a]]);export{_ as default};
