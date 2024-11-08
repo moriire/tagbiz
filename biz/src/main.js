@@ -4,10 +4,10 @@ import "@fortawesome/fontawesome-free/js/all.min.js"
 //import "./assets/js/vendor.js"
 //import "./assets/js/main.js"
 import "bootstrap/dist/css/bootstrap.min.css"
+import 'aos/dist/aos.css'
 import "@fortawesome/fontawesome-free/css/all.min.css"
 import "alertifyjs/build/css/alertify.min.css"
 //import "./assets/css/vendor.css"
-import 'aos/dist/aos.css'
 import "./assets/css/style.css"
 import AOS from 'aos';
 import { createApp } from 'vue'

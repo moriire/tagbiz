@@ -28,6 +28,7 @@ class OrderView(ModelViewSet):
                     for_email = metadata.get("email"),
                     authorization_code=authorization_code,
                     reference_code = reference,
+                    amount = metadata.get("amount")/100,
                     status = "PAID",
                     mode = metadata.get('delivery_mode'),
                     address = metadata.get("address"),

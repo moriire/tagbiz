@@ -12,7 +12,7 @@ const setImage = (img)=>{
     return `${backend}${img}`
 }
 onMounted(async () => {
-  await prod.getProducts()
+  //await prod.getProducts()
 })
 </script>
 
@@ -64,9 +64,13 @@ onMounted(async () => {
                   </td>
                   <td class="cart-item-quantity">
                     <div class="quantity d-flex align-items-center justify-content-between">
-                      <button class="qty-btn dec-qty" @click="()=>cart.count -= 1" ><img src="/src/assets/img/icon/minus.svg" alt="minus"></button>
+                      <button class="qty-btn dec-qty" @click="()=>cart.count -= 1" >
+                        <i class="fa-solid fa-minus"></i>
+                      </button>
                       <input class="qty-input" type="number" v-model="cart.count"  :min="1" :max="12" >
-                      <button class="qty-btn inc-qty" @click="()=>cart.count += 1" ><img src="/src/assets/img/icon/plus.svg" alt="plus"></button>
+                      <button class="qty-btn inc-qty" @click="()=>cart.count += 1" >
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
                     </div>
                     <a href="#" class="product-remove mt-2" @click="prod.deleteCartLocal(cart)">Remove</a>
                   </td>
