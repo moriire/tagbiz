@@ -56,7 +56,7 @@ onMounted(async () => {
         <div class="col-xl-9 col-lg-8 col-md-12 col-12">
           <div class="header">
             <h2 class=".pb-1">Billing address</h2>
-          </div>{{ship.shippingDetail.transaction.amount }}
+          </div>
           <div class="shipping-address-area">
             <div class=".shipping-address-form-wrapper">
               <form @submit.prevent="submitCheckout">
