@@ -41,7 +41,7 @@ const mobileNavSection = [
 </script>
 
 <template>
-  <PageHeader :mobileNavSection="mobileNavSection" :contacts="app_conf" :cartItems="prod.cartItems"/>
+  <PageHeader :mobileNavSection="mobileNavSection" :contacts="app_conf.config" :cartItems="prod.cartItems"/>
   <main id="MainContent" class="content-for-layout">
     <RouterView />
   </main>
@@ -89,31 +89,31 @@ const mobileNavSection = [
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-phone"></i>
             </span>
-            <a :href="`callto:${app_conf.phone}`"> {{ app_conf.phone }} </a>
+            <a :href="`callto:${app_conf.phone}`"> {{ app_conf.config.phone }} </a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-brands fa-whatsapp"></i>
             </span>
-            <a :href="app_conf.whatsapp"> WhatsApp</a>
+            <a :href="app_conf.config.whatsapp"> WhatsApp</a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-brands fa-facebook"></i>
             </span>
-            <a :href="app_conf.facebook">Facebook</a>
+            <a :href="app_conf.config.facebook">Facebook</a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-brands fa-instagram"></i>
             </span>
-            <a :href="app_conf.instagram">Instagram</a>
+            <a :href="app_conf.config.instagram">Instagram</a>
           </li>
           <li class="utilty-menu-item">
             <span class="utilty-icon-wrapper">
               <i class="fa-solid fa-envelope-open-text"></i>
             </span>
-            <a :href="`mailto:${app_conf.email}`">{{ app_conf.email }}</a>
+            <a :href="`mailto:${app_conf.config.email}`">{{ app_conf.config.email }}</a>
           </li>
         </ul>
       </div>

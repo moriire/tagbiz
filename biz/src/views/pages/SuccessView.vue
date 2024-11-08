@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
+onMounted(()=>localStorage.removeItem("carts"))
 </script>
 <template>
   <div class="container d-flex flex-column align-items-center text-center py-5">

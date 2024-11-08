@@ -101,24 +101,6 @@ const singeProduct = async (product_id) => {
   }
 };
 
-const addCartForShipping = async (user, product, count) => {
-  try {
-    const res = await axios.post(`cart`,
-      {
-          user: auth.userInfo.pk,
-          product: product,
-          count: count
-      }
-    )
-    //cartContents.value = res.data
-    //cartContents.value = res.data
-    console.log(res.status)
-    //getUserProducts()
-  } catch (e) {
-    console.log(e)
-  }
-};
-
 const cartObj = (product, count, user) => {product:product, user=user, count=count}
 
 const cartForShipping = computed(() => {

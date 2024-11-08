@@ -70,8 +70,14 @@ const router = createRouter({
         {
           path: '/about',
           name: 'about',
-          component: () => import('../views/pages/AboutView.vue'),
-          meta: { title: "About" }
+          component: () => import('../views/pages/ContactView.vue'),
+          meta: { title: "About Us" }
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: () => import('../views/pages/ContactView.vue'),
+          meta: { title: "Contact Us" }
         },
       ],
       component: PagesBase
