@@ -41,7 +41,7 @@ const mobileNavSection = [
 </script>
 
 <template>
-  <PageHeader :mobileNavSection="mobileNavSection" :contacts="app_conf" :cartItems="prod.cartItems.length"/>
+  <PageHeader :mobileNavSection="mobileNavSection" :contacts="app_conf" :cartItems="prod.cartItems"/>
   <main id="MainContent" class="content-for-layout">
     <RouterView />
   </main>

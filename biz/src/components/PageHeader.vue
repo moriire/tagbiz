@@ -102,6 +102,7 @@ onMounted(async () => {
                 data-bs-toggle="offcanvas"
               >
                 <i class="fa-solid fa-bars fa-2x"></i>
+               
               </a>
             </div>
           </div>
